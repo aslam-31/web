@@ -1,0 +1,234 @@
+import { 
+  founders, 
+  products, 
+  projects, 
+  contacts,
+  type Founder, 
+  type InsertFounder,
+  type Product,
+  type InsertProduct,
+  type Project,
+  type InsertProject,
+  type Contact,
+  type InsertContact
+} from "@shared/schema";
+
+export interface IStorage {
+  // Founders
+  getFounders(): Promise<Founder[]>;
+  createFounder(founder: InsertFounder): Promise<Founder>;
+  
+  // Products
+  getProducts(): Promise<Product[]>;
+  createProduct(product: InsertProduct): Promise<Product>;
+  
+  // Projects
+  getProjects(): Promise<Project[]>;
+  getProjectsByCategory(category: string): Promise<Project[]>;
+  getProjectsByYear(year: number): Promise<Project[]>;
+  createProject(project: InsertProject): Promise<Project>;
+  
+  // Contacts
+  getContacts(): Promise<Contact[]>;
+  createContact(contact: InsertContact): Promise<Contact>;
+}
+
+export class MemStorage implements IStorage {
+  private founders: Map<number, Founder>;
+  private products: Map<number, Product>;
+  private projects: Map<number, Project>;
+  private contacts: Map<number, Contact>;
+  private currentFounderId: number;
+  private currentProductId: number;
+  private currentProjectId: number;
+  private currentContactId: number;
+
+  constructor() {
+    this.founders = new Map();
+    this.products = new Map();
+    this.projects = new Map();
+    this.contacts = new Map();
+    this.currentFounderId = 1;
+    this.currentProductId = 1;
+    this.currentProjectId = 1;
+    this.currentContactId = 1;
+    
+    this.seedData();
+  }
+
+  private seedData() {
+    // Seed founders
+    const foundersData: InsertFounder[] = [
+      {
+        name: "Carlos Rodriguez",
+        position: "CEO & Co-Founder",
+        bio: "With over 20 years in international trade, Carlos brings expertise in market development and strategic partnerships across Europe and Latin America.",
+        imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        order: 1
+      },
+      {
+        name: "Maria Santos",
+        position: "COO & Co-Founder",
+        bio: "Maria oversees operations and quality control, ensuring our clients receive exceptional service and premium products with her 15+ years of logistics expertise.",
+        imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        order: 2
+      }
+    ];
+
+    foundersData.forEach(founder => {
+      const id = this.currentFounderId++;
+      this.founders.set(id, { ...founder, id, order: founder.order });
+    });
+
+    // Seed products
+    const productsData: InsertProduct[] = [
+      {
+        name: "Industrial Machinery",
+        description: "High-performance manufacturing equipment and industrial machinery for global markets.",
+        category: "Manufacturing",
+        imageUrl: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 1
+      },
+      {
+        name: "Consumer Electronics",
+        description: "Latest technology products and consumer electronics for international distribution.",
+        category: "Technology",
+        imageUrl: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 2
+      },
+      {
+        name: "Agricultural Products",
+        description: "Premium agricultural products and specialty foods from Spain to global markets.",
+        category: "Agriculture",
+        imageUrl: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 3
+      },
+      {
+        name: "Textiles & Fashion",
+        description: "Quality textiles and fashion products for international retail and wholesale markets.",
+        category: "Fashion",
+        imageUrl: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 4
+      },
+      {
+        name: "Automotive Components",
+        description: "Precision automotive parts and components for global automotive manufacturers.",
+        category: "Automotive",
+        imageUrl: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 5
+      }
+    ];
+
+    productsData.forEach(product => {
+      const id = this.currentProductId++;
+      this.products.set(id, { ...product, id, order: product.order });
+    });
+
+    // Seed projects
+    const projectsData: InsertProject[] = [
+      {
+        title: "Brazilian Manufacturing Partnership",
+        description: "Successfully exported €2.5M worth of industrial machinery to establish manufacturing capabilities in São Paulo.",
+        category: "industrial",
+        location: "São Paulo, Brazil",
+        year: 2024,
+        status: "Completed",
+        imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 1
+      },
+      {
+        title: "European Electronics Network",
+        description: "Establishing distribution channels for consumer electronics across 5 European markets with local partners.",
+        category: "technology",
+        location: "Multiple European Cities",
+        year: 2024,
+        status: "In Progress",
+        imageUrl: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 2
+      },
+      {
+        title: "Asian Agricultural Partnership",
+        description: "Launched premium Spanish agricultural products export program to high-end markets in Japan and South Korea.",
+        category: "agriculture",
+        location: "Tokyo & Seoul",
+        year: 2023,
+        status: "Completed",
+        imageUrl: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        order: 3
+      }
+    ];
+
+    projectsData.forEach(project => {
+      const id = this.currentProjectId++;
+      this.projects.set(id, { ...project, id, order: project.order });
+    });
+  }
+
+  // Founders methods
+  async getFounders(): Promise<Founder[]> {
+    return Array.from(this.founders.values()).sort((a, b) => a.order - b.order);
+  }
+
+  async createFounder(insertFounder: InsertFounder): Promise<Founder> {
+    const id = this.currentFounderId++;
+    const founder: Founder = { ...insertFounder, id, order: insertFounder.order || 0 };
+    this.founders.set(id, founder);
+    return founder;
+  }
+
+  // Products methods
+  async getProducts(): Promise<Product[]> {
+    return Array.from(this.products.values()).sort((a, b) => a.order - b.order);
+  }
+
+  async createProduct(insertProduct: InsertProduct): Promise<Product> {
+    const id = this.currentProductId++;
+    const product: Product = { ...insertProduct, id, order: insertProduct.order || 0 };
+    this.products.set(id, product);
+    return product;
+  }
+
+  // Projects methods
+  async getProjects(): Promise<Project[]> {
+    return Array.from(this.projects.values()).sort((a, b) => a.order - b.order);
+  }
+
+  async getProjectsByCategory(category: string): Promise<Project[]> {
+    return Array.from(this.projects.values())
+      .filter(project => project.category === category)
+      .sort((a, b) => a.order - b.order);
+  }
+
+  async getProjectsByYear(year: number): Promise<Project[]> {
+    return Array.from(this.projects.values())
+      .filter(project => project.year === year)
+      .sort((a, b) => a.order - b.order);
+  }
+
+  async createProject(insertProject: InsertProject): Promise<Project> {
+    const id = this.currentProjectId++;
+    const project: Project = { ...insertProject, id, order: insertProject.order || 0 };
+    this.projects.set(id, project);
+    return project;
+  }
+
+  // Contacts methods
+  async getContacts(): Promise<Contact[]> {
+    return Array.from(this.contacts.values()).sort((a, b) => 
+      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+  }
+
+  async createContact(insertContact: InsertContact): Promise<Contact> {
+    const id = this.currentContactId++;
+    const contact: Contact = { 
+      ...insertContact, 
+      id, 
+      createdAt: new Date()
+    };
+    this.contacts.set(id, contact);
+    return contact;
+  }
+}
+
+export const storage = new MemStorage();
