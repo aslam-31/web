@@ -184,6 +184,50 @@
   animation-delay: 2s;
 }
 
+/* Vector animations */
+@keyframes vectorFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -5px) rotate(90deg); }
+  50% { transform: translate(-5px, 10px) rotate(180deg); }
+  75% { transform: translate(-10px, -5px) rotate(270deg); }
+}
+
+@keyframes vectorPulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+@keyframes vectorSlide {
+  0% { transform: translateX(-100px); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateX(100px); opacity: 0; }
+}
+
+.animate-vector-float {
+  animation: vectorFloat 15s ease-in-out infinite;
+}
+
+.animate-vector-pulse {
+  animation: vectorPulse 4s ease-in-out infinite;
+}
+
+.animate-vector-slide {
+  animation: vectorSlide 20s linear infinite;
+}
+
+/* Enhanced glass effect for cards */
+.glass-enhanced {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-enhanced {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Noise grid pattern */
 .noise-grid {
   background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);

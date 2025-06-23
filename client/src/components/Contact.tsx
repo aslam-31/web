@@ -64,7 +64,13 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-slide-right">
+          <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-slide-right relative overflow-hidden">
+            {/* Moving Vector Elements in Contact Form */}
+            <div className="absolute top-6 right-6 w-8 h-8 opacity-10 animate-vector-slide">
+              <svg viewBox="0 0 32 32" className="w-full h-full text-current">
+                <polygon points="16,4 28,20 4,20" stroke="currentColor" strokeWidth="1" fill="none"/>
+              </svg>
+            </div>
             <h3 className="text-2xl font-bold mb-6">{t("contact.form.title")}</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

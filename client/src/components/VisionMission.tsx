@@ -24,7 +24,15 @@ export function VisionMission() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300">
+          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+            {/* Moving Vector Elements */}
+            <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
+              <svg viewBox="0 0 32 32" className="w-full h-full text-current">
+                <path d="M4,16 L28,16 M24,12 L28,16 L24,20" stroke="currentColor" strokeWidth="1" fill="none">
+                  <animateTransform attributeName="transform" type="translate" values="0,0; 10,0; 0,0" dur="3s" repeatCount="indefinite"/>
+                </path>
+              </svg>
+            </div>
             <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-300 rounded-xl flex items-center justify-center mb-6">
               <i className="fas fa-eye text-2xl text-white dark:text-black"></i>
             </div>
@@ -34,7 +42,18 @@ export function VisionMission() {
             </p>
           </div>
 
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300">
+          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+            {/* Moving Vector Elements */}
+            <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
+              <svg viewBox="0 0 32 32" className="w-full h-full text-current">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="1" fill="none">
+                  <animateTransform attributeName="transform" type="rotate" values="0 16 16; 360 16 16" dur="8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="16" cy="8" r="2" fill="currentColor">
+                  <animateTransform attributeName="transform" type="rotate" values="0 16 16; 360 16 16" dur="8s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+            </div>
             <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-300 rounded-xl flex items-center justify-center mb-6">
               <i className="fas fa-bullseye text-2xl text-white dark:text-black"></i>
             </div>

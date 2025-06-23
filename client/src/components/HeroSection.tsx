@@ -76,6 +76,44 @@ export function HeroSection() {
       <div className="absolute inset-0 z-1">
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60 dark:from-white/60 dark:via-transparent dark:to-white/60"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent dark:via-white/20 animate-pulse"></div>
+        
+        {/* Moving Vectors Overlay */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            {/* Animated Lines */}
+            <g className="animate-pulse">
+              <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="8s" repeatCount="indefinite"/>
+              </line>
+              <line x1="70%" y1="10%" x2="90%" y2="30%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -30,50; 0,0" dur="10s" repeatCount="indefinite"/>
+              </line>
+              <line x1="20%" y1="80%" x2="40%" y2="60%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 40,-20; 0,0" dur="12s" repeatCount="indefinite"/>
+              </line>
+            </g>
+            
+            {/* Animated Arrows */}
+            <g className="animate-pulse">
+              <path d="M15,25 L35,35 M30,30 L35,35 L30,40" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 0,0" dur="15s" repeatCount="indefinite"/>
+              </path>
+              <path d="M75,15 L95,25 M90,20 L95,25 L90,30" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -50,80; 0,0" dur="18s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            
+            {/* Animated Geometric Shapes */}
+            <g className="animate-pulse">
+              <circle cx="85%" cy="75%" r="3" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -80,-40; 0,0" dur="20s" repeatCount="indefinite"/>
+              </circle>
+              <polygon points="10,10 20,5 30,10 25,20 15,20" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-white dark:text-black">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 120,60; 0,0" dur="22s" repeatCount="indefinite"/>
+              </polygon>
+            </g>
+          </svg>
+        </div>
       </div>
 
       <div className="relative z-10 flex items-center min-h-screen">

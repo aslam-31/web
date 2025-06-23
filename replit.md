@@ -113,6 +113,7 @@ This is a modern, full-stack web application for a premium import-export busines
 ```
 Changelog:
 - June 23, 2025. Initial setup
+- June 23, 2025. Enhanced with advanced Three.js animations, parallax effects, and moving vector graphics throughout the page
 ```
 
 ## User Preferences

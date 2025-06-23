@@ -70,9 +70,15 @@ export function Products() {
             {products?.map((product, index) => (
               <div 
                 key={product.id} 
-                className="flex-none w-80 noise-grid gradient-border glass rounded-2xl p-6 hover-scale transition-all duration-500 group"
+                className="flex-none w-80 noise-grid gradient-border glass rounded-2xl p-6 hover-scale transition-all duration-500 group relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Moving Vector Elements in Cards */}
+                <div className="absolute bottom-4 left-4 w-6 h-6 opacity-10 animate-vector-float">
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                    <path d="M2,12 L22,12 M18,8 L22,12 L18,16" stroke="currentColor" strokeWidth="1" fill="none"/>
+                  </svg>
+                </div>
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <img 
                     src={product.imageUrl} 

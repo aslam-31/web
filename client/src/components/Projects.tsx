@@ -87,9 +87,16 @@ export function Projects() {
           {projects?.map((project, index) => (
             <div 
               key={project.id} 
-              className="noise-grid gradient-border glass rounded-2xl overflow-hidden hover-scale transition-all duration-500 group animate-fade-up"
+              className="noise-grid gradient-border glass rounded-2xl overflow-hidden hover-scale transition-all duration-500 group animate-fade-up relative"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
+              {/* Moving Vector Elements in Project Cards */}
+              <div className="absolute top-4 left-4 w-6 h-6 opacity-15 animate-vector-pulse">
+                <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                  <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1" fill="none"/>
+                  <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                </svg>
+              </div>
               <div className="relative overflow-hidden">
                 <img 
                   src={project.imageUrl} 
