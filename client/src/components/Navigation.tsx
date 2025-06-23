@@ -26,10 +26,16 @@ export function Navigation() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center">
-                <span className="text-white dark:text-black font-bold text-lg">IE</span>
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="w-8 h-8 fill-white dark:fill-black">
+                  <path d="M50 10c-5 0-10 2-15 5l-15 10c-5 3-5 7 0 10l15 10c5 3 10 5 15 5s10-2 15-5l15-10c5-3 5-7 0-10l-15-10c-5-3-10-5-15-5z"/>
+                  <path d="M25 35l15-10c5-3 10-5 15-5s10 2 15 5l15 10v20l-15 10c-5 3-10 5-15 5s-10-2-15-5l-15-10V35z"/>
+                  <ellipse cx="35" cy="25" rx="3" ry="8" transform="rotate(-30 35 25)"/>
+                  <ellipse cx="65" cy="25" rx="3" ry="8" transform="rotate(30 65 25)"/>
+                  <path d="M40 45c0-5 5-10 10-10s10 5 10 10-5 10-10 10-10-5-10-10z"/>
+                </svg>
               </div>
-              <span className="text-xl font-semibold hidden sm:block">{t("nav.brand")}</span>
+              <span className="text-xl font-bold hidden sm:block">CLIFTON</span>
             </div>
 
             {/* Desktop Navigation */}

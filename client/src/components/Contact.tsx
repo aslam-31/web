@@ -158,7 +158,7 @@ export function Contact() {
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-envelope w-6 text-gray-600 dark:text-gray-400"></i>
-                  <span className="ml-3">info@importexport.es</span>
+                  <span className="ml-3">info@clifton.es</span>
                 </div>
                 <div className="flex items-center">
                   <i className="fab fa-whatsapp w-6 text-gray-600 dark:text-gray-400"></i>

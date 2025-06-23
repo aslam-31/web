@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     nav: {
-      brand: "ImportExport",
+      brand: "CLIFTON",
       home: "Home",
       about: "About Us",
       products: "Products",
@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       title: {
-        main: "Premium",
+        main: "CLIFTON",
         accent: "Import Export"
       },
       subtitle: "Excellence in International Trade • Connecting Spain with the World",
@@ -95,14 +95,14 @@ export const translations = {
         quality: "Quality Control"
       },
       contact: "Contact",
-      copyright: "© 2024 ImportExport. All rights reserved.",
+      copyright: "© 2024 CLIFTON. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms of Service"
     }
   },
   pt: {
     nav: {
-      brand: "ImportExport",
+      brand: "CLIFTON",
       home: "Início",
       about: "Sobre Nós",
       products: "Produtos",
@@ -111,7 +111,7 @@ export const translations = {
     },
     hero: {
       title: {
-        main: "Premium",
+        main: "CLIFTON",
         accent: "Importação Exportação"
       },
       subtitle: "Excelência em Comércio Internacional • Conectando a Espanha com o Mundo",
@@ -196,7 +196,7 @@ export const translations = {
         quality: "Controle de Qualidade"
       },
       contact: "Contato",
-      copyright: "© 2024 ImportExport. Todos os direitos reservados.",
+      copyright: "© 2024 CLIFTON. Todos os direitos reservados.",
       privacy: "Política de Privacidade",
       terms: "Termos de Serviço"
     }

@@ -1,8 +1,8 @@
-# Premium Import Export Business Website
+# CLIFTON - Premium Import Export Business Website
 
 ## Overview
 
-This is a modern, full-stack web application for a premium import-export business based in Spain. The application serves as a comprehensive business showcase featuring company information, product catalogs, project portfolios, and contact management capabilities. It combines a React-based frontend with an Express.js backend, utilizing PostgreSQL for data persistence and modern UI/UX design principles.
+This is a modern, full-stack web application for CLIFTON, a premium import-export business based in Spain. The application serves as a comprehensive business showcase featuring company information, product catalogs, project portfolios, and contact management capabilities. It combines a React-based frontend with an Express.js backend, utilizing PostgreSQL for data persistence and modern UI/UX design principles.
 
 ## System Architecture
 
@@ -114,6 +114,7 @@ This is a modern, full-stack web application for a premium import-export busines
 Changelog:
 - June 23, 2025. Initial setup
 - June 23, 2025. Enhanced with advanced Three.js animations, parallax effects, and moving vector graphics throughout the page
+- June 23, 2025. Updated branding to CLIFTON with new eagle logo and company identity
 ```
 
 ## User Preferences
