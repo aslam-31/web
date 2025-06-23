@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
 import { useLanguage } from "./LanguageProvider";
 
+import WhatsApp_Image_2025_06_23_at_15_47_14_b699984d_removebg_preview from "@assets/WhatsApp_Image_2025-06-23_at_15.47.14_b699984d-removebg-preview.png";
+
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -28,7 +30,7 @@ export function Navigation() {
             <div className="flex items-center">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src="/images/clifton-logo.jpg" 
+                  src={WhatsApp_Image_2025_06_23_at_15_47_14_b699984d_removebg_preview} 
                   alt="CLIFTON Logo" 
                   className="w-full h-full object-contain"
                 />
