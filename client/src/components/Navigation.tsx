@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { useTheme } from "./ThemeProvider";
 import { useLanguage } from "./LanguageProvider";
 
@@ -6,6 +7,7 @@ import WhatsApp_Image_2025_06_23_at_15_47_14_b699984d_removebg_preview from "@as
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
 
@@ -14,11 +16,26 @@ export function Navigation() {
   };
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
+    if (location !== '/') {
+      setLocation('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const navigateToProducts = () => {
+    setLocation('/products');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -52,7 +69,7 @@ export function Navigation() {
                 {t("nav.about")}
               </button>
               <button 
-                onClick={() => scrollToSection('products')}
+                onClick={navigateToProducts}
                 className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.products")}
@@ -139,7 +156,7 @@ export function Navigation() {
                   {t("nav.about")}
                 </button>
                 <button 
-                  onClick={() => scrollToSection('products')}
+                  onClick={navigateToProducts}
                   className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.products")}

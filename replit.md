@@ -135,6 +135,11 @@ Changelog:
 - June 25, 2025. Updated footer by removing CLIFTON text next to logo and shortened tagline to "Excellence in international trade solutions"
 - June 25, 2025. Enhanced footer with social media icons (Twitter, LinkedIn, Instagram, YouTube), contact icons for location/phone/email, updated services list to match commodity products, and added certification information
 - June 25, 2025. Updated footer to black and white design, removing colored icons in favor of monochromatic gray scheme for professional appearance
+- January 24, 2025. Migration from Replit Agent to standard Replit environment completed
+- January 24, 2025. Created separate products page (/products) with same theme and navigation
+- January 24, 2025. Added dedicated commodity showcase for Coffee, Salt, Sugar, and Soye
+- January 24, 2025. Implemented "Why Choose CLIFTON" section with quality certifications and benefits
+- January 24, 2025. Added trade volumes information and contact CTA section
 ```
 
 ## User Preferences
