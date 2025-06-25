@@ -8,6 +8,11 @@ export const founders = pgTable("founders", {
   position: text("position").notNull(),
   bio: text("bio").notNull(),
   imageUrl: text("image_url").notNull(),
+  email: text("email"),
+  linkedin: text("linkedin"),
+  twitter: text("twitter"),
+  instagram: text("instagram"),
+  facebook: text("facebook"),
   order: integer("order").notNull().default(0),
 });
 

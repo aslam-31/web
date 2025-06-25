@@ -64,6 +64,11 @@ export class MemStorage implements IStorage {
         position: "CEO & Co-Founder",
         bio: "With over 20 years in international trade, Carlos brings expertise in market development and strategic partnerships across Europe and Latin America.",
         imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        email: "carlos@clifton.es",
+        linkedin: "https://linkedin.com/in/carlos-rodriguez-clifton",
+        twitter: "https://twitter.com/carlosrod_trade",
+        instagram: "https://instagram.com/carlosrodriguez_ceo",
+        facebook: "https://facebook.com/carlos.rodriguez.clifton",
         order: 1
       },
       {
@@ -71,6 +76,11 @@ export class MemStorage implements IStorage {
         position: "COO & Co-Founder",
         bio: "Maria oversees operations and quality control, ensuring our clients receive exceptional service and premium products with her 15+ years of logistics expertise.",
         imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        email: "maria@clifton.es",
+        linkedin: "https://linkedin.com/in/maria-santos-clifton",
+        twitter: "https://twitter.com/mariasantos_ops",
+        instagram: "https://instagram.com/mariasantos_coo",
+        facebook: "https://facebook.com/maria.santos.clifton",
         order: 2
       }
     ];
