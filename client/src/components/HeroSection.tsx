@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80",
-  "https://images.unsplash.com/photo-1520637836862-4d197d17c35a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80",
-  "https://images.unsplash.com/photo-1597149962419-0d90ac2e3db4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80",
-  "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80"
+  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+  "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+  "https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+  "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+  "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
 ];
 
 const animations = [
@@ -14,7 +15,8 @@ const animations = [
   'animate-slide-right', 
   'animate-zoom-in',
   'animate-zoom-out',
-  'animate-fade-up'
+  'animate-fade-up',
+  'animate-fade-down'
 ];
 
 export function HeroSection() {
@@ -55,12 +57,12 @@ export function HeroSection() {
             key={index}
             className={`absolute inset-0 bg-cover bg-center transition-all duration-2000 ease-in-out ${
               index === currentSlide 
-                ? 'opacity-40' 
+                ? 'opacity-20' 
                 : 'opacity-0'
             }`}
             style={{ 
               backgroundImage: `url(${image})`,
-              filter: 'grayscale(80%) contrast(1.1)',
+              filter: 'grayscale(100%) contrast(1.2)',
               transform: index === currentSlide 
                 ? 'scale(1.02)' 
                 : 'scale(1.05)',
@@ -70,8 +72,8 @@ export function HeroSection() {
       </div>
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-white/15 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
@@ -221,7 +223,7 @@ export function HeroSection() {
           }
         }}
       >
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-0">
           <svg 
             className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
@@ -232,7 +234,7 @@ export function HeroSection() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
           <svg 
-            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 -mt-2" 
+            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
