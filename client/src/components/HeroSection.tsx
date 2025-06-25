@@ -150,7 +150,7 @@ export function HeroSection() {
                 <span className="text-base sm:text-lg font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
 
                 <div className="flex items-center gap-1 relative z-10">
-                  <span className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">Export</span>
+                  <span className="sm:text-lg font-semibold text-gray-800 dark:text-gray-200 text-[24px]">Export</span>
                   <div className="w-4 h-4 relative">
                     <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
