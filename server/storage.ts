@@ -60,27 +60,27 @@ export class MemStorage implements IStorage {
     // Seed founders
     const foundersData: InsertFounder[] = [
       {
-        name: "Carlos Rodriguez",
-        position: "CEO & Co-Founder",
-        bio: "With over 20 years in international trade, Carlos brings expertise in market development and strategic partnerships across Europe and Latin America.",
+        name: "Benson Clement",
+        position: "Managing Director",
+        bio: "BA English Literature, MBA HR and Marketing. With 12 years of experience in textiles, trading, import and export, Benson leads strategic operations and business development.",
         imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-        email: "carlos@clifton.es",
-        linkedin: "https://linkedin.com/in/carlos-rodriguez-clifton",
-        twitter: "https://twitter.com/carlosrod_trade",
-        instagram: "https://instagram.com/carlosrodriguez_ceo",
-        facebook: "https://facebook.com/carlos.rodriguez.clifton",
+        email: "benson@cliftontraders.com",
+        linkedin: "https://linkedin.com/in/benson-clement-clifton",
+        twitter: "https://twitter.com/bensonclement_md",
+        instagram: "https://instagram.com/bensonclement_director",
+        facebook: "https://facebook.com/benson.clement.clifton",
         order: 1
       },
       {
-        name: "Maria Santos",
-        position: "COO & Co-Founder",
-        bio: "Maria oversees operations and quality control, ensuring our clients receive exceptional service and premium products with her 15+ years of logistics expertise.",
-        imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-        email: "maria@clifton.es",
-        linkedin: "https://linkedin.com/in/maria-santos-clifton",
-        twitter: "https://twitter.com/mariasantos_ops",
-        instagram: "https://instagram.com/mariasantos_coo",
-        facebook: "https://facebook.com/maria.santos.clifton",
+        name: "Joseph Ebenezer",
+        position: "Technical Director",
+        bio: "B.Sc (Physics), MBA (HR & Marketing). With 10 years of experience in sales & marketing in IT & Non-IT sector services, Joseph drives technical strategy and market expansion.",
+        imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        email: "joseph@cliftontraders.com",
+        linkedin: "https://linkedin.com/in/joseph-ebenezer-clifton",
+        twitter: "https://twitter.com/josephebenezer_td",
+        instagram: "https://instagram.com/josephebenezer_tech",
+        facebook: "https://facebook.com/joseph.ebenezer.clifton",
         order: 2
       }
     ];
