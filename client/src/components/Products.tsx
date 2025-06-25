@@ -14,9 +14,9 @@ const getServiceIcon = (name: string) => {
   switch (name.toLowerCase()) {
     case 'import services':
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
           </svg>
@@ -24,9 +24,9 @@ const getServiceIcon = (name: string) => {
       );
     case 'export services':
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
           </svg>
@@ -34,18 +34,18 @@ const getServiceIcon = (name: string) => {
       );
     case 'logistics & supply chain management':
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
           </svg>
         </div>
       );
     case 'customs clearance':
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 2V8H22" />
           </svg>
@@ -53,18 +53,18 @@ const getServiceIcon = (name: string) => {
       );
     case 'market research & consulting':
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
         </div>
       );
     default:
       return (
-        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6" />
           </svg>
         </div>
@@ -165,14 +165,6 @@ export function Products() {
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
                   {product.description}
                 </p>
-                <button className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-black via-gray-800 to-black dark:from-white dark:via-gray-200 dark:to-white text-white dark:text-black rounded-xl hover-scale transition-all duration-300 font-semibold shadow-lg hover:shadow-xl group-hover:shadow-2xl">
-                  <span className="flex items-center justify-center gap-2">
-                    {t("products.learnMore")}
-                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </button>
               </div>
             </div>
           ))}
@@ -211,14 +203,6 @@ export function Products() {
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
                     {product.description}
                   </p>
-                  <button className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-black via-gray-800 to-black dark:from-white dark:via-gray-200 dark:to-white text-white dark:text-black rounded-xl hover-scale transition-all duration-300 font-semibold shadow-lg hover:shadow-xl group-hover:shadow-2xl">
-                    <span className="flex items-center justify-center gap-2">
-                      {t("products.learnMore")}
-                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </button>
                 </div>
               </div>
             ))}
