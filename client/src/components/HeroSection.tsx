@@ -190,7 +190,7 @@ export function HeroSection() {
             </div>
             
             <div className="relative">
-              <p className="text-lg sm:text-xl lg:text-2xl mb-10 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto leading-relaxed text-stroke font-semibold">
+              <p className="text-lg sm:text-xl lg:text-2xl mb-10 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto leading-relaxed font-semibold text-[#111827]">
                 Connecting continents through seamless trade solutions From Europe to global markets, we bridge opportunities with excellence
               </p>
               
