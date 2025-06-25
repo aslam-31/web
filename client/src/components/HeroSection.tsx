@@ -177,7 +177,7 @@ export function HeroSection() {
                 </div>
 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-900 dark:text-gray-300">with</span>
+                  <span className="sm:text-xl lg:text-2xl font-medium text-gray-900 dark:text-gray-300 text-[28px]">with</span>
                   <span className="sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200 text-[30px]">Delivery</span>
                   <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
                     <svg className="w-full h-full text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
