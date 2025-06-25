@@ -116,8 +116,8 @@ export function HeroSection() {
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mt-[50px]">
-            <div className="mb-6 relative overflow-hidden rounded-lg px-4 py-2">
-              <div className="flex justify-center items-center relative z-10 mb-4">
+            <div className="mb-6">
+              <div className="flex justify-center items-center mb-4">
                 {/* Logo for light mode */}
                 <img 
                   src="/images/CLIFTON-BLACK.png" 
@@ -131,9 +131,6 @@ export function HeroSection() {
                   className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right hidden dark:block"
                 />
               </div>
-              
-              {/* Auto-loop shimmer animation for main title */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 dark:via-black/15 to-transparent transform -skew-x-12 animate-shimmer-loop"></div>
             </div>
 
             {/* Centered Animated Text with Static Icons */}
