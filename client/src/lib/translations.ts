@@ -21,12 +21,13 @@ export const translations = {
     },
     vision: {
       title: "About Us",
+      subtitle: "Welcome to Clifton Traders, an import and export company dedicated to bridging global markets and delivering excellence in trade solutions. With years of experience in the industries of Agro-commodity, Solar Energy & pharmaceuticals, we specialize in facilitating seamless international trade by connecting businesses with high-quality products and services across borders.",
       vision: {
-        title: "Vision",
+        title: "Our Vision",
         description: "To be the world's leading provider of trade solutions, facilitating global growth and connecting markets through exceptional import and export services."
       },
       mission: {
-        title: "Mission",
+        title: "Our Mission",
         description: "At Clifton Traders, our mission is to empower businesses by providing reliable, efficient, and cost-effective import and export services. We strive to foster global partnerships, drive economic growth, and deliver value to our clients by ensuring smooth transactions and timely delivery of goods."
       }
     },
@@ -134,12 +135,13 @@ export const translations = {
     },
     vision: {
       title: "Sobre Nós",
+      subtitle: "Bem-vindos à Clifton Traders, uma empresa de importação e exportação dedicada a conectar mercados globais e entregar excelência em soluções comerciais. Com anos de experiência nas indústrias de Agro-commodities, Energia Solar e farmacêuticos, especializamo-nos em facilitar o comércio internacional sem problemas, conectando empresas com produtos e serviços de alta qualidade através das fronteiras.",
       vision: {
-        title: "Visão",
+        title: "Nossa Visão",
         description: "Ser a empresa líder mundial em soluções comerciais, facilitando o crescimento global e conectando mercados através de serviços excepcionais de importação e exportação."
       },
       mission: {
-        title: "Missão",
+        title: "Nossa Missão",
         description: "Na Clifton Traders, nossa missão é capacitar empresas fornecendo serviços de importação e exportação confiáveis, eficientes e econômicos. Nos esforçamos para promover parcerias globais, impulsionar o crescimento econômico e agregar valor aos nossos clientes garantindo transações suaves e entrega pontual de mercadorias."
       }
     },
