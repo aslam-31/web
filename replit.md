@@ -133,6 +133,7 @@ Changelog:
 - June 25, 2025. Added auto-rotating testimonials section after "Why Choose Us?" with circular animation, 6 client testimonials, and interactive navigation dots
 - June 25, 2025. Added "Our Clients" section under testimonials featuring 4 client company logos with modern hover effects, grayscale to color transitions, and shine animations
 - June 25, 2025. Updated footer by removing CLIFTON text next to logo and shortened tagline to "Excellence in international trade solutions"
+- June 25, 2025. Enhanced footer with social media icons (Twitter, LinkedIn, Instagram, YouTube), contact icons for location/phone/email, updated services list to match commodity products, and added certification information
 ```
 
 ## User Preferences
