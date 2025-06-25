@@ -119,10 +119,7 @@ export function Projects() {
                   </p>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute top-4 right-4 w-8 h-8 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
-                </div>
+                
                 
                 {/* Bottom Accent */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
