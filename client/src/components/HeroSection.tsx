@@ -73,7 +73,7 @@ export function HeroSection() {
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
         <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
@@ -182,11 +182,11 @@ export function HeroSection() {
             
             <div className="relative">
               <p className="text-lg sm:text-xl lg:text-2xl mb-10 text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto font-normal leading-relaxed">
-                {t("hero.subtitle")}
+                Connecting continents through seamless trade solutions From Europe to global markets, we bridge opportunities with excellence
               </p>
               
               {/* Animated underline */}
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gray-800 dark:via-gray-200 to-transparent mx-auto mb-12 animate-pulse"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gray-800 dark:via-gray-200 to-gray-800 mx-auto mb-12 animate-pulse"></div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
@@ -194,14 +194,14 @@ export function HeroSection() {
                 onClick={scrollToProducts}
                 className="group noise-grid gradient-border glass px-8 py-4 rounded-md text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
               >
-                <span className="relative z-10">{t("hero.cta.primary")}</span>
+                <span className="relative z-10">Explore Our Products</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
               <button 
                 onClick={scrollToContact}
                 className="group bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-md hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
               >
-                <span className="relative z-10">{t("hero.cta.secondary")}</span>
+                <span className="relative z-10">Contact Us Today</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 dark:from-black/5 dark:to-black/10 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
             </div>
