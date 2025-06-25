@@ -74,41 +74,41 @@ export function HeroSection() {
 
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70 dark:from-white/70 dark:via-white/30 dark:to-white/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 dark:from-white/40 dark:via-transparent dark:to-white/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
             {/* Animated Lines */}
             <g className="animate-pulse">
-              <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+              <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="8s" repeatCount="indefinite"/>
               </line>
-              <line x1="70%" y1="10%" x2="90%" y2="30%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+              <line x1="70%" y1="10%" x2="90%" y2="30%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; -30,50; 0,0" dur="10s" repeatCount="indefinite"/>
               </line>
-              <line x1="20%" y1="80%" x2="40%" y2="60%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-white dark:text-black">
+              <line x1="20%" y1="80%" x2="40%" y2="60%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 40,-20; 0,0" dur="12s" repeatCount="indefinite"/>
               </line>
             </g>
             
             {/* Animated Arrows */}
             <g className="animate-pulse">
-              <path d="M15,25 L35,35 M30,30 L35,35 L30,40" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-white dark:text-black">
+              <path d="M15,25 L35,35 M30,30 L35,35 L30,40" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 0,0" dur="15s" repeatCount="indefinite"/>
               </path>
-              <path d="M75,15 L95,25 M90,20 L95,25 L90,30" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-white dark:text-black">
+              <path d="M75,15 L95,25 M90,20 L95,25 L90,30" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; -50,80; 0,0" dur="18s" repeatCount="indefinite"/>
               </path>
             </g>
             
             {/* Animated Geometric Shapes */}
             <g className="animate-pulse">
-              <circle cx="85%" cy="75%" r="3" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-white dark:text-black">
+              <circle cx="85%" cy="75%" r="3" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; -80,-40; 0,0" dur="20s" repeatCount="indefinite"/>
               </circle>
-              <polygon points="10,10 20,5 30,10 25,20 15,20" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-white dark:text-black">
+              <polygon points="10,10 20,5 30,10 25,20 15,20" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 120,60; 0,0" dur="22s" repeatCount="indefinite"/>
               </polygon>
             </g>
@@ -120,7 +120,7 @@ export function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="mb-8">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 text-white dark:text-black leading-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 text-black dark:text-white leading-tight">
                 <span className="inline-block animate-slide-right">{t("hero.title.main")}</span>
                 <br />
                 <span className="inline-block text-gradient animate-slide-left animation-delay-300">
@@ -130,28 +130,28 @@ export function HeroSection() {
             </div>
             
             <div className="relative">
-              <p className="text-xl sm:text-2xl lg:text-3xl mb-8 text-gray-200 dark:text-gray-800 animate-fade-up animation-delay-600 max-w-4xl mx-auto font-light">
+              <p className="text-xl sm:text-2xl lg:text-3xl mb-8 text-gray-800 dark:text-gray-200 animate-fade-up animation-delay-600 max-w-4xl mx-auto font-light">
                 {t("hero.subtitle")}
               </p>
               
               {/* Animated underline */}
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-white dark:via-black to-transparent mx-auto mb-12 animate-pulse"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-black dark:via-white to-transparent mx-auto mb-12 animate-pulse"></div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
               <button 
                 onClick={scrollToProducts}
-                className="group noise-grid gradient-border glass px-10 py-5 rounded-2xl text-white dark:text-black hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
+                className="group noise-grid gradient-border glass px-10 py-5 rounded-2xl text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.primary")}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 dark:from-black/10 dark:to-black/5 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
               <button 
                 onClick={scrollToContact}
-                className="group bg-white dark:bg-black text-black dark:text-white px-10 py-5 rounded-2xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-white/20 dark:hover:border-black/20 relative overflow-hidden"
+                className="group bg-black dark:bg-white text-white dark:text-black px-10 py-5 rounded-2xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.secondary")}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 dark:from-black/5 dark:to-black/10 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
             </div>
 
