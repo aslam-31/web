@@ -500,3 +500,14 @@
 .animate-mouse-scroll {
   animation: mouse-scroll 2s ease-in-out infinite;
 }
+
+/* Text stroke for better visibility */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+  text-stroke: 1px rgba(255, 255, 255, 0.8);
+}
+
+.dark .text-stroke {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+  text-stroke: 1px rgba(0, 0, 0, 0.3);
+}
