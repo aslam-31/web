@@ -118,136 +118,20 @@ export function ModernProducts() {
           ))}
         </div>
 
-        {/* Detailed Information Section */}
-        <div className="mt-16 sm:mt-20 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-950 rounded-3xl p-8 sm:p-12 border border-gray-200/50 dark:border-gray-700/50">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose CLIFTON for Your Commodity Needs?
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              With decades of experience in international trade, we ensure the highest quality standards, 
-              competitive pricing, and reliable supply chains for all your agricultural commodity requirements.
-            </p>
-          </div>
-
-          {/* Key Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Quality Certified</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">International quality standards with full traceability</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Fast Delivery</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Efficient logistics and timely global shipping</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Competitive Pricing</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Market-leading prices with flexible payment terms</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Global Reach</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Worldwide network of trusted suppliers and partners</p>
-            </div>
-          </div>
-
-          {/* Additional Details */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 mb-8 border border-gray-100 dark:border-gray-700">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Our Commitment</h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Sourcing from verified and sustainable farms</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Comprehensive quality testing and certification</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Transparent pricing with no hidden costs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>24/7 customer support and order tracking</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Trade Volumes</h4>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Minimum Order</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">25 MT</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Standard Containers</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">20ft & 40ft FCL</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Bulk Shipments</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">Up to 50,000 MT</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Payment Terms</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">LC, TT, DP</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-              Ready to discuss your commodity requirements? Our trade specialists are here to help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              >
-                Request Quote
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
-                <span className="block">Call us: +34 123 456 789</span>
-                <span className="block">Email: trade@cliftontraders.com</span>
-              </div>
-            </div>
-          </div>
+        {/* Simple CTA Button */}
+        <div className="text-center mt-12 sm:mt-16">
+          <button
+            onClick={() => {
+              // Navigate to products page - you can update this with your routing logic
+              window.location.href = '/products';
+            }}
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          >
+            View All Products
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
