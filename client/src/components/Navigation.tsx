@@ -57,12 +57,7 @@ export function Navigation() {
               >
                 {t("nav.products")}
               </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              >
-                {t("nav.projects")}
-              </button>
+
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
@@ -149,12 +144,7 @@ export function Navigation() {
                 >
                   {t("nav.products")}
                 </button>
-                <button 
-                  onClick={() => scrollToSection('projects')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-                >
-                  {t("nav.projects")}
-                </button>
+
                 <button 
                   onClick={() => scrollToSection('contact')}
                   className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
