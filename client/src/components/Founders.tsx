@@ -3,6 +3,8 @@ import { useLanguage } from "./LanguageProvider";
 import { Mail, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import type { Founder } from "@shared/schema";
 
+import prof from "@assets/prof.jpg";
+
 export function Founders() {
   const { t } = useLanguage();
   
@@ -54,7 +56,7 @@ export function Founders() {
               <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-transform duration-300">
                 <div className="relative mb-6">
                   <img 
-                    src={founder.imageUrl} 
+                    src={prof} 
                     alt={founder.name} 
                     className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg"
                   />
