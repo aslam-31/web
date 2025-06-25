@@ -192,14 +192,14 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
               <button 
                 onClick={scrollToProducts}
-                className="group noise-grid gradient-border glass px-8 py-4 rounded-xl text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
+                className="group noise-grid gradient-border glass px-8 py-4 rounded-md text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.primary")}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
               <button 
                 onClick={scrollToContact}
-                className="group bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
+                className="group bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-md hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.secondary")}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 dark:from-black/5 dark:to-black/10 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
