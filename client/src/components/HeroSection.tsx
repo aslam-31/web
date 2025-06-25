@@ -117,9 +117,20 @@ export function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mt-[50px]">
             <div className="mb-6 relative overflow-hidden rounded-lg px-4 py-2">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight relative z-10">
-                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[90px]">{t("hero.title.main")}</span>
-              </h1>
+              <div className="flex justify-center items-center relative z-10 mb-4">
+                {/* Logo for light mode */}
+                <img 
+                  src="/CLIFTON-BLACK.png" 
+                  alt="CLIFTON Logo" 
+                  className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right dark:hidden"
+                />
+                {/* Logo for dark mode */}
+                <img 
+                  src="/CLIFTON-WHITE.png" 
+                  alt="CLIFTON Logo" 
+                  className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right hidden dark:block"
+                />
+              </div>
               
               {/* Auto-loop shimmer animation for main title */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 dark:via-black/15 to-transparent transform -skew-x-12 animate-shimmer-loop"></div>
