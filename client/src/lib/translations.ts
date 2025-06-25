@@ -98,7 +98,7 @@ export const translations = {
       }
     },
     footer: {
-      description: "Clifton Traders - Your Gateway to the World. Excellence in international trade solutions.",
+      description: "Excellence in international trade solutions.",
       quickLinks: "Quick Links",
       services: {
         title: "Services",
@@ -212,7 +212,7 @@ export const translations = {
       }
     },
     footer: {
-      description: "Clifton Traders - Sua Porta de Entrada para o Mundo. Excelência em soluções de comércio internacional.",
+      description: "Excelência em soluções de comércio internacional.",
       quickLinks: "Links Rápidos",
       services: {
         title: "Serviços",

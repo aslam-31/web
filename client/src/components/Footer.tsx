@@ -15,7 +15,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
                   src="/images/CLIFTON-BLACK.png" 
@@ -23,7 +23,6 @@ export function Footer() {
                   className="w-full h-full object-contain filter invert dark:invert-0"
                 />
               </div>
-              <span className="text-xl font-bold">CLIFTON</span>
             </div>
             <p className="text-gray-400 dark:text-gray-600">
               {t("footer.description")}
