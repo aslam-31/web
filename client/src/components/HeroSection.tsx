@@ -75,6 +75,28 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
+        {/* Transport themed floating images */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Airplane image */}
+          <img 
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+            alt="Airplane transport" 
+            className="absolute top-16 right-16 w-64 h-40 object-cover rounded-lg opacity-15 filter grayscale animate-float animation-delay-1000"
+          />
+          {/* Cargo ship image */}
+          <img 
+            src="https://images.unsplash.com/photo-1605379399843-5870eea9b74e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+            alt="Cargo ship transport" 
+            className="absolute bottom-20 left-16 w-72 h-48 object-cover rounded-lg opacity-15 filter grayscale animate-float animation-delay-2000"
+          />
+          {/* Container port image */}
+          <img 
+            src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+            alt="Container port" 
+            className="absolute top-1/3 left-1/4 w-56 h-36 object-cover rounded-lg opacity-12 filter grayscale animate-float animation-delay-3000"
+          />
+        </div>
+
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
