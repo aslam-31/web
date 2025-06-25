@@ -503,11 +503,11 @@
 
 /* Text stroke for better visibility */
 .text-stroke {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
-  text-stroke: 1px rgba(255, 255, 255, 0.8);
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+  text-stroke: 0.5px rgba(255, 255, 255, 0.6);
 }
 
 .dark .text-stroke {
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
-  text-stroke: 1px rgba(0, 0, 0, 0.3);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
+  text-stroke: 0.5px rgba(0, 0, 0, 0.2);
 }
