@@ -129,7 +129,7 @@ export function HeroSection() {
             <div className="mb-6 text-center">
               <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300">
                 <div className="flex items-center gap-1">
-                  <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
+                  <span className="sm:text-xl font-bold text-gray-900 dark:text-gray-100 text-[24px]">CLIFTON</span>
                   <div className="w-5 h-5 relative">
                     <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
@@ -147,7 +147,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="text-base sm:text-lg font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
+                <span className="sm:text-lg font-light text-gray-700 dark:text-gray-300 relative z-10 text-[22px]">&</span>
 
                 <div className="flex items-center gap-1 relative z-10">
                   <span className="sm:text-lg font-semibold text-gray-800 dark:text-gray-200 text-[24px]">Export</span>
