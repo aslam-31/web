@@ -227,7 +227,7 @@ export function HeroSection() {
       </div>
       {/* Mouse Scroll Animation */}
       <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-fade-up animation-delay-2000"
+        className="absolute bottom-8 right-8 cursor-pointer group animate-fade-up animation-delay-2000"
         onClick={() => {
           const aboutSection = document.querySelector('#about');
           if (aboutSection) {
