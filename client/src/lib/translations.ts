@@ -20,7 +20,7 @@ export const translations = {
       }
     },
     vision: {
-      title: "Our Vision & Mission",
+      title: "About Us",
       vision: {
         title: "Vision",
         description: "To be the world's leading provider of trade solutions, facilitating global growth and connecting markets through exceptional import and export services."
@@ -133,7 +133,7 @@ export const translations = {
       }
     },
     vision: {
-      title: "Nossa Visão & Missão",
+      title: "Sobre Nós",
       vision: {
         title: "Visão",
         description: "Ser a empresa líder mundial em soluções comerciais, facilitando o crescimento global e conectando mercados através de serviços excepcionais de importação e exportação."
