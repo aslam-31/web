@@ -164,7 +164,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 dark:text-gray-300 relative z-10">&</span>
+                <span className="sm:text-2xl lg:text-3xl font-light text-gray-900 dark:text-gray-300 relative z-10 text-[28px]">&</span>
 
                 <div className="flex items-center gap-2 relative z-10">
                   <span className="sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200 text-[30px]">Export</span>
