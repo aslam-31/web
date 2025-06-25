@@ -137,8 +137,8 @@ export function HeroSection() {
             <div className="mb-8 text-center">
               <div className="flex items-center justify-center gap-3 flex-wrap animate-fade-up animation-delay-300">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 animate-glow-blue">CLIFTON</span>
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative animate-pulse-slow">
                     <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
                     </svg>
@@ -146,8 +146,8 @@ export function HeroSection() {
                 </div>
                 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200 animate-glow-green">Import</span>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative animate-pulse-slow animation-delay-500">
                     <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
@@ -155,11 +155,11 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 relative z-10 animate-glow-subtle">&</span>
 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200 animate-glow-orange">Export</span>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative animate-pulse-slow animation-delay-1000">
                     <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
@@ -168,9 +168,9 @@ export function HeroSection() {
                 </div>
 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300">with</span>
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
+                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300 animate-glow-subtle">with</span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200 animate-glow-purple">Delivery</span>
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative animate-pulse-slow animation-delay-1500">
                     <svg className="w-full h-full text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
