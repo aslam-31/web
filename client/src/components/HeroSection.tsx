@@ -128,8 +128,8 @@ export function HeroSection() {
 
             {/* Centered Animated Text with Static Icons */}
             <div className="mb-6 text-center">
-              <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300">
-                <div className="flex items-center gap-1">
+              <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300 relative overflow-hidden rounded-lg px-4 py-2">
+                <div className="flex items-center gap-1 relative z-10">
                   <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
                   <div className="w-5 h-5 relative">
                     <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -138,7 +138,7 @@ export function HeroSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 relative z-10">
                   <span className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">Import</span>
                   <div className="w-4 h-4 relative">
                     <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,9 +148,9 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="text-base sm:text-lg font-light text-gray-700 dark:text-gray-300">&</span>
+                <span className="text-base sm:text-lg font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 relative z-10">
                   <span className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">Export</span>
                   <div className="w-4 h-4 relative">
                     <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 relative z-10">
                   <span className="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300">with</span>
                   <span className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
                   <div className="w-5 h-5 relative">
@@ -169,6 +169,9 @@ export function HeroSection() {
                     </svg>
                   </div>
                 </div>
+                
+                {/* Auto-loop shimmer animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-black/10 to-transparent transform -skew-x-12 animate-shimmer-loop"></div>
               </div>
             </div>
             

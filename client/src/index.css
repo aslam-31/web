@@ -188,6 +188,20 @@
   animation-delay: 1s;
 }
 
+/* Shimmer loop animation */
+@keyframes shimmerLoop {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer-loop {
+  animation: shimmerLoop 3s ease-in-out infinite;
+}
+
 .animation-delay-1500 {
   animation-delay: 1.5s;
 }
