@@ -191,9 +191,7 @@ export function HeroSection() {
 
             {/* Additional content lines */}
             <div className="mb-8 text-center animate-fade-up animation-delay-700">
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-2 font-medium">
-                Connecting continents through seamless trade solutions
-              </p>
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 font-medium mt-[0px] mb-[0px]">Connecting continents through seamless trade solutions From Europe to global markets, we bridge opportunities with excellence</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
