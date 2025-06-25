@@ -14,82 +14,57 @@ const getServiceIcon = (name: string) => {
   switch (name.toLowerCase()) {
     case 'import services':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-          </div>
         </div>
       );
     case 'export services':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-700 dark:from-emerald-400 dark:to-emerald-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-          </div>
         </div>
       );
     case 'logistics & supply chain management':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-400 dark:to-purple-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-indigo-400 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
         </div>
       );
     case 'customs clearance':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-700 dark:from-amber-400 dark:to-amber-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 2V8H22" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-400 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-          </div>
         </div>
       );
     case 'market research & consulting':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-rose-700 dark:from-rose-400 dark:to-rose-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-          </div>
         </div>
       );
     default:
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-400 dark:to-gray-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-black dark:bg-white rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white dark:text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6" />
           </svg>
         </div>
