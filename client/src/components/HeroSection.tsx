@@ -116,20 +116,23 @@ export function HeroSection() {
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mt-[50px]">
-            <div className="mb-6">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            <div className="mb-6 relative overflow-hidden rounded-lg px-4 py-2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight relative z-10">
                 <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[90px]">{t("hero.title.main")}</span>
                 <br />
                 <span className="inline-block text-gray-900 dark:text-gray-100 animate-slide-left animation-delay-300 drop-shadow-lg text-[80px]">
                   {t("hero.title.accent")}
                 </span>
               </h1>
+              
+              {/* Auto-loop shimmer animation for main title */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 dark:via-black/15 to-transparent transform -skew-x-12 animate-shimmer-loop"></div>
             </div>
 
             {/* Centered Animated Text with Static Icons */}
             <div className="mb-6 text-center">
-              <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300 relative overflow-hidden rounded-lg px-4 py-2">
-                <div className="flex items-center gap-1 relative z-10">
+              <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300">
+                <div className="flex items-center gap-1">
                   <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
                   <div className="w-5 h-5 relative">
                     <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -169,9 +172,7 @@ export function HeroSection() {
                     </svg>
                   </div>
                 </div>
-                
-                {/* Auto-loop shimmer animation */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-black/10 to-transparent transform -skew-x-12 animate-shimmer-loop"></div>
+
               </div>
             </div>
             
