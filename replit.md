@@ -134,6 +134,7 @@ Changelog:
 - June 25, 2025. Added "Our Clients" section under testimonials featuring 4 client company logos with modern hover effects, grayscale to color transitions, and shine animations
 - June 25, 2025. Updated footer by removing CLIFTON text next to logo and shortened tagline to "Excellence in international trade solutions"
 - June 25, 2025. Enhanced footer with social media icons (Twitter, LinkedIn, Instagram, YouTube), contact icons for location/phone/email, updated services list to match commodity products, and added certification information
+- June 25, 2025. Updated footer to black and white design, removing colored icons in favor of monochromatic gray scheme for professional appearance
 ```
 
 ## User Preferences
