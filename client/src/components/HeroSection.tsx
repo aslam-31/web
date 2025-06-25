@@ -119,10 +119,6 @@ export function HeroSection() {
             <div className="mb-6 relative overflow-hidden rounded-lg px-4 py-2">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight relative z-10">
                 <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[90px]">{t("hero.title.main")}</span>
-                <br />
-                <span className="inline-block text-gray-900 dark:text-gray-100 animate-slide-left animation-delay-300 drop-shadow-lg text-[80px]">
-                  {t("hero.title.accent")}
-                </span>
               </h1>
               
               {/* Auto-loop shimmer animation for main title */}
