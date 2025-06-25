@@ -9,8 +9,8 @@ export function VisionMission() {
     <section ref={elementRef} id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Business background" 
+          src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
+          alt="Import Export background" 
           className="w-full h-full object-cover"
           style={{ transform, filter: 'grayscale(100%)' }}
         />

@@ -80,41 +80,41 @@ export class MemStorage implements IStorage {
       this.founders.set(id, { ...founder, id, order: founder.order });
     });
 
-    // Seed products
+    // Seed products/services
     const productsData: InsertProduct[] = [
       {
-        name: "Industrial Machinery",
-        description: "High-performance manufacturing equipment and industrial machinery for global markets.",
-        category: "Manufacturing",
-        imageUrl: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        name: "Import Services",
+        description: "Sourcing high-quality products from trusted suppliers worldwide.",
+        category: "Import",
+        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         order: 1
       },
       {
-        name: "Consumer Electronics",
-        description: "Latest technology products and consumer electronics for international distribution.",
-        category: "Technology",
-        imageUrl: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        name: "Export Services",
+        description: "Helping businesses expand their reach by connecting them with international markets.",
+        category: "Export",
+        imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         order: 2
       },
       {
-        name: "Agricultural Products",
-        description: "Premium agricultural products and specialty foods from Spain to global markets.",
-        category: "Agriculture",
-        imageUrl: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        name: "Logistics & Supply Chain Management",
+        description: "Ensuring efficient transportation, warehousing, and delivery of goods.",
+        category: "Logistics",
+        imageUrl: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         order: 3
       },
       {
-        name: "Textiles & Fashion",
-        description: "Quality textiles and fashion products for international retail and wholesale markets.",
-        category: "Fashion",
-        imageUrl: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        name: "Customs Clearance",
+        description: "Navigating complex regulations to ensure hassle-free trade.",
+        category: "Customs",
+        imageUrl: "https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         order: 4
       },
       {
-        name: "Automotive Components",
-        description: "Precision automotive parts and components for global automotive manufacturers.",
-        category: "Automotive",
-        imageUrl: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        name: "Market Research & Consulting",
+        description: "Providing insights and strategies to help businesses succeed in global markets.",
+        category: "Consulting",
+        imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         order: 5
       }
     ];

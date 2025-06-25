@@ -13,22 +13,22 @@ export const translations = {
         main: "CLIFTON",
         accent: "Import Export"
       },
-      subtitle: "Excellence in International Trade • Connecting Spain with the World",
+      subtitle: "Welcome to Clifton Traders, an import and export company dedicated to bridging global markets and delivering excellence in trade solutions.",
       cta: {
         primary: "Explore Our Products",
         secondary: "Contact Us Today"
       }
     },
     vision: {
-      title: "Our Vision & Mission",
-      subtitle: "Driving excellence in international commerce with integrity and innovation",
+      title: "About Clifton Traders",
+      subtitle: "With years of experience in the industries of Agro-commodity, Solar Energy & pharmaceuticals, we specialize in facilitating seamless international trade by connecting businesses with high-quality products and services across borders.",
       vision: {
-        title: "Vision",
-        description: "To be the leading import-export company in Spain, recognized for our commitment to quality, reliability, and sustainable business practices that connect global markets seamlessly."
+        title: "Our Vision",
+        description: "To be the preferred partner for businesses seeking to thrive in the global marketplace by offering innovative trade solutions and exceptional service. At Clifton Traders, we believe in building long-term relationships based on trust, transparency, and mutual success. Whether you're looking to import or export, we're here to make your journey seamless and rewarding."
       },
       mission: {
-        title: "Mission",
-        description: "We facilitate international trade by providing premium import-export services, ensuring quality products reach global markets while building lasting partnerships based on trust and excellence."
+        title: "Our Mission",
+        description: "At Clifton Traders, our mission is to empower businesses by providing reliable, efficient, and cost-effective import and export services. We strive to foster global partnerships, drive economic growth, and deliver value to our clients by ensuring smooth transactions and timely delivery of goods."
       }
     },
     founders: {
@@ -36,13 +36,13 @@ export const translations = {
       subtitle: "Visionary leaders with decades of experience in international commerce"
     },
     products: {
-      title: "Our Products",
-      subtitle: "Premium quality products sourced globally for international markets",
+      title: "What We Do",
+      subtitle: "We offer a comprehensive range of services tailored to meet the diverse needs of our clients",
       learnMore: "Learn More"
     },
     projects: {
-      title: "Recent Projects",
-      subtitle: "Successful international trade partnerships and project implementations",
+      title: "Why Choose Us?",
+      subtitle: "Global Network: Established relationships with suppliers, manufacturers, and distributors across the globe.",
       filters: {
         all: "All Projects",
         industrial: "Industrial",
@@ -51,7 +51,7 @@ export const translations = {
     },
     contact: {
       title: "Contact Us",
-      subtitle: "Ready to start your next international trade project? Get in touch with our team.",
+      subtitle: "Contact us today to learn how we can help your business grow globally! Clifton Traders - Your Gateway to the World.",
       form: {
         title: "Send us a message",
         name: "Full Name",
@@ -85,14 +85,14 @@ export const translations = {
       }
     },
     footer: {
-      description: "Excellence in international trade connecting Spain with the world.",
+      description: "Clifton Traders - Your Gateway to the World. Excellence in international trade solutions.",
       quickLinks: "Quick Links",
       services: {
         title: "Services",
         import: "Import Services",
-        export: "Export Solutions",
-        logistics: "Logistics Management",
-        quality: "Quality Control"
+        export: "Export Services",
+        logistics: "Logistics & Supply Chain",
+        quality: "Market Research & Consulting"
       },
       contact: "Contact",
       copyright: "© 2024 CLIFTON. All rights reserved.",
@@ -114,22 +114,22 @@ export const translations = {
         main: "CLIFTON",
         accent: "Importação Exportação"
       },
-      subtitle: "Excelência em Comércio Internacional • Conectando a Espanha com o Mundo",
+      subtitle: "Bem-vindos à Clifton Traders, uma empresa de importação e exportação dedicada a conectar mercados globais e oferecer excelência em soluções comerciais.",
       cta: {
         primary: "Explore Nossos Produtos",
         secondary: "Entre em Contato Hoje"
       }
     },
     vision: {
-      title: "Nossa Visão & Missão",
-      subtitle: "Impulsionando a excelência no comércio internacional com integridade e inovação",
+      title: "Sobre a Clifton Traders",
+      subtitle: "Com anos de experiência nas indústrias de agro-commodities, energia solar e farmacêutica, especializamo-nos em facilitar o comércio internacional conectando empresas com produtos e serviços de alta qualidade.",
       vision: {
-        title: "Visão",
-        description: "Ser a empresa líder em importação-exportação na Espanha, reconhecida pelo nosso compromisso com qualidade, confiabilidade e práticas de negócios sustentáveis que conectam mercados globais perfeitamente."
+        title: "Nossa Visão",
+        description: "Ser o parceiro preferido para empresas que buscam prosperar no mercado global, oferecendo soluções comerciais inovadoras e serviços excepcionais. Na Clifton Traders, acreditamos na construção de relacionamentos de longo prazo baseados em confiança, transparência e sucesso mútuo."
       },
       mission: {
-        title: "Missão",
-        description: "Facilitamos o comércio internacional fornecendo serviços premium de importação-exportação, garantindo que produtos de qualidade alcancem mercados globais enquanto construímos parcerias duradouras baseadas em confiança e excelência."
+        title: "Nossa Missão",
+        description: "Na Clifton Traders, nossa missão é capacitar empresas fornecendo serviços de importação e exportação confiáveis, eficientes e econômicos. Nos esforçamos para promover parcerias globais, impulsionar o crescimento econômico e agregar valor aos nossos clientes."
       }
     },
     founders: {
@@ -137,13 +137,13 @@ export const translations = {
       subtitle: "Líderes visionários com décadas de experiência em comércio internacional"
     },
     products: {
-      title: "Nossos Produtos",
-      subtitle: "Produtos de qualidade premium originários globalmente para mercados internacionais",
+      title: "O Que Fazemos",
+      subtitle: "Oferecemos uma gama abrangente de serviços adaptados para atender às diversas necessidades dos nossos clientes",
       learnMore: "Saiba Mais"
     },
     projects: {
-      title: "Projetos Recentes",
-      subtitle: "Parcerias comerciais internacionais bem-sucedidas e implementações de projetos",
+      title: "Por Que Nos Escolher?",
+      subtitle: "Rede Global: Relacionamentos estabelecidos com fornecedores, fabricantes e distribuidores em todo o mundo.",
       filters: {
         all: "Todos os Projetos",
         industrial: "Industrial",
@@ -152,7 +152,7 @@ export const translations = {
     },
     contact: {
       title: "Entre em Contato",
-      subtitle: "Pronto para iniciar seu próximo projeto de comércio internacional? Entre em contato com nossa equipe.",
+      subtitle: "Entre em contato hoje para saber como podemos ajudar seu negócio a crescer globalmente! Clifton Traders - Seu Portal para o Mundo.",
       form: {
         title: "Envie-nos uma mensagem",
         name: "Nome Completo",
@@ -186,14 +186,14 @@ export const translations = {
       }
     },
     footer: {
-      description: "Excelência em comércio internacional conectando a Espanha com o mundo.",
+      description: "Clifton Traders - Seu Portal para o Mundo. Excelência em soluções de comércio internacional.",
       quickLinks: "Links Rápidos",
       services: {
         title: "Serviços",
         import: "Serviços de Importação",
-        export: "Soluções de Exportação",
-        logistics: "Gestão Logística",
-        quality: "Controle de Qualidade"
+        export: "Serviços de Exportação",
+        logistics: "Logística e Cadeia de Suprimentos",
+        quality: "Consultoria e Pesquisa de Mercado"
       },
       contact: "Contato",
       copyright: "© 2024 CLIFTON. Todos os direitos reservados.",
