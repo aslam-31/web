@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageProvider';
 import { useTheme } from '../components/ThemeProvider';
 import { Navigation } from '../components/Navigation';
@@ -8,6 +8,42 @@ import { ThreeBackground } from '../components/ThreeBackground';
 const Products = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  
+  // Background images for sliding effect
+  const backgroundImages = [
+    '/images/products/coffee.jpg',
+    '/images/products/salt.jpeg',
+    '/images/products/sugar.jpg',
+    '/images/products/soye.jpg'
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fadeClass, setFadeClass] = useState('opacity-100');
+  const [slideDirection, setSlideDirection] = useState('translate-x-0');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Start fade out and slide effect
+      setFadeClass('opacity-0');
+      setSlideDirection('translate-x-full');
+      
+      setTimeout(() => {
+        // Change image
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+        );
+        
+        // Reset position and start fade in
+        setSlideDirection('-translate-x-full');
+        setTimeout(() => {
+          setFadeClass('opacity-100');
+          setSlideDirection('translate-x-0');
+        }, 100);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
 
   const products = [
     {
@@ -71,17 +107,58 @@ const Products = () => {
       <ThreeBackground />
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-5 sm:px-8 lg:px-10">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* Hero Section with Sliding Background */}
+      <section className="relative pt-32 pb-20 px-5 sm:px-8 lg:px-10 min-h-screen flex items-center overflow-hidden">
+        {/* Animated Background Images */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${fadeClass} ${slideDirection}`}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${backgroundImages[currentImageIndex]})`
+            }}
+          />
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 z-10"></div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto text-center relative z-20 w-full">
           <div className="animate-slide-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
               Premium Commodities
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed drop-shadow-lg">
               Discover our range of high-quality agricultural commodities, sourced from trusted global suppliers and delivered with excellence.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="group noise-grid gradient-border glass px-8 py-4 rounded-xl text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+                <span className="relative z-10">Explore Our Range</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+              </button>
+              <button className="group bg-white text-black px-8 py-4 rounded-xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-white/20 relative overflow-hidden">
+                <span className="relative z-10">Request Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+              </button>
+            </div>
           </div>
+        </div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+            />
+          ))}
         </div>
       </section>
 

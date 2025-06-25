@@ -140,6 +140,7 @@ Changelog:
 - January 24, 2025. Added dedicated commodity showcase for Coffee, Salt, Sugar, and Soye
 - January 24, 2025. Implemented "Why Choose CLIFTON" section with quality certifications and benefits
 - January 24, 2025. Added trade volumes information and contact CTA section
+- January 24, 2025. Enhanced products page hero section with sliding background images, fade in/out effects, and left/right movement animations
 ```
 
 ## User Preferences
