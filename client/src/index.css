@@ -480,3 +480,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Custom opacity override for different modes */
+.opacity-20 {
+  opacity: 0.3;
+}
+
+.dark .opacity-20 {
+  opacity: 0.2;
+}
