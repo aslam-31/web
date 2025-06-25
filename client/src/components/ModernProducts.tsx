@@ -3,51 +3,9 @@ import { useLanguage } from "./LanguageProvider";
 interface ProductItem {
   name: string;
   description: string;
-  icon: JSX.Element;
+  image: string;
   gradient: string;
 }
-
-const getProductIcon = (name: string) => {
-  switch (name.toLowerCase()) {
-    case 'coffee':
-      return (
-        <svg className="w-12 h-12 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M2 21h18v-2H2v2zm1.15-4.05L4 15.47l1.4-1.4-.03-.22c-.01-.1-.01-.2 0-.3l.03-.22L4 12.33l.85-1.42 1.28.75c.11-.06.22-.12.34-.18l.1-1.49h1.69l.1 1.49c.12.06.23.12.34.18l1.28-.75L11.82 12l-1.4 1.4.03.22c.01.1.01.2 0 .3l-.03.22 1.4 1.4-.82 1.42-1.28-.75c-.11.06-.22.12-.34.18l-.1 1.49H7.59l-.1-1.49c-.12-.06-.23-.12-.34-.18l-1.28.75-.72-1.4zm3.85-.45c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/>
-          <path d="M18.5 2c-1.79 0-3.43.73-4.61 1.91C12.73 2.73 11.09 2 9.3 2 7.55 2 5.95 2.69 4.76 3.88c-.53.53-.53 1.39 0 1.92s1.39.53 1.92 0C7.47 5.01 8.35 4.5 9.3 4.5c.95 0 1.83.51 2.62 1.3.79-.79 1.67-1.3 2.62-1.3.95 0 1.83.51 2.62 1.3.53.53 1.39.53 1.92 0s.53-1.39 0-1.92C18.29 2.69 16.69 2 14.94 2h3.56z"/>
-        </svg>
-      );
-    case 'salt':
-      return (
-        <svg className="w-12 h-12 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          <circle cx="8" cy="8" r="1.5"/>
-          <circle cx="16" cy="8" r="1.5"/>
-          <circle cx="12" cy="12" r="1.5"/>
-          <circle cx="8" cy="16" r="1.5"/>
-          <circle cx="16" cy="16" r="1.5"/>
-        </svg>
-      );
-    case 'sugar':
-      return (
-        <svg className="w-12 h-12 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          <path d="M12 6l1.5 3L17 9.5l-2.5 2.4.6 3.4L12 13.8l-3.1 1.5.6-3.4L7 9.5l3.5-.5L12 6z"/>
-        </svg>
-      );
-    case 'soy':
-      return (
-        <svg className="w-12 h-12 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg>
-      );
-    default:
-      return (
-        <svg className="w-12 h-12 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-        </svg>
-      );
-  }
-};
 
 export function ModernProducts() {
   const { t } = useLanguage();
@@ -56,25 +14,25 @@ export function ModernProducts() {
     {
       name: "Coffee",
       description: "Premium quality coffee beans sourced from the finest plantations worldwide",
-      icon: getProductIcon("coffee"),
+      image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&h=300&fit=crop&crop=center",
       gradient: "from-amber-500 to-orange-600"
     },
     {
       name: "Salt",
       description: "Pure, natural salt products for industrial and consumer applications",
-      icon: getProductIcon("salt"),
+      image: "https://images.unsplash.com/photo-1518281361980-b26bfd556770?w=300&h=300&fit=crop&crop=center",
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       name: "Sugar",
       description: "High-grade sugar products meeting international quality standards",
-      icon: getProductIcon("sugar"),
+      image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&h=300&fit=crop&crop=center",
       gradient: "from-pink-500 to-rose-600"
     },
     {
-      name: "Soy",
-      description: "Sustainable soy products for food processing and agricultural needs",
-      icon: getProductIcon("soy"),
+      name: "Soye",
+      description: "Sustainable soye products for food processing and agricultural needs",
+      image: "https://images.unsplash.com/photo-1628773492803-61d46750257c?w=300&h=300&fit=crop&crop=center",
       gradient: "from-green-500 to-emerald-600"
     }
   ];
@@ -127,10 +85,14 @@ export function ModernProducts() {
                 </svg>
               </div>
 
-              {/* Icon Container */}
-              <div className={`w-20 h-20 bg-gradient-to-br ${product.gradient} rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {product.icon}
+              {/* Image Container */}
+              <div className="w-20 h-20 rounded-2xl mb-6 relative overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl`}></div>
                 
                 {/* Sparkle Effect */}
                 <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
