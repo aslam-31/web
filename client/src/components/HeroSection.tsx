@@ -134,20 +134,20 @@ export function HeroSection() {
             </div>
 
             {/* Centered Animated Text with Static Icons */}
-            <div className="mb-6 text-center">
-              <div className="flex items-center justify-center gap-2 flex-wrap animate-fade-up animation-delay-300">
-                <div className="flex items-center gap-1">
-                  <span className="sm:text-xl font-bold text-gray-900 dark:text-gray-100 text-[24px]">CLIFTON</span>
-                  <div className="w-5 h-5 relative">
+            <div className="mb-8 text-center">
+              <div className="flex items-center justify-center gap-3 flex-wrap animate-fade-up animation-delay-300">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
                     <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
                     </svg>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-1 relative z-10">
-                  <span className="sm:text-lg font-semibold text-gray-800 dark:text-gray-200 text-[24px]">Import</span>
-                  <div className="w-4 h-4 relative">
+                <div className="flex items-center gap-2 relative z-10">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
                     <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
@@ -155,11 +155,11 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="sm:text-lg font-light text-gray-700 dark:text-gray-300 relative z-10 text-[22px]">&</span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
 
-                <div className="flex items-center gap-1 relative z-10">
-                  <span className="sm:text-lg font-semibold text-gray-800 dark:text-gray-200 text-[24px]">Export</span>
-                  <div className="w-4 h-4 relative">
+                <div className="flex items-center gap-2 relative z-10">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
                     <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
@@ -167,10 +167,10 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1 relative z-10">
-                  <span className="sm:text-base font-medium text-gray-700 dark:text-gray-300 text-[22px]">with</span>
-                  <span className="sm:text-lg font-semibold text-gray-800 dark:text-gray-200 text-[24px]">Delivery</span>
-                  <div className="w-5 h-5 relative">
+                <div className="flex items-center gap-2 relative z-10">
+                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300">with</span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
                     <svg className="w-full h-full text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
@@ -181,7 +181,7 @@ export function HeroSection() {
             </div>
             
             <div className="relative">
-              <p className="text-base sm:text-lg lg:text-xl mb-8 text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-3xl mx-auto font-normal leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl mb-10 text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto font-normal leading-relaxed">
                 {t("hero.subtitle")}
               </p>
               
@@ -189,17 +189,17 @@ export function HeroSection() {
               <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gray-800 dark:via-gray-200 to-transparent mx-auto mb-12 animate-pulse"></div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-900">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
               <button 
                 onClick={scrollToProducts}
-                className="group noise-grid gradient-border glass px-6 py-3 rounded-xl text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-base relative overflow-hidden"
+                className="group noise-grid gradient-border glass px-8 py-4 rounded-xl text-black dark:text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.primary")}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </button>
               <button 
                 onClick={scrollToContact}
-                className="group bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-xl hover-scale transition-all duration-500 font-semibold text-base border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
+                className="group bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-black/20 dark:hover:border-white/20 relative overflow-hidden"
               >
                 <span className="relative z-10">{t("hero.cta.secondary")}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 dark:from-black/5 dark:to-black/10 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
