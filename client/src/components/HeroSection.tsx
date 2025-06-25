@@ -3,11 +3,10 @@ import { useLanguage } from "./LanguageProvider";
 
 const heroImages = [
   "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Cargo ship at port
-  "https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Airplane in flight
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Container port aerial view
-  "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Cargo plane loading
+  "/images/1.webp", // Airplane in flight
+  "https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Container port aerial view
   "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Large cargo ship
-  "https://images.unsplash.com/photo-1568454537842-d933259bb258?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"  // Airport cargo terminal
+  "/images/2.png"  // Airport cargo terminal
 ];
 
 const animations = [
@@ -15,7 +14,6 @@ const animations = [
   'animate-slide-right', 
   'animate-zoom-in',
   'animate-zoom-out',
-  'animate-fade-up',
   'animate-fade-down'
 ];
 
