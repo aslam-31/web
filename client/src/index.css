@@ -489,3 +489,14 @@
 .dark .opacity-20 {
   opacity: 0.2;
 }
+
+/* Mouse scroll animation */
+@keyframes mouse-scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(6px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-mouse-scroll {
+  animation: mouse-scroll 2s ease-in-out infinite;
+}

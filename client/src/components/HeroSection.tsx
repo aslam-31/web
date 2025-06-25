@@ -225,9 +225,9 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      {/* Double Chevron Down Arrows */}
+      {/* Mouse Scroll Animation */}
       <div 
-        className="absolute bottom-8 right-8 cursor-pointer group animate-fade-up animation-delay-2000"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-fade-up animation-delay-2000"
         onClick={() => {
           const aboutSection = document.querySelector('#about');
           if (aboutSection) {
@@ -235,25 +235,15 @@ export function HeroSection() {
           }
         }}
       >
-        <div className="flex flex-col items-center">
-          <svg 
-            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-          <svg 
-            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 -mt-2" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+        <div className="flex flex-col items-center space-y-2">
+          {/* Mouse Icon */}
+          <div className="w-6 h-10 border-2 border-gray-700 dark:border-gray-300 rounded-full relative group-hover:border-gray-900 dark:group-hover:border-gray-100 transition-colors duration-300">
+            <div className="w-1 h-3 bg-gray-700 dark:bg-gray-300 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 animate-bounce group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors duration-300"></div>
+          </div>
+          {/* Scroll Down Text */}
+          <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 font-medium">
+            Scroll Down
+          </span>
         </div>
       </div>
     </section>
