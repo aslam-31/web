@@ -119,9 +119,6 @@ Changelog:
 - June 25, 2025. Added social media icons to founders section with professional contact information
 - June 25, 2025. Updated "What We Do" section with colorful gradient icons and removed "Learn More" buttons
 - June 25, 2025. Transformed "Why Choose Us?" section with key business benefits and colorful icons (Global Network, Expertise, Reliability, Customer-Centric Approach)
-- January 23, 2025. Migrated from Replit Agent to Replit environment successfully
-- January 23, 2025. Enhanced hero section with symmetrical design, improved text contrast, and mouse scroll animation
-- January 23, 2025. Added white shadow effect to subtitle text for better visibility against backgrounds
 ```
 
 ## User Preferences
