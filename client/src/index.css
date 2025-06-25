@@ -82,6 +82,10 @@
 .animate-pulse-slow {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+.animate-chevron-bounce {
+  animation: chevronBounce 2s ease-in-out infinite;
+}
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -230,6 +234,15 @@
   50% { 
     text-shadow: 0 0 8px rgba(156, 163, 175, 0.6), 0 0 15px rgba(156, 163, 175, 0.4);
     opacity: 1;
+  }
+}
+
+@keyframes chevronBounce {
+  0%, 100% { 
+    transform: translateY(0);
+  }
+  50% { 
+    transform: translateY(8px);
   }
 }
 

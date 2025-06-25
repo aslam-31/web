@@ -213,32 +213,34 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      {/* Animated Down Arrows in Right Corner */}
+      {/* Double Chevron Down Arrows */}
       <div 
         className="absolute bottom-8 right-8 cursor-pointer group animate-fade-up animation-delay-2000"
         onClick={() => {
-          const visionSection = document.querySelector('.vision-mission-section');
-          if (visionSection) {
-            visionSection.scrollIntoView({ behavior: 'smooth' });
+          const aboutSection = document.querySelector('#about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
           }
         }}
       >
         <div className="flex flex-col items-center gap-1">
           <svg 
-            className="w-6 h-6 text-gray-700 dark:text-gray-300 animate-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
+            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
+            strokeWidth={3}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
           <svg 
-            className="w-6 h-6 text-gray-700 dark:text-gray-300 animate-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
+            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
+            strokeWidth={3}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </div>
