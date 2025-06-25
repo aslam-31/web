@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { VisionMission } from "@/components/VisionMission";
 import { Founders } from "@/components/Founders";
 import { Products } from "@/components/Products";
+import { ModernProducts } from "@/components/ModernProducts";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
       <VisionMission />
       <Founders />
       <Products />
+      <ModernProducts />
       <Projects />
       <Contact />
       <Footer />

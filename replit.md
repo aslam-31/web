@@ -126,6 +126,8 @@ Changelog:
 - June 25, 2025. Updated founders section with new leadership team: Benson Clement (Managing Director) and Joseph Ebenezer (Technical Director) with their qualifications and experience
 - June 25, 2025. Enhanced "Why Choose Us?" section by removing floating elements and adding curved bottom accent lines that match card border radius for improved hover animations
 - June 25, 2025. Added side edge glow effects to "Why Choose Us?" cards with gradient colors and scale animations on hover
+- June 25, 2025. Removed projects section from navigation menu for cleaner navigation
+- June 25, 2025. Added modern Premium Commodities section featuring Coffee, Salt, Sugar, and Soy with gradient cards, hover animations, floating elements, and custom icons
 ```
 
 ## User Preferences
