@@ -72,42 +72,51 @@ export function HeroSection() {
       </div>
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/20 to-white/50 dark:from-black/50 dark:via-black/20 dark:to-black/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-            {/* Animated Lines */}
+            {/* Animated Lines - Symmetrical */}
             <g className="animate-pulse">
               <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="8s" repeatCount="indefinite"/>
               </line>
-              <line x1="70%" y1="10%" x2="90%" y2="30%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
-                <animateTransform attributeName="transform" type="translate" values="0,0; -30,50; 0,0" dur="10s" repeatCount="indefinite"/>
+              <line x1="70%" y1="20%" x2="90%" y2="40%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -50,30; 0,0" dur="8s" repeatCount="indefinite"/>
               </line>
               <line x1="20%" y1="80%" x2="40%" y2="60%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 40,-20; 0,0" dur="12s" repeatCount="indefinite"/>
               </line>
+              <line x1="60%" y1="80%" x2="80%" y2="60%" stroke="currentColor" strokeWidth="1" opacity="0.1" className="text-black dark:text-white">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -40,-20; 0,0" dur="12s" repeatCount="indefinite"/>
+              </line>
             </g>
             
-            {/* Animated Arrows */}
+            {/* Animated Arrows - Symmetrical */}
             <g className="animate-pulse">
               <path d="M15,25 L35,35 M30,30 L35,35 L30,40" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 0,0" dur="15s" repeatCount="indefinite"/>
               </path>
-              <path d="M75,15 L95,25 M90,20 L95,25 L90,30" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-black dark:text-white">
-                <animateTransform attributeName="transform" type="translate" values="0,0; -50,80; 0,0" dur="18s" repeatCount="indefinite"/>
+              <path d="M75,25 L95,35 M90,30 L95,35 L90,40" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.15" className="text-black dark:text-white">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -100,50; 0,0" dur="15s" repeatCount="indefinite"/>
               </path>
             </g>
             
-            {/* Animated Geometric Shapes */}
+            {/* Animated Geometric Shapes - Symmetrical */}
             <g className="animate-pulse">
+              <circle cx="15%" cy="75%" r="3" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 80,-40; 0,0" dur="20s" repeatCount="indefinite"/>
+              </circle>
               <circle cx="85%" cy="75%" r="3" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; -80,-40; 0,0" dur="20s" repeatCount="indefinite"/>
               </circle>
               <polygon points="10,10 20,5 30,10 25,20 15,20" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
                 <animateTransform attributeName="transform" type="translate" values="0,0; 120,60; 0,0" dur="22s" repeatCount="indefinite"/>
+              </polygon>
+              <polygon points="90,10 100,5 110,10 105,20 95,20" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.1" className="text-black dark:text-white">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -120,60; 0,0" dur="22s" repeatCount="indefinite"/>
               </polygon>
             </g>
           </svg>
@@ -206,10 +215,13 @@ export function HeroSection() {
               </button>
             </div>
 
-            {/* Floating Elements */}
+            {/* Floating Elements - Symmetrical */}
             <div className="absolute top-1/4 left-10 w-4 h-4 bg-white/20 dark:bg-black/20 rounded-full animate-float animation-delay-1000"></div>
+            <div className="absolute top-1/4 right-10 w-4 h-4 bg-white/20 dark:bg-black/20 rounded-full animate-float animation-delay-1000"></div>
+            <div className="absolute top-1/3 left-16 w-6 h-6 border-2 border-white/30 dark:border-black/30 rounded-full animate-float animation-delay-1500"></div>
             <div className="absolute top-1/3 right-16 w-6 h-6 border-2 border-white/30 dark:border-black/30 rounded-full animate-float animation-delay-1500"></div>
             <div className="absolute bottom-1/4 left-20 w-2 h-2 bg-white/40 dark:bg-black/40 rounded-full animate-float animation-delay-2000"></div>
+            <div className="absolute bottom-1/4 right-20 w-2 h-2 bg-white/40 dark:bg-black/40 rounded-full animate-float animation-delay-2000"></div>
           </div>
         </div>
       </div>
