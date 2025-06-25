@@ -9,6 +9,7 @@ import { Products } from "@/components/Products";
 import { ModernProducts } from "@/components/ModernProducts";
 import { Projects } from "@/components/Projects";
 import { Testimonials } from "@/components/Testimonials";
+import { OurClients } from "@/components/OurClients";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <ModernProducts />
       <Projects />
       <Testimonials />
+      <OurClients />
       <Contact />
       <Footer />
     </div>

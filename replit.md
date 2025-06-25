@@ -131,6 +131,7 @@ Changelog:
 - June 25, 2025. Updated products section to use local images from /images/products/ and increased card image size to full width
 - June 25, 2025. Simplified products section by removing detailed content and adding circular "view details" buttons on each card
 - June 25, 2025. Added auto-rotating testimonials section after "Why Choose Us?" with circular animation, 6 client testimonials, and interactive navigation dots
+- June 25, 2025. Added "Our Clients" section under testimonials featuring 4 client company logos with modern hover effects, grayscale to color transitions, and shine animations
 ```
 
 ## User Preferences
