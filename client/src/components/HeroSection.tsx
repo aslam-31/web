@@ -118,7 +118,7 @@ export function HeroSection() {
           <div className="text-center mt-[50px]">
             <div className="mb-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[73px]">{t("hero.title.main")}</span>
+                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[90px]">{t("hero.title.main")}</span>
                 <br />
                 <span className="inline-block text-gray-900 dark:text-gray-100 animate-slide-left animation-delay-300 drop-shadow-lg text-[80px]">
                   {t("hero.title.accent")}
