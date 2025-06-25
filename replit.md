@@ -50,7 +50,7 @@ This is a modern, full-stack web application for CLIFTON, a premium import-expor
 
 ### Frontend Components
 - **Navigation**: Responsive navigation with mobile menu and theme/language switchers
-- **HeroSection**: Auto-sliding image carousel with call-to-action buttons, enhanced with transport-themed floating images (airplane, cargo ship, container port) and smooth chevron down arrows
+- **HeroSection**: Auto-sliding image carousel with call-to-action buttons
 - **VisionMission**: Company vision and mission statements
 - **Founders**: Dynamic founder profiles with images and bios
 - **Products**: Horizontal scrolling product showcase
