@@ -155,7 +155,7 @@ export function HeroSection() {
                 </div>
                 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200">Import</span>
+                  <span className="sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200 text-[30px]">Import</span>
                   <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
                     <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
