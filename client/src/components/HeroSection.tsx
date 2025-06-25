@@ -126,7 +126,7 @@ export function HeroSection() {
                 />
                 {/* Logo for dark mode */}
                 <img 
-                  src="/images/CLIFTON-WHITE.png" 
+                  src="/images/CLIFTON-CUT-WHITE.png" 
                   alt="CLIFTON Logo" 
                   className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right hidden dark:block"
                 />
