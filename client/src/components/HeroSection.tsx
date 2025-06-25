@@ -120,22 +120,66 @@ export function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="mb-8">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 text-black dark:text-white leading-tight">
-                <span className="inline-block animate-slide-right">{t("hero.title.main")}</span>
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight">
+                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg">{t("hero.title.main")}</span>
                 <br />
-                <span className="inline-block text-black dark:text-white animate-slide-left animation-delay-300">
+                <span className="inline-block text-gray-900 dark:text-gray-100 animate-slide-left animation-delay-300 drop-shadow-lg">
                   {t("hero.title.accent")}
                 </span>
               </h1>
             </div>
+
+            {/* Animated Text with Delivery Icons */}
+            <div className="mb-8 flex items-center justify-center gap-4 flex-wrap">
+              <div className="flex items-center gap-2 animate-fade-up animation-delay-300">
+                <span className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
+                <div className="w-8 h-8 relative">
+                  <svg className="w-full h-full text-blue-600 dark:text-blue-400 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2 animate-fade-up animation-delay-600">
+                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
+                <div className="w-6 h-6 relative">
+                  <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" className="animate-pulse" />
+                  </svg>
+                </div>
+              </div>
+
+              <span className="text-xl sm:text-2xl font-light text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-700">&</span>
+
+              <div className="flex items-center gap-2 animate-fade-up animation-delay-900">
+                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
+                <div className="w-6 h-6 relative">
+                  <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" className="animate-pulse" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 animate-fade-up animation-delay-1200">
+                <span className="text-lg sm:text-xl font-medium text-gray-700 dark:text-gray-300">with</span>
+                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
+                <div className="w-7 h-7 relative">
+                  <svg className="w-full h-full text-purple-600 dark:text-purple-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+              </div>
+            </div>
             
             <div className="relative">
-              <p className="text-xl sm:text-2xl lg:text-3xl mb-8 text-gray-800 dark:text-gray-200 animate-fade-up animation-delay-600 max-w-4xl mx-auto font-light">
+              <p className="text-base sm:text-lg lg:text-xl mb-8 text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-3xl mx-auto font-normal leading-relaxed">
                 {t("hero.subtitle")}
               </p>
               
               {/* Animated underline */}
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-black dark:via-white to-transparent mx-auto mb-12 animate-pulse"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gray-800 dark:via-gray-200 to-transparent mx-auto mb-12 animate-pulse"></div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
