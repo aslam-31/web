@@ -116,6 +116,9 @@ Changelog:
 - June 23, 2025. Enhanced with advanced Three.js animations, parallax effects, and moving vector graphics throughout the page
 - June 23, 2025. Updated branding to CLIFTON with new eagle logo and company identity
 - June 23, 2025. Updated content to Clifton Traders import-export business with new services, vision, mission, and background images
+- June 25, 2025. Added social media icons to founders section with professional contact information
+- June 25, 2025. Updated "What We Do" section with colorful gradient icons and removed "Learn More" buttons
+- June 25, 2025. Transformed "Why Choose Us?" section with key business benefits and colorful icons (Global Network, Expertise, Reliability, Customer-Centric Approach)
 ```
 
 ## User Preferences

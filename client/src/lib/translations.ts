@@ -42,11 +42,24 @@ export const translations = {
     },
     projects: {
       title: "Why Choose Us?",
-      subtitle: "Global Network: Established relationships with suppliers, manufacturers, and distributors across the globe.",
-      filters: {
-        all: "All Projects",
-        industrial: "Industrial",
-        technology: "Technology"
+      subtitle: "Discover what sets Clifton Traders apart in the global trade industry.",
+      benefits: {
+        network: {
+          title: "Global Network",
+          description: "Established relationships with suppliers, manufacturers, and distributors across the globe."
+        },
+        expertise: {
+          title: "Expertise",
+          description: "A team of experienced professionals with in-depth knowledge of international trade regulations and market trends."
+        },
+        reliability: {
+          title: "Reliability",
+          description: "Commitment to delivering quality products and services on time, every time."
+        },
+        customerCentric: {
+          title: "Customer-Centric Approach",
+          description: "Tailored solutions to meet the unique needs of each client."
+        }
       }
     },
     contact: {
