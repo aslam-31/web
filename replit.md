@@ -124,6 +124,7 @@ Changelog:
 - June 25, 2025. Updated "Vision & Mission" section to "About Us" with new company description highlighting Agro-commodity, Solar Energy & pharmaceuticals expertise
 - June 25, 2025. Fixed static background image in About Us section by removing parallax movement effect
 - June 25, 2025. Updated founders section with new leadership team: Benson Clement (Managing Director) and Joseph Ebenezer (Technical Director) with their qualifications and experience
+- June 25, 2025. Enhanced "Why Choose Us?" section by removing floating elements and adding curved bottom accent lines that match card border radius for improved hover animations
 ```
 
 ## User Preferences

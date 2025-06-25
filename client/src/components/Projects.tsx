@@ -119,10 +119,8 @@ export function Projects() {
                   </p>
                 </div>
 
-                
-                
-                {/* Bottom Accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                {/* Curved Bottom Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" style={{ borderRadius: '0 0 24px 24px' }}></div>
               </div>
             </div>
           ))}
