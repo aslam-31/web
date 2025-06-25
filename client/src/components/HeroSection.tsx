@@ -129,46 +129,48 @@ export function HeroSection() {
               </h1>
             </div>
 
-            {/* Animated Text with Delivery Icons */}
-            <div className="mb-8 flex items-center justify-center gap-4 flex-wrap">
-              <div className="flex items-center gap-2 animate-fade-up animation-delay-300">
-                <span className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
-                <div className="w-8 h-8 relative">
-                  <svg className="w-full h-full text-blue-600 dark:text-blue-400 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
-                  </svg>
+            {/* Centered Animated Text with Static Icons */}
+            <div className="mb-8 text-center">
+              <div className="flex items-center justify-center gap-3 flex-wrap animate-fade-up animation-delay-300">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">CLIFTON</span>
+                  <div className="w-7 h-7 relative">
+                    <svg className="w-full h-full text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L13.09 7.26L18 6L16.74 11.26L22 12L16.74 12.74L18 18L12.74 16.74L12 22L11.26 16.74L6 18L7.26 12.74L2 12L7.26 11.26L6 6L11.26 7.26L12 2Z"/>
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-center gap-2 animate-fade-up animation-delay-600">
-                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
-                <div className="w-6 h-6 relative">
-                  <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" className="animate-pulse" />
-                  </svg>
+                
+                <div className="flex items-center gap-2">
+                  <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
+                  <div className="w-6 h-6 relative">
+                    <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
 
-              <span className="text-xl sm:text-2xl font-light text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-700">&</span>
+                <span className="text-xl sm:text-2xl font-light text-gray-700 dark:text-gray-300">&</span>
 
-              <div className="flex items-center gap-2 animate-fade-up animation-delay-900">
-                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
-                <div className="w-6 h-6 relative">
-                  <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" className="animate-pulse" />
-                  </svg>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
+                  <div className="w-6 h-6 relative">
+                    <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-2 animate-fade-up animation-delay-1200">
-                <span className="text-lg sm:text-xl font-medium text-gray-700 dark:text-gray-300">with</span>
-                <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
-                <div className="w-7 h-7 relative">
-                  <svg className="w-full h-full text-purple-600 dark:text-purple-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                  </svg>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg sm:text-xl font-medium text-gray-700 dark:text-gray-300">with</span>
+                  <span className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
+                  <div className="w-7 h-7 relative">
+                    <svg className="w-full h-full text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -207,13 +209,34 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce animation-delay-2000">
-        <div className="w-8 h-12  border-2 border-white/60 dark:border-black/60 rounded-full flex justify-center relative overflow-hidden">
-          <div className="w-1 h-4 bg-white dark:bg-black rounded-full mt-2 animate-pulse"></div>
-          <div className="absolute inset-0 border-2 border-white/20 dark:border-black/20 rounded-full animate-ping"></div>
+      {/* Animated Down Arrows in Right Corner */}
+      <div 
+        className="absolute bottom-8 right-8 cursor-pointer group animate-fade-up animation-delay-2000"
+        onClick={() => {
+          const visionSection = document.querySelector('.vision-mission-section');
+          if (visionSection) {
+            visionSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+      >
+        <div className="flex flex-col items-center gap-1">
+          <svg 
+            className="w-6 h-6 text-gray-700 dark:text-gray-300 animate-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+          <svg 
+            className="w-6 h-6 text-gray-700 dark:text-gray-300 animate-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
-        <p className="text-white/60 dark:text-black/60 text-sm mt-2 animate-pulse">Scroll Down</p>
       </div>
     </section>
   );
