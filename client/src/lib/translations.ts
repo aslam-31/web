@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       title: "CLIFTON",
-      subtitle: "Your Gateway to the World",
+      subtitle: "Connecting continents through seamless trade solutions From Europe to global markets, we bridge opportunities with excellence",
       description: "Professional import and export solutions connecting businesses globally with excellence and reliability.",
       cta: {
         services: "Our Services",
@@ -121,7 +121,7 @@ export const translations = {
     },
     hero: {
       title: "CLIFTON",
-      subtitle: "Sua Porta de Entrada para o Mundo",
+      subtitle: "Conectando continentes através de soluções comerciais perfeitas Da Europa aos mercados globais, unimos oportunidades com excelência",
       description: "Soluções profissionais de importação e exportação conectando negócios globalmente com excelência e confiabilidade.",
       cta: {
         services: "Nossos Serviços",
