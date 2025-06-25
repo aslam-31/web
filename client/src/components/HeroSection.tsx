@@ -50,7 +50,6 @@ export function HeroSection() {
   return (
     <section id="home" className="min-h-screen hero-bg relative overflow-hidden">
       <div className="absolute inset-0 noise-grid opacity-20"></div>
-      
       {/* Auto-sliding Background Images with Smooth Transitions */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
@@ -71,7 +70,6 @@ export function HeroSection() {
           />
         ))}
       </div>
-
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
         <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
@@ -115,13 +113,12 @@ export function HeroSection() {
           </svg>
         </div>
       </div>
-
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="mb-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg">{t("hero.title.main")}</span>
+                <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[73px]">{t("hero.title.main")}</span>
                 <br />
                 <span className="inline-block text-gray-900 dark:text-gray-100 animate-slide-left animation-delay-300 drop-shadow-lg">
                   {t("hero.title.accent")}
@@ -208,7 +205,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
       {/* Animated Down Arrows in Right Corner */}
       <div 
         className="absolute bottom-8 right-8 cursor-pointer group animate-fade-up animation-delay-2000"
