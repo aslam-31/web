@@ -120,13 +120,13 @@ export function HeroSection() {
               <div className="flex justify-center items-center relative z-10 mb-4">
                 {/* Logo for light mode */}
                 <img 
-                  src="/CLIFTON-BLACK.png" 
+                  src="/images/CLIFTON-BLACK.png" 
                   alt="CLIFTON Logo" 
                   className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right dark:hidden"
                 />
                 {/* Logo for dark mode */}
                 <img 
-                  src="/CLIFTON-WHITE.png" 
+                  src="/images/CLIFTON-WHITE.png" 
                   alt="CLIFTON Logo" 
                   className="h-24 sm:h-32 lg:h-40 w-auto animate-slide-right hidden dark:block"
                 />
