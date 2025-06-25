@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import { useLanguage } from "./LanguageProvider";
 
 interface ProductItem {
@@ -9,6 +10,7 @@ interface ProductItem {
 
 export function ModernProducts() {
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const products: ProductItem[] = [
     {
@@ -109,10 +111,10 @@ export function ModernProducts() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.location.href = `/products/${product.name.toLowerCase()}`;
+                      setLocation('/products');
                     }}
                     className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    title={`View ${product.name} details`}
+                    title="View products page"
                   >
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
