@@ -115,7 +115,7 @@ export function HeroSection() {
       </div>
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
+          <div className="text-center mt-[50px]">
             <div className="mb-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 <span className="inline-block animate-slide-right text-gray-900 dark:text-gray-100 drop-shadow-lg text-[73px]">{t("hero.title.main")}</span>
