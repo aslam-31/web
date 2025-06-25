@@ -123,7 +123,7 @@ export function HeroSection() {
               <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 text-black dark:text-white leading-tight">
                 <span className="inline-block animate-slide-right">{t("hero.title.main")}</span>
                 <br />
-                <span className="inline-block text-gradient animate-slide-left animation-delay-300">
+                <span className="inline-block text-black dark:text-white animate-slide-left animation-delay-300">
                   {t("hero.title.accent")}
                 </span>
               </h1>
