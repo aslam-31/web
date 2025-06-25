@@ -223,7 +223,7 @@ export function HeroSection() {
           }
         }}
       >
-        <div className="flex flex-col items-center gap-0">
+        <div className="flex flex-col items-center">
           <svg 
             className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
@@ -234,7 +234,7 @@ export function HeroSection() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
           <svg 
-            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
+            className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce animation-delay-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 -mt-2" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
