@@ -103,6 +103,23 @@ export function ModernProducts() {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">{product.name}</h3>
                   </div>
                 </div>
+                
+                {/* View Details Button */}
+                <div className="absolute top-4 left-4">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.location.href = `/products/${product.name.toLowerCase()}`;
+                    }}
+                    className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    title={`View ${product.name} details`}
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               {/* Content */}
