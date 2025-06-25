@@ -223,7 +223,7 @@ export function HeroSection() {
           }
         }}
       >
-        <div className="flex flex-col items-center gap-1">
+        <div className="flex flex-col items-center gap-0">
           <svg 
             className="w-8 h-8 text-gray-700 dark:text-gray-300 animate-chevron-bounce group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300" 
             fill="none" 
