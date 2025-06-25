@@ -28,7 +28,7 @@ export function HeroSection() {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
       setCurrentAnimation((prev) => (prev + 1) % animations.length);
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,31 +51,31 @@ export function HeroSection() {
     <section id="home" className="min-h-screen hero-bg relative overflow-hidden">
       <div className="absolute inset-0 noise-grid opacity-20"></div>
       
-      {/* Auto-sliding Background Images with Mixed Animations */}
+      {/* Auto-sliding Background Images with Smooth Transitions */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${
+            className={`absolute inset-0 bg-cover bg-center transition-all duration-2000 ease-in-out ${
               index === currentSlide 
-                ? `opacity-15 ${animations[currentAnimation]}` 
-                : 'opacity-0 scale-110'
+                ? 'opacity-20' 
+                : 'opacity-0'
             }`}
             style={{ 
               backgroundImage: `url(${image})`,
               filter: 'grayscale(100%) contrast(1.2)',
               transform: index === currentSlide 
-                ? 'scale(1.05)' 
-                : 'scale(1.1)',
+                ? 'scale(1.02)' 
+                : 'scale(1.05)',
             }}
           />
         ))}
       </div>
 
-      {/* Animated Background Video Effect */}
+      {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60 dark:from-white/60 dark:via-transparent dark:to-white/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent dark:via-white/20 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70 dark:from-white/70 dark:via-white/30 dark:to-white/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 dark:from-white/40 dark:via-transparent dark:to-white/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">

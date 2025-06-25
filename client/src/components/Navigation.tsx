@@ -24,13 +24,13 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 w-full z-50 px-5 sm:px-8 lg:px-10 pt-5 sm:pt-8">
       <div className="max-w-7xl mx-auto">
-        <div className="noise-grid gradient-border glass rounded-2xl px-6 sm:px-10 py-5">
+        <div className="noise-grid gradient-border glass rounded-2xl px-6 sm:px-10 py-5 backdrop-blur-xl bg-white/95 dark:bg-black/95 shadow-2xl border border-white/20 dark:border-black/20">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src={WhatsApp_Image_2025_06_23_at_15_47_14_b699984d_removebg_preview} 
+                  src={theme === 'light' ? "/images/CLIFTON-BLACK.png" : "/images/CLIFTON-WHITE.png"}
                   alt="CLIFTON Logo" 
                   className="w-full h-full object-contain"
                 />
@@ -41,31 +41,31 @@ export function Navigation() {
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors drop-shadow-sm"
               >
                 {t("nav.home")}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors drop-shadow-sm"
               >
                 {t("nav.about")}
               </button>
               <button 
                 onClick={() => scrollToSection('products')}
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors drop-shadow-sm"
               >
                 {t("nav.products")}
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors drop-shadow-sm"
               >
                 {t("nav.projects")}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors drop-shadow-sm"
               >
                 {t("nav.contact")}
               </button>
@@ -98,7 +98,7 @@ export function Navigation() {
               
               <button 
                 onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-black dark:text-white"
               >
                 {theme === 'light' ? (
                   <i className="fas fa-moon"></i>
@@ -110,7 +110,7 @@ export function Navigation() {
               {/* Mobile Menu Button with Animation */}
               <button 
                 onClick={toggleMobileMenu}
-                className="md:hidden p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
+                className="md:hidden p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group text-black dark:text-white"
               >
                 <div className="w-6 h-6 flex flex-col justify-center space-y-1">
                   <span className={`block w-6 h-0.5 bg-current transform transition-all duration-300 ${
@@ -133,31 +133,31 @@ export function Navigation() {
               <div className="flex flex-col space-y-3">
                 <button 
                   onClick={() => scrollToSection('home')}
-                  className="py-2 text-left hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="py-2 text-left text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.home")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="py-2 text-left hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="py-2 text-left text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.about")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')}
-                  className="py-2 text-left hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="py-2 text-left text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.products")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('projects')}
-                  className="py-2 text-left hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="py-2 text-left text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.projects")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="py-2 text-left hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  className="py-2 text-left text-black dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.contact")}
                 </button>
