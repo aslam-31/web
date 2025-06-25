@@ -237,9 +237,15 @@ export function HeroSection() {
       >
         <div className="flex flex-col items-center space-y-2">
           {/* Mouse Icon */}
-          <div className="w-7 h-11 border-2 border-gray-700 dark:border-gray-300 rounded-2xl relative group-hover:border-gray-900 dark:group-hover:border-gray-100 transition-colors duration-300">
-            {/* Mouse wheel/scroll indicator */}
-            <div className="w-1.5 h-2 bg-gray-700 dark:bg-gray-300 rounded-full absolute top-3 left-1/2 transform -translate-x-1/2 animate-bounce group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors duration-300"></div>
+          <div className="w-8 h-12 border-2 border-gray-700 dark:border-gray-300 rounded-2xl relative group-hover:border-gray-900 dark:group-hover:border-gray-100 transition-colors duration-300 bg-white dark:bg-gray-800">
+            {/* Left Mouse Button */}
+            <div className="absolute top-0 left-0 w-3 h-5 border-r border-gray-700 dark:border-gray-300 rounded-tl-2xl"></div>
+            {/* Right Mouse Button */}
+            <div className="absolute top-0 right-0 w-3 h-5 border-l border-gray-700 dark:border-gray-300 rounded-tr-2xl"></div>
+            {/* Scroll Wheel */}
+            <div className="w-0.5 h-3 bg-gray-700 dark:bg-gray-300 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 animate-bounce group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors duration-300"></div>
+            {/* Scroll wheel track */}
+            <div className="w-1 h-4 border border-gray-400 dark:border-gray-500 rounded-full absolute top-1.5 left-1/2 transform -translate-x-1/2"></div>
           </div>
           {/* Scroll Down Text */}
           <span className="text-xs text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 font-medium">
