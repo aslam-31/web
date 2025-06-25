@@ -55,7 +55,7 @@ export function ModernProducts() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-200/30 dark:border-blue-700/30 mb-6">
-            <span className="font-semibold text-blue-600 dark:text-blue-400 text-[24px]">Our Products</span>
+            <span className="font-semibold text-blue-600 dark:text-blue-400 text-[18px]">Our Products</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
             Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Commodities</span>
