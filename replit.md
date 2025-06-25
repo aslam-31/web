@@ -125,6 +125,7 @@ Changelog:
 - June 25, 2025. Fixed static background image in About Us section by removing parallax movement effect
 - June 25, 2025. Updated founders section with new leadership team: Benson Clement (Managing Director) and Joseph Ebenezer (Technical Director) with their qualifications and experience
 - June 25, 2025. Enhanced "Why Choose Us?" section by removing floating elements and adding curved bottom accent lines that match card border radius for improved hover animations
+- June 25, 2025. Added side edge glow effects to "Why Choose Us?" cards with gradient colors and scale animations on hover
 ```
 
 ## User Preferences
