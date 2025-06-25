@@ -41,31 +41,31 @@ export function Navigation() {
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.home")}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.about")}
               </button>
               <button 
                 onClick={() => scrollToSection('products')}
-                className="text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.products")}
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.projects")}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {t("nav.contact")}
               </button>
@@ -133,31 +133,31 @@ export function Navigation() {
               <div className="flex flex-col space-y-3">
                 <button 
                   onClick={() => scrollToSection('home')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.home")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.about")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.products")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('projects')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.projects")}
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="py-2 text-left text-gray-900 dark:text-white font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   {t("nav.contact")}
                 </button>
