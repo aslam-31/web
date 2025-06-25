@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
+  "/images/hero-bg-1.jpg",
+  "/images/hero-bg-2.jpg", 
+  "/images/hero-bg-3.jpg",
+  "/images/hero-bg-4.jpg",
+  "/images/hero-bg-5.jpg"
 ];
 
 const animations = [
@@ -15,8 +14,7 @@ const animations = [
   'animate-slide-right', 
   'animate-zoom-in',
   'animate-zoom-out',
-  'animate-fade-up',
-  'animate-fade-down'
+  'animate-fade-up'
 ];
 
 export function HeroSection() {
@@ -57,12 +55,12 @@ export function HeroSection() {
             key={index}
             className={`absolute inset-0 bg-cover bg-center transition-all duration-2000 ease-in-out ${
               index === currentSlide 
-                ? 'opacity-20' 
+                ? 'opacity-40' 
                 : 'opacity-0'
             }`}
             style={{ 
               backgroundImage: `url(${image})`,
-              filter: 'grayscale(100%) contrast(1.2)',
+              filter: 'grayscale(80%) contrast(1.1)',
               transform: index === currentSlide 
                 ? 'scale(1.02)' 
                 : 'scale(1.05)',
@@ -72,8 +70,8 @@ export function HeroSection() {
       </div>
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-white/70 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 dark:from-black/70 dark:via-black/30 dark:to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-white/15 dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
