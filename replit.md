@@ -119,6 +119,10 @@ Changelog:
 - June 25, 2025. Added social media icons to founders section with professional contact information
 - June 25, 2025. Updated "What We Do" section with colorful gradient icons and removed "Learn More" buttons
 - June 25, 2025. Transformed "Why Choose Us?" section with key business benefits and colorful icons (Global Network, Expertise, Reliability, Customer-Centric Approach)
+- June 25, 2025. Added ultra-thin text borders (0.2px) to hero subtitle for enhanced readability
+- June 25, 2025. Implemented sharp geometric edges on both sides of hero section in light mode
+- June 25, 2025. Updated "Vision & Mission" section to "About Us" with new company description highlighting Agro-commodity, Solar Energy & pharmaceuticals expertise
+- June 25, 2025. Fixed static background image in About Us section by removing parallax movement effect
 ```
 
 ## User Preferences

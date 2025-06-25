@@ -1,18 +1,16 @@
 import { useLanguage } from "./LanguageProvider";
-import { useParallax } from "@/hooks/use-parallax";
 
 export function VisionMission() {
   const { t } = useLanguage();
-  const { elementRef, transform } = useParallax(0.3);
 
   return (
-    <section ref={elementRef} id="about" className="vision-mission-section py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
+    <section id="about" className="vision-mission-section py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
           src="images/3.jpg" 
           alt="Import Export background" 
           className="w-full h-full object-cover"
-          style={{ transform, filter: 'grayscale(100%)' }}
+          style={{ filter: 'grayscale(100%)' }}
         />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
