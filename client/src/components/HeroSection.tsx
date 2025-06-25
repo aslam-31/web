@@ -75,6 +75,41 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/20 to-white/50 dark:from-black/50 dark:via-black/20 dark:to-black/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
+        {/* Sharp Edge Overlays for Light Mode */}
+        <div className="absolute inset-0 overflow-hidden block dark:hidden">
+          {/* Left Sharp Edge */}
+          <svg className="absolute left-0 top-0 w-64 h-full" viewBox="0 0 200 1080" preserveAspectRatio="none">
+            <polygon 
+              points="0,0 0,1080 150,1080 200,540 150,0" 
+              fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(0,0,0,0.1)" 
+              strokeWidth="1"
+            />
+            <polygon 
+              points="0,0 0,1080 120,1080 170,540 120,0" 
+              fill="rgba(255,255,255,0.05)" 
+              stroke="rgba(0,0,0,0.05)" 
+              strokeWidth="0.5"
+            />
+          </svg>
+          
+          {/* Right Sharp Edge */}
+          <svg className="absolute right-0 top-0 w-64 h-full" viewBox="0 0 200 1080" preserveAspectRatio="none">
+            <polygon 
+              points="200,0 200,1080 50,1080 0,540 50,0" 
+              fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(0,0,0,0.1)" 
+              strokeWidth="1"
+            />
+            <polygon 
+              points="200,0 200,1080 80,1080 30,540 80,0" 
+              fill="rgba(255,255,255,0.05)" 
+              stroke="rgba(0,0,0,0.05)" 
+              strokeWidth="0.5"
+            />
+          </svg>
+        </div>
+
         {/* Moving Vectors Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
