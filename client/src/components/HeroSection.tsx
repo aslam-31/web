@@ -194,9 +194,6 @@ export function HeroSection() {
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-2 font-medium">
                 Connecting continents through seamless trade solutions
               </p>
-              <p className="text-base sm:text-lg text-gray-500 dark:text-gray-500">
-                From Europe to global markets, we bridge opportunities with excellence
-              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up animation-delay-900">
