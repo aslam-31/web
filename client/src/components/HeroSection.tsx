@@ -155,7 +155,7 @@ export function HeroSection() {
                 </div>
                 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Import</span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200">Import</span>
                   <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
                     <svg className="w-full h-full text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
@@ -164,10 +164,10 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 relative z-10">&</span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-light text-gray-900 dark:text-gray-300 relative z-10">&</span>
 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Export</span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200">Export</span>
                   <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative">
                     <svg className="w-full h-full text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
@@ -177,8 +177,8 @@ export function HeroSection() {
                 </div>
 
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300">with</span>
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-200">Delivery</span>
+                  <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-900 dark:text-gray-300">with</span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-gray-200">Delivery</span>
                   <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 relative">
                     <svg className="w-full h-full text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -190,7 +190,7 @@ export function HeroSection() {
             </div>
             
             <div className="relative">
-              <p className="text-lg sm:text-xl lg:text-2xl mb-10 text-gray-700 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto font-normal leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl mb-10 text-gray-900 dark:text-gray-300 animate-fade-up animation-delay-1500 max-w-4xl mx-auto font-normal leading-relaxed">
                 Connecting continents through seamless trade solutions From Europe to global markets, we bridge opportunities with excellence
               </p>
               
