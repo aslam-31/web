@@ -14,25 +14,25 @@ export function ModernProducts() {
     {
       name: "Coffee",
       description: "Premium quality coffee beans sourced from the finest plantations worldwide",
-      image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&h=300&fit=crop&crop=center",
+      image: "/images/products/coffee.jpg",
       gradient: "from-amber-500 to-orange-600"
     },
     {
       name: "Salt",
       description: "Pure, natural salt products for industrial and consumer applications",
-      image: "https://images.unsplash.com/photo-1518281361980-b26bfd556770?w=300&h=300&fit=crop&crop=center",
+      image: "/images/products/salt.jpeg",
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       name: "Sugar",
       description: "High-grade sugar products meeting international quality standards",
-      image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&h=300&fit=crop&crop=center",
+      image: "/images/products/sugar.jpg",
       gradient: "from-pink-500 to-rose-600"
     },
     {
       name: "Soye",
       description: "Sustainable soye products for food processing and agricultural needs",
-      image: "https://images.unsplash.com/photo-1628773492803-61d46750257c?w=300&h=300&fit=crop&crop=center",
+      image: "/images/products/soye.jpg",
       gradient: "from-green-500 to-emerald-600"
     }
   ];
@@ -85,25 +85,29 @@ export function ModernProducts() {
                 </svg>
               </div>
 
-              {/* Image Container */}
-              <div className="w-20 h-20 rounded-2xl mb-6 relative overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-xl">
+              {/* Image Container - Made Much Larger */}
+              <div className="w-full h-48 sm:h-56 rounded-2xl mb-6 relative overflow-hidden group-hover:scale-105 transition-transform duration-500 shadow-xl">
                 <img 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover rounded-2xl"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl`}></div>
                 
                 {/* Sparkle Effect */}
-                <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                <div className="absolute top-3 right-3 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                
+                {/* Product Name Overlay */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-xl px-4 py-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">{product.name}</h3>
+                  </div>
+                </div>
               </div>
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-300">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                   {product.description}
                 </p>
               </div>
