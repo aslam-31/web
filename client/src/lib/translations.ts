@@ -9,25 +9,22 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: {
-        main: "CLIFTON",
-        accent: "Import Export"
-      },
-      subtitle: "Welcome to Clifton Traders, an import and export company dedicated to bridging global markets and delivering excellence in trade solutions.",
+      title: "CLIFTON",
+      subtitle: "Your Gateway to the World",
+      description: "Professional import and export solutions connecting businesses globally with excellence and reliability.",
       cta: {
-        primary: "Explore Our Products",
-        secondary: "Contact Us Today"
+        services: "Our Services",
+        contact: "Get in Touch"
       }
     },
     vision: {
-      title: "About Clifton Traders",
-      subtitle: "With years of experience in the industries of Agro-commodity, Solar Energy & pharmaceuticals, we specialize in facilitating seamless international trade by connecting businesses with high-quality products and services across borders.",
+      title: "Our Vision & Mission",
       vision: {
-        title: "Our Vision",
-        description: "To be the preferred partner for businesses seeking to thrive in the global marketplace by offering innovative trade solutions and exceptional service. At Clifton Traders, we believe in building long-term relationships based on trust, transparency, and mutual success. Whether you're looking to import or export, we're here to make your journey seamless and rewarding."
+        title: "Vision",
+        description: "To be the world's leading provider of trade solutions, facilitating global growth and connecting markets through exceptional import and export services."
       },
       mission: {
-        title: "Our Mission",
+        title: "Mission",
         description: "At Clifton Traders, our mission is to empower businesses by providing reliable, efficient, and cost-effective import and export services. We strive to foster global partnerships, drive economic growth, and deliver value to our clients by ensuring smooth transactions and timely delivery of goods."
       }
     },
@@ -77,7 +74,7 @@ export const translations = {
         sending: "Sending...",
         success: {
           title: "Message sent successfully!",
-          description: "We'll get back to you within 24 hours."
+          description: "We'll get back to you soon."
         },
         error: {
           title: "Failed to send message",
@@ -123,26 +120,23 @@ export const translations = {
       contact: "Contato"
     },
     hero: {
-      title: {
-        main: "CLIFTON",
-        accent: "Importação Exportação"
-      },
-      subtitle: "Bem-vindos à Clifton Traders, uma empresa de importação e exportação dedicada a conectar mercados globais e oferecer excelência em soluções comerciais.",
+      title: "CLIFTON",
+      subtitle: "Sua Porta de Entrada para o Mundo",
+      description: "Soluções profissionais de importação e exportação conectando negócios globalmente com excelência e confiabilidade.",
       cta: {
-        primary: "Explore Nossos Produtos",
-        secondary: "Entre em Contato Hoje"
+        services: "Nossos Serviços",
+        contact: "Entre em Contato"
       }
     },
     vision: {
-      title: "Sobre a Clifton Traders",
-      subtitle: "Com anos de experiência nas indústrias de agro-commodities, energia solar e farmacêutica, especializamo-nos em facilitar o comércio internacional conectando empresas com produtos e serviços de alta qualidade.",
+      title: "Nossa Visão & Missão",
       vision: {
-        title: "Nossa Visão",
-        description: "Ser o parceiro preferido para empresas que buscam prosperar no mercado global, oferecendo soluções comerciais inovadoras e serviços excepcionais. Na Clifton Traders, acreditamos na construção de relacionamentos de longo prazo baseados em confiança, transparência e sucesso mútuo."
+        title: "Visão",
+        description: "Ser a empresa líder mundial em soluções comerciais, facilitando o crescimento global e conectando mercados através de serviços excepcionais de importação e exportação."
       },
       mission: {
-        title: "Nossa Missão",
-        description: "Na Clifton Traders, nossa missão é capacitar empresas fornecendo serviços de importação e exportação confiáveis, eficientes e econômicos. Nos esforçamos para promover parcerias globais, impulsionar o crescimento econômico e agregar valor aos nossos clientes."
+        title: "Missão",
+        description: "Na Clifton Traders, nossa missão é capacitar empresas fornecendo serviços de importação e exportação confiáveis, eficientes e econômicos. Nos esforçamos para promover parcerias globais, impulsionar o crescimento econômico e agregar valor aos nossos clientes garantindo transações suaves e entrega pontual de mercadorias."
       }
     },
     founders: {
@@ -151,21 +145,34 @@ export const translations = {
     },
     products: {
       title: "O Que Fazemos",
-      subtitle: "Oferecemos uma gama abrangente de serviços adaptados para atender às diversas necessidades dos nossos clientes",
+      subtitle: "Oferecemos uma gama abrangente de serviços personalizados para atender às diversas necessidades de nossos clientes",
       learnMore: "Saiba Mais"
     },
     projects: {
       title: "Por Que Nos Escolher?",
-      subtitle: "Rede Global: Relacionamentos estabelecidos com fornecedores, fabricantes e distribuidores em todo o mundo.",
-      filters: {
-        all: "Todos os Projetos",
-        industrial: "Industrial",
-        technology: "Tecnologia"
+      subtitle: "Descubra o que diferencia a Clifton Traders na indústria de comércio global.",
+      benefits: {
+        network: {
+          title: "Rede Global",
+          description: "Relacionamentos estabelecidos com fornecedores, fabricantes e distribuidores em todo o mundo."
+        },
+        expertise: {
+          title: "Especialização",
+          description: "Uma equipe de profissionais experientes com conhecimento profundo das regulamentações de comércio internacional e tendências do mercado."
+        },
+        reliability: {
+          title: "Confiabilidade",
+          description: "Compromisso em entregar produtos e serviços de qualidade no prazo, sempre."
+        },
+        customerCentric: {
+          title: "Abordagem Centrada no Cliente",
+          description: "Soluções personalizadas para atender às necessidades únicas de cada cliente."
+        }
       }
     },
     contact: {
       title: "Entre em Contato",
-      subtitle: "Entre em contato hoje para saber como podemos ajudar seu negócio a crescer globalmente! Clifton Traders - Seu Portal para o Mundo.",
+      subtitle: "Entre em contato conosco hoje para saber como podemos ajudar seu negócio a crescer globalmente! Clifton Traders - Sua Porta de Entrada para o Mundo.",
       form: {
         title: "Envie-nos uma mensagem",
         name: "Nome Completo",
@@ -178,11 +185,11 @@ export const translations = {
         sending: "Enviando...",
         success: {
           title: "Mensagem enviada com sucesso!",
-          description: "Entraremos em contato em até 24 horas."
+          description: "Entraremos em contato em breve."
         },
         error: {
           title: "Falha ao enviar mensagem",
-          description: "Por favor, tente novamente ou entre em contato diretamente."
+          description: "Tente novamente ou entre em contato diretamente."
         }
       },
       info: {
@@ -191,7 +198,7 @@ export const translations = {
         location: "Madrid, Espanha"
       },
       hours: {
-        title: "Horário Comercial",
+        title: "Horário de Funcionamento",
         weekdays: "Segunda - Sexta",
         saturday: "Sábado",
         sunday: "Domingo",
@@ -199,14 +206,14 @@ export const translations = {
       }
     },
     footer: {
-      description: "Clifton Traders - Seu Portal para o Mundo. Excelência em soluções de comércio internacional.",
+      description: "Clifton Traders - Sua Porta de Entrada para o Mundo. Excelência em soluções de comércio internacional.",
       quickLinks: "Links Rápidos",
       services: {
         title: "Serviços",
         import: "Serviços de Importação",
         export: "Serviços de Exportação",
         logistics: "Logística e Cadeia de Suprimentos",
-        quality: "Consultoria e Pesquisa de Mercado"
+        quality: "Pesquisa de Mercado e Consultoria"
       },
       contact: "Contato",
       copyright: "© 2024 CLIFTON. Todos os direitos reservados.",

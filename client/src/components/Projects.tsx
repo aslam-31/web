@@ -1,41 +1,58 @@
 import { useLanguage } from "./LanguageProvider";
-import { Globe, Users, Shield, Heart } from "lucide-react";
+import { Network, GraduationCap, Award, Handshake } from "lucide-react";
 
 const getBenefitIcon = (benefitKey: string) => {
   switch (benefitKey) {
     case 'network':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <Globe className="w-10 h-10 text-white relative z-10" />
+        <div className="relative">
+          <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300">
+            <Network className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+            <span className="text-xs font-bold text-gray-900">🌍</span>
+          </div>
         </div>
       );
     case 'expertise':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <Users className="w-10 h-10 text-white relative z-10" />
+        <div className="relative">
+          <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full flex items-center justify-center shadow-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-300">
+            <GraduationCap className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center">
+            <span className="text-xs font-bold text-gray-900">📊</span>
+          </div>
         </div>
       );
     case 'reliability':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <Shield className="w-10 h-10 text-white relative z-10" />
+        <div className="relative">
+          <div className="w-16 h-16 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-300">
+            <Award className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-400 rounded-full flex items-center justify-center">
+            <span className="text-xs font-bold text-gray-900">⏰</span>
+          </div>
         </div>
       );
     case 'customerCentric':
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <Heart className="w-10 h-10 text-white relative z-10" />
+        <div className="relative">
+          <div className="w-16 h-16 bg-gradient-to-br from-pink-400 via-rose-500 to-red-600 rounded-full flex items-center justify-center shadow-2xl transform -rotate-2 group-hover:-rotate-4 transition-transform duration-300">
+            <Handshake className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center">
+            <span className="text-xs font-bold text-gray-900">💡</span>
+          </div>
         </div>
       );
     default:
       return (
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <Globe className="w-10 h-10 text-white relative z-10" />
+        <div className="relative">
+          <div className="w-16 h-16 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 rounded-full flex items-center justify-center shadow-2xl">
+            <Network className="w-8 h-8 text-white" />
+          </div>
         </div>
       );
   }
@@ -52,41 +69,63 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-black relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-black dark:to-blue-950 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-10 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{t("projects.title")}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white">
+            {t("projects.title")}
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             {t("projects.subtitle")}
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Benefits Grid - Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.key}
-              className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 group relative overflow-hidden text-center"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Moving Vector Elements */}
-              <div className="absolute top-6 right-6 w-8 h-8 opacity-10 group-hover:opacity-20 transition-all duration-300">
-                <svg viewBox="0 0 24 24" className="w-full h-full text-current">
-                  <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="1" fill="none">
-                    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="10s" repeatCount="indefinite"/>
-                  </path>
-                </svg>
-              </div>
-              
-              {getBenefitIcon(benefit.key)}
-              
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
-                  {benefit.description}
-                </p>
+              {/* Card Container */}
+              <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-2">
+                
+                {/* Gradient Background on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-pink-950/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 text-center">
+                  {/* Icon Container */}
+                  <div className="flex justify-center mb-6">
+                    {getBenefitIcon(benefit.key)}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {benefit.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-8 h-8 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
+                </div>
+                
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </div>
             </div>
           ))}
