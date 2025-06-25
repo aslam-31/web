@@ -237,7 +237,7 @@ export function HeroSection() {
       >
         <div className="flex flex-col items-center space-y-2">
           {/* Mouse Icon - Outline Only */}
-          <div className="w-7 h-11 border-2 border-gray-700 dark:border-gray-300 rounded-2xl relative group-hover:border-gray-900 dark:group-hover:border-gray-100 transition-colors duration-300">
+          <div className="w-7 h-11 border-2 border-gray-700 dark:border-gray-300 rounded-2xl relative group-hover:border-gray-900 dark:group-hover:border-gray-100 transition-colors duration-300 animate-mouse-scroll">
             {/* Mouse button separator line */}
             <div className="absolute top-0 left-1/2 w-px h-4 bg-gray-700 dark:bg-gray-300 transform -translate-x-1/2"></div>
             {/* Scroll Wheel */}
