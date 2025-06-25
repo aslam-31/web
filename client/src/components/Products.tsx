@@ -1,48 +1,136 @@
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
 import { useLanguage } from "./LanguageProvider";
-import type { Product } from "@shared/schema";
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  category: string;
+  imageUrl: string;
+  order: number;
+}
+
+const getServiceIcon = (name: string) => {
+  switch (name.toLowerCase()) {
+    case 'import services':
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V12M7 8V4M17 8V12M17 16V20M3 12H21M7 8H17" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20L8 16H16L12 20Z" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      );
+    case 'export services':
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-700 dark:from-emerald-400 dark:to-emerald-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16V12M17 8V4M7 8V12M7 16V20M21 12H3M17 8H7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4L16 8H8L12 4Z" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+        </div>
+      );
+    case 'logistics & supply chain management':
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-400 dark:to-purple-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-indigo-400 rounded-full flex items-center justify-center">
+            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+      );
+    case 'customs clearance':
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-700 dark:from-amber-400 dark:to-amber-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 2V8H22" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-400 rounded-full flex items-center justify-center">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+        </div>
+      );
+    case 'market research & consulting':
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-rose-700 dark:from-rose-400 dark:to-rose-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-cyan-400 rounded-full flex items-center justify-center">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+        </div>
+      );
+    default:
+      return (
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-400 dark:to-gray-600 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden group shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6" />
+          </svg>
+        </div>
+      );
+  }
+};
 
 export function Products() {
   const { t } = useLanguage();
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   
-  const { data: products, isLoading } = useQuery<Product[]>({
-    queryKey: ["/api/products"],
+  const { data: products, isLoading, error } = useQuery<Product[]>({
+    queryKey: ["products"],
+    queryFn: async () => {
+      const response = await fetch("/api/products");
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      return response.json();
+    },
   });
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-    }
-  };
 
   if (isLoading) {
     return (
       <section id="products" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("products.title")}</h2>
+            <div className="animate-pulse">
+              <div className="h-12 bg-gray-300 dark:bg-gray-700 rounded w-64 mx-auto mb-6"></div>
+              <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-96 mx-auto"></div>
+            </div>
           </div>
-          <div className="flex gap-6 overflow-x-auto pb-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="flex-none w-80 noise-grid gradient-border glass rounded-2xl p-6 animate-pulse">
-                <div className="w-full h-48 bg-gray-300 dark:bg-gray-700 rounded-xl mb-4"></div>
-                <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
-                <div className="space-y-2 mb-4">
+              <div key={i} className="noise-grid gradient-border glass rounded-2xl p-8 animate-pulse">
+                <div className="w-20 h-20 bg-gray-300 dark:bg-gray-700 rounded-3xl mb-6"></div>
+                <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded mb-4"></div>
+                <div className="space-y-2 mb-6">
                   <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded"></div>
                   <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/3"></div>
-                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/4"></div>
-                </div>
+                <div className="h-10 bg-gray-300 dark:bg-gray-700 rounded"></div>
               </div>
             ))}
           </div>
@@ -51,70 +139,116 @@ export function Products() {
     );
   }
 
+  if (error) {
+    return (
+      <section id="products" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-red-600 dark:text-red-400">Failed to load services. Please try again later.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section id="products" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="products" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("products.title")}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{t("products.title")}</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             {t("products.subtitle")}
           </p>
         </div>
 
-        {/* Horizontal Scrolling Products */}
-        <div className="relative">
-          <div 
-            ref={scrollContainerRef}
-            className="scroll-container flex gap-6 overflow-x-auto pb-6"
-          >
-            {products?.map((product, index) => (
-              <div 
-                key={product.id} 
-                className="flex-none w-80 noise-grid gradient-border glass rounded-2xl p-6 hover-scale transition-all duration-500 group relative overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Moving Vector Elements in Cards */}
-                <div className="absolute bottom-4 left-4 w-6 h-6 opacity-10 animate-vector-float">
-                  <svg viewBox="0 0 24 24" className="w-full h-full text-current">
-                    <path d="M2,12 L22,12 M18,8 L22,12 L18,16" stroke="currentColor" strokeWidth="1" fill="none"/>
-                  </svg>
-                </div>
-                <div className="relative overflow-hidden rounded-xl mb-4">
-                  <img 
-                    src={product.imageUrl} 
-                    alt={product.name} 
-                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+        {/* Desktop and Tablet Grid Layout */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {products?.slice(0, 3).map((product, index) => (
+            <div
+              key={product.id}
+              className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Moving Vector Elements */}
+              <div className="absolute top-6 right-6 w-8 h-8 opacity-10 group-hover:opacity-20 transition-all duration-300">
+                <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                  <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="1" fill="none">
+                    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="10s" repeatCount="indefinite"/>
+                  </path>
+                </svg>
+              </div>
+              
+              {getServiceIcon(product.name)}
+              
+              <div className="space-y-6">
+                <span className="inline-block px-4 py-2 text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
+                  {product.category}
+                </span>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  {product.name}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
                   {product.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">{product.category}</span>
-                  <button className="text-black dark:text-white hover:underline">
+                <button className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-black via-gray-800 to-black dark:from-white dark:via-gray-200 dark:to-white text-white dark:text-black rounded-xl hover-scale transition-all duration-300 font-semibold shadow-lg hover:shadow-xl group-hover:shadow-2xl">
+                  <span className="flex items-center justify-center gap-2">
                     {t("products.learnMore")}
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Additional Services for Larger Screens */}
+        {products && products.length > 3 && (
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {products.slice(3).map((product, index) => (
+              <div
+                key={product.id}
+                className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
+                style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+              >
+                {/* Moving Vector Elements */}
+                <div className="absolute top-6 right-6 w-8 h-8 opacity-10 group-hover:opacity-20 transition-all duration-300">
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1" fill="none">
+                      <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="12" cy="6" r="2" fill="currentColor">
+                      <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="8s" repeatCount="indefinite"/>
+                    </circle>
+                  </svg>
+                </div>
+                
+                {getServiceIcon(product.name)}
+                
+                <div className="space-y-6">
+                  <span className="inline-block px-4 py-2 text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
+                    {product.category}
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
+                    {product.description}
+                  </p>
+                  <button className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-black via-gray-800 to-black dark:from-white dark:via-gray-200 dark:to-white text-white dark:text-black rounded-xl hover-scale transition-all duration-300 font-semibold shadow-lg hover:shadow-xl group-hover:shadow-2xl">
+                    <span className="flex items-center justify-center gap-2">
+                      {t("products.learnMore")}
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Scroll Controls */}
-          <button 
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 noise-grid gradient-border glass rounded-full flex items-center justify-center hover-scale transition-transform"
-          >
-            <i className="fas fa-chevron-left"></i>
-          </button>
-          <button 
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 noise-grid gradient-border glass rounded-full flex items-center justify-center hover-scale transition-transform"
-          >
-            <i className="fas fa-chevron-right"></i>
-          </button>
-        </div>
+        )}
       </div>
     </section>
   );
