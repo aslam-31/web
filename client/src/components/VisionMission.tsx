@@ -14,15 +14,15 @@ export function VisionMission() {
         />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("vision.title")}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">{t("vision.title")}</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
             {t("vision.subtitle")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
             <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
               <svg viewBox="0 0 24 24" className="w-full h-full text-current">
@@ -40,7 +40,7 @@ export function VisionMission() {
             </p>
           </div>
 
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+          <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
             <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
               <svg viewBox="0 0 24 24" className="w-full h-full text-current">

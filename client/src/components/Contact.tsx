@@ -55,16 +55,16 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("contact.title")}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">{t("contact.title")}</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
             {t("contact.subtitle")}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Form */}
-          <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-slide-right relative overflow-hidden bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
+          <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 animate-slide-right relative overflow-hidden bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
             {/* Moving Vector Elements in Contact Form */}
             <div className="absolute top-6 right-6 w-8 h-8 opacity-10 animate-vector-slide">
               <svg viewBox="0 0 32 32" className="w-full h-full text-current">
@@ -139,8 +139,8 @@ export function Contact() {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8 animate-slide-left">
-            <div className="noise-grid gradient-border glass rounded-2xl p-8 bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
+          <div className="space-y-6 sm:space-y-8 animate-slide-left">
+            <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
                 alt="Modern office building in Madrid, Spain" 
@@ -167,8 +167,8 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="noise-grid gradient-border glass rounded-2xl p-8 bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
-              <h4 className="text-xl font-bold mb-4">{t("contact.hours.title")}</h4>
+            <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{t("contact.hours.title")}</h4>
               <div className="space-y-2 text-gray-600 dark:text-gray-400">
                 <div className="flex justify-between">
                   <span>{t("contact.hours.weekdays")}</span>

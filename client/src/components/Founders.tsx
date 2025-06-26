@@ -43,19 +43,19 @@ export function Founders() {
   return (
     <section className="py-20 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("founders.title")}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">{t("founders.title")}</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
             {t("founders.subtitle")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {founders?.map((founder) => (
             <div key={founder.id} className="text-center">
-              <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm transform-gpu hover:rotate-y-3 hover:shadow-2xl hover:shadow-black/20 dark:hover:shadow-white/10 perspective-1000 hover:-translate-y-2">
-                <div className="relative mb-6 transform-gpu transition-transform duration-300 hover:scale-110">
-                  <div className="w-32 h-32 rounded-full mx-auto relative overflow-hidden shadow-2xl ring-4 ring-white/20 dark:ring-gray-700/50">
+              <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 hover-scale transition-all duration-500 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm transform-gpu hover:rotate-y-3 hover:shadow-2xl hover:shadow-black/20 dark:hover:shadow-white/10 perspective-1000 hover:-translate-y-2">
+                <div className="relative mb-4 sm:mb-6 transform-gpu transition-transform duration-300 hover:scale-110">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full mx-auto relative overflow-hidden shadow-2xl ring-4 ring-white/20 dark:ring-gray-700/50">
                     <img 
                       src={prof} 
                       alt={founder.name} 
@@ -65,9 +65,9 @@ export function Founders() {
                   </div>
                 </div>
                 <div className="transform-gpu transition-all duration-300 hover:translate-z-4">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{founder.name}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 font-medium">{founder.position}</p>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{founder.name}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 font-medium">{founder.position}</p>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6">
                     {founder.bio}
                   </p>
                 </div>

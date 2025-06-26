@@ -128,7 +128,7 @@ export const translations = {
       description: "Soluções profissionais de importação e exportação conectando negócios globalmente com excelência e confiabilidade.",
       cta: {
         primary: "Explore Nossos Produtos",
-        secondary: "Contact Us Today",
+        secondary: "Entre em Contato Hoje",
         services: "Nossos Serviços",
         contact: "Entre em Contato"
       }

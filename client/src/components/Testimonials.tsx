@@ -60,10 +60,10 @@ export function Testimonials() {
           <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full border border-purple-200/30 dark:border-purple-700/30 mb-6">
             <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">Client Testimonials</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white px-4">
             What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Clients Say</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed pb-10">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed pb-8 sm:pb-10 px-4">
             Trusted by businesses worldwide for premium commodity trading
           </p>
         </div>
@@ -71,7 +71,7 @@ export function Testimonials() {
         {/* Testimonials Container */}
         <div className="relative">
           {/* Circular Animation Container */}
-          <div className="relative w-full max-w-4xl mx-auto h-96 flex items-center justify-center">
+          <div className="relative w-full max-w-4xl mx-auto h-72 sm:h-80 md:h-96 flex items-center justify-center">
             {testimonials.map((testimonial, index) => {
               // Calculate position on circle
               const angle = (index * 360) / testimonials.length - (currentIndex * 360) / testimonials.length;
