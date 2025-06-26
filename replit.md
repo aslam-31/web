@@ -148,6 +148,7 @@ Changelog:
 - January 24, 2025. Updated About Us background image opacity to 0.2 for optimal visibility
 - January 24, 2025. Added white background overlay with 0.3 opacity to hero section for better text readability
 - January 24, 2025. Fixed animated arrow overflow in Vision & Mission cards by adjusting positioning and viewBox dimensions
+- January 24, 2025. Made founder cards darker with gray background overlay for better contrast against the white background
 ```
 
 ## User Preferences
