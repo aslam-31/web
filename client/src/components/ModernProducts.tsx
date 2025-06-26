@@ -208,7 +208,7 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col"
+                  className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col mb-2.5"
                   style={{ 
                     width: visibleCards === 1 ? '100%' : 
                            visibleCards === 2 ? 'calc(50% - 8px)' : 
