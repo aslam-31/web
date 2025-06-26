@@ -146,6 +146,7 @@ Changelog:
 - January 24, 2025. Removed dual background overlays in About Us section for cleaner appearance
 - January 24, 2025. Fixed background image opacity to use custom 0.1 value instead of Tailwind's opacity-15 class
 - January 24, 2025. Updated About Us background image opacity to 0.2 for optimal visibility
+- January 24, 2025. Added white background overlay with 0.3 opacity to hero section for better text readability
 ```
 
 ## User Preferences
