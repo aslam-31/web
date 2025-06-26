@@ -85,23 +85,26 @@ export function ModernProducts() {
   useEffect(() => {
     const handleResize = () => {
       const newVisibleCards = getVisibleCards();
-      console.log('Resize detected, new visible cards:', newVisibleCards, 'Total products:', products.length);
-      setVisibleCards(newVisibleCards);
-      // Reset currentIndex if it's beyond the new max
-      const newMaxIndex = Math.max(0, products.length - newVisibleCards);
-      if (currentIndex > newMaxIndex) {
-        setCurrentIndex(0);
+      if (newVisibleCards !== visibleCards) {
+        console.log('Resize detected, new visible cards:', newVisibleCards, 'Total products:', products.length);
+        setVisibleCards(newVisibleCards);
+        // Reset currentIndex if it's beyond the new max
+        const newMaxIndex = Math.max(0, products.length - newVisibleCards);
+        if (currentIndex > newMaxIndex) {
+          setCurrentIndex(0);
+        }
       }
     };
     
-    // Set initial value
-    handleResize();
+    // Set initial value on mount
+    const initialCards = getVisibleCards();
+    setVisibleCards(initialCards);
     
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }
-  }, [currentIndex, products.length]);
+  }, []); // Remove dependencies to prevent constant re-renders
 
   const maxIndex = Math.max(0, products.length - visibleCards);
 
@@ -109,11 +112,9 @@ export function ModernProducts() {
     const newMaxIndex = Math.max(0, products.length - visibleCards);
     console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
-      setCurrentIndex(prev => {
-        const newIndex = prev + 1;
-        console.log('Setting new index:', newIndex);
-        return newIndex;
-      });
+      const newIndex = currentIndex + 1;
+      console.log('Setting new index:', newIndex);
+      setCurrentIndex(newIndex);
     } else {
       console.log('Already at max index, cannot go further');
     }
@@ -122,11 +123,9 @@ export function ModernProducts() {
   const prevSlide = () => {
     console.log('Prev slide - Current:', currentIndex, 'Visible cards:', visibleCards);
     if (currentIndex > 0) {
-      setCurrentIndex(prev => {
-        const newIndex = prev - 1;
-        console.log('Setting new prev index:', newIndex);
-        return newIndex;
-      });
+      const newIndex = currentIndex - 1;
+      console.log('Setting new prev index:', newIndex);
+      setCurrentIndex(newIndex);
     } else {
       console.log('Already at start, cannot go back');
     }
@@ -148,13 +147,20 @@ export function ModernProducts() {
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
+    const currentMaxIndex = Math.max(0, products.length - visibleCards);
 
-    if (isLeftSwipe && currentIndex < maxIndex) {
+    console.log('Touch end - Distance:', distance, 'Current:', currentIndex, 'Max:', currentMaxIndex);
+
+    if (isLeftSwipe && currentIndex < currentMaxIndex) {
       nextSlide();
     }
     if (isRightSwipe && currentIndex > 0) {
       prevSlide();
     }
+
+    // Reset touch states
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   // Mouse drag handlers
@@ -175,8 +181,11 @@ export function ModernProducts() {
     const distance = dragStart - e.clientX;
     const isLeftDrag = distance > 50;
     const isRightDrag = distance < -50;
+    const currentMaxIndex = Math.max(0, products.length - visibleCards);
 
-    if (isLeftDrag && currentIndex < maxIndex) {
+    console.log('Mouse up - Distance:', distance, 'Current:', currentIndex, 'Max:', currentMaxIndex);
+
+    if (isLeftDrag && currentIndex < currentMaxIndex) {
       nextSlide();
     }
     if (isRightDrag && currentIndex > 0) {
