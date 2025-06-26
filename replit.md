@@ -150,6 +150,7 @@ Changelog:
 - January 24, 2025. Fixed animated arrow overflow in Vision & Mission cards by adjusting positioning and viewBox dimensions
 - January 24, 2025. Made founder cards darker with gray background overlay for better contrast against the white background
 - January 24, 2025. Added comprehensive 3D effects to founder cards including hover transforms, shadows, profile image scaling, and interactive social media icons
+- January 24, 2025. Replaced products section with horizontal scrolling carousel featuring Consumer Electronics, Agricultural Products, Textiles & Fashion, and Automotive Components with navigation arrows and "Saiba Mais" buttons
 ```
 
 ## User Preferences
