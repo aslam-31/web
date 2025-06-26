@@ -47,13 +47,28 @@ export function ModernProducts() {
       image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Fashion",
       buttonText: "Saiba Mais"
+    },
+    {
+      name: "Automotive Components",
+      description: "Premium automotive parts and components for international automotive industry.",
+      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      category: "Automotive",
+      buttonText: "Saiba Mais"
+    },
+    {
+      name: "Medical Equipment",
+      description: "Advanced medical devices and healthcare equipment for global healthcare providers.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      category: "Healthcare",
+      buttonText: "Saiba Mais"
     }
   ];
 
-  // Responsive card counts: 4 on desktop, 2 on tablet, 1 on mobile
+  // Responsive card counts: 4 on desktop, 3 on large tablet, 2 on tablet, 1 on mobile
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 4; // lg and up
+      if (window.innerWidth >= 1280) return 4; // xl and up
+      if (window.innerWidth >= 1024) return 3; // lg and up
       if (window.innerWidth >= 768) return 2;  // md and up
       return 1; // mobile
     }
@@ -87,8 +102,9 @@ export function ModernProducts() {
   const maxIndex = Math.max(0, products.length - visibleCards);
 
   const nextSlide = () => {
-    console.log('Next slide - Current:', currentIndex, 'Max:', maxIndex, 'Visible cards:', visibleCards);
-    if (currentIndex < maxIndex) {
+    const newMaxIndex = Math.max(0, products.length - visibleCards);
+    console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards);
+    if (currentIndex < newMaxIndex) {
       setCurrentIndex(prev => prev + 1);
     }
   };
@@ -126,7 +142,7 @@ export function ModernProducts() {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-black dark:via-gray-950 dark:to-blue-950 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 min-h-[700px] bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-black dark:via-gray-950 dark:to-blue-950 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -192,43 +208,42 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className={`flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm ${
-                    visibleCards === 1 ? 'w-full' : 
-                    visibleCards === 2 ? 'w-1/2' : 
-                    'w-1/4'
-                  }`}
+                  className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col"
                   style={{ 
-                    minWidth: visibleCards === 1 ? '100%' : 
-                             visibleCards === 2 ? 'calc(50% - 8px)' : 
-                             'calc(25% - 12px)'
+                    width: visibleCards === 1 ? '100%' : 
+                           visibleCards === 2 ? 'calc(50% - 8px)' : 
+                           visibleCards === 3 ? 'calc(33.333% - 10.67px)' :
+                           'calc(25% - 12px)'
                   }}
                 >
                   {/* Product Image */}
-                  <div className="p-3 pt-3">
+                  <div className="p-4 pt-4">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-44 object-cover rounded-xl"
+                      className="w-full h-40 sm:h-48 object-cover rounded-xl"
                     />
                   </div>
                   
                   {/* Product Content */}
-                  <div className="px-4 pb-4">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                      {product.description}
-                    </p>
+                  <div className="px-4 pb-6 flex flex-col justify-between flex-grow">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
+                        {product.description}
+                      </p>
+                    </div>
                     
                     {/* Category and Button */}
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    <div className="flex justify-between items-center mt-auto">
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
                         {product.category}
                       </span>
                       <button 
                         onClick={() => setLocation('/products')}
-                        className="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 font-semibold text-sm transition-colors duration-200"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold text-sm transition-colors duration-200 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30"
                       >
                         {product.buttonText}
                       </button>
