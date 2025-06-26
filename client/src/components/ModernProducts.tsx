@@ -18,6 +18,8 @@ export function ModernProducts() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState<number | null>(null);
 
   const products: ProductItem[] = [
     {
@@ -141,6 +143,41 @@ export function ModernProducts() {
     }
   };
 
+  // Mouse drag handlers
+  const onMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    e.preventDefault();
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || dragStart === null) return;
+    e.preventDefault();
+  };
+
+  const onMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging || dragStart === null) return;
+    
+    const distance = dragStart - e.clientX;
+    const isLeftDrag = distance > 50;
+    const isRightDrag = distance < -50;
+
+    if (isLeftDrag && currentIndex < maxIndex) {
+      nextSlide();
+    }
+    if (isRightDrag && currentIndex > 0) {
+      prevSlide();
+    }
+
+    setIsDragging(false);
+    setDragStart(null);
+  };
+
+  const onMouseLeave = () => {
+    setIsDragging(false);
+    setDragStart(null);
+  };
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 min-h-[700px] bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-black dark:via-gray-950 dark:to-blue-950 relative overflow-hidden">
       {/* Background Pattern */}
@@ -192,17 +229,21 @@ export function ModernProducts() {
 
           {/* Scrolling Container */}
           <div 
-            className="overflow-hidden mx-8 md:mx-12"
+            className={`overflow-hidden mx-8 md:mx-12 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
             ref={containerRef}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseLeave}
           >
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-4"
               style={{ 
                 transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
-                width: `${(products.length / visibleCards) * 100}%`
+                width: `${Math.max(100, (products.length / visibleCards) * 100)}%`
               }}
             >
               {products.map((product, index) => (
@@ -210,10 +251,11 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col mb-2.5"
                   style={{ 
-                    width: visibleCards === 1 ? '100%' : 
+                    width: visibleCards === 1 ? 'calc(100% - 16px)' : 
                            visibleCards === 2 ? 'calc(50% - 8px)' : 
                            visibleCards === 3 ? 'calc(33.333% - 10.67px)' :
-                           'calc(25% - 12px)'
+                           'calc(25% - 12px)',
+                    flexShrink: 0
                   }}
                 >
                   {/* Product Image */}
