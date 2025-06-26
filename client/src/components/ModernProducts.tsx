@@ -143,11 +143,11 @@ export function ModernProducts() {
                   className="flex-none w-full lg:w-1/4 md:w-1/2 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700"
                 >
                   {/* Product Image */}
-                  <div className="h-48 relative overflow-hidden">
+                  <div className="p-3 pt-3">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover rounded-t-xl"
+                      className="w-full h-44 object-cover rounded-xl"
                     />
                   </div>
                   
