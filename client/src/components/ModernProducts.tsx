@@ -18,6 +18,13 @@ export function ModernProducts() {
 
   const products: ProductItem[] = [
     {
+      name: "Industrial Machinery",
+      description: "High-performance manufacturing equipment and industrial machinery for global markets.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      category: "Manufacturing",
+      buttonText: "Saiba Mais"
+    },
+    {
       name: "Consumer Electronics",
       description: "Latest technology products and consumer electronics for international distribution.",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
@@ -26,7 +33,7 @@ export function ModernProducts() {
     },
     {
       name: "Agricultural Products",
-      description: "Fresh agricultural products and specialty foods from Spain to global markets.",
+      description: "Premium agricultural products and specialty foods from Spain to global markets.",
       image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Agriculture",
       buttonText: "Saiba Mais"
@@ -37,22 +44,15 @@ export function ModernProducts() {
       image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Fashion",
       buttonText: "Saiba Mais"
-    },
-    {
-      name: "Automotive Components",
-      description: "Precision automotive parts and components for global manufacturers.",
-      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      category: "Automotive",
-      buttonText: "Saiba Mais"
     }
   ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.max(1, products.length - 2));
+    setCurrentIndex((prev) => (prev + 1) % Math.max(1, products.length - 3));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.max(1, products.length - 2)) % Math.max(1, products.length - 2));
+    setCurrentIndex((prev) => (prev - 1 + Math.max(1, products.length - 3)) % Math.max(1, products.length - 3));
   };
 
   return (
@@ -99,7 +99,7 @@ export function ModernProducts() {
           <button 
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
-            disabled={currentIndex >= products.length - 3}
+            disabled={currentIndex >= products.length - 4}
           >
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
           </button>
@@ -107,16 +107,16 @@ export function ModernProducts() {
           {/* Scrolling Container */}
           <div className="overflow-hidden mx-12">
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-6"
-              style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
+              className="flex transition-transform duration-500 ease-in-out gap-4"
+              style={{ transform: `translateX(-${currentIndex * 25}%)` }}
             >
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-1/3 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="flex-none w-1/4 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
                   {/* Product Image */}
-                  <div className="h-48 relative overflow-hidden">
+                  <div className="h-40 relative overflow-hidden rounded-t-2xl">
                     <img 
                       src={product.image} 
                       alt={product.name}
@@ -125,22 +125,22 @@ export function ModernProducts() {
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                    <p className="text-gray-600 dark:text-gray-400 text-xs mb-3 leading-relaxed">
                       {product.description}
                     </p>
                     
                     {/* Category and Button */}
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
                         {product.category}
                       </span>
                       <button 
                         onClick={() => setLocation('/products')}
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors duration-200"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-xs transition-colors duration-200"
                       >
                         {product.buttonText}
                       </button>
