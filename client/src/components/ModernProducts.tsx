@@ -70,8 +70,8 @@ export function ModernProducts() {
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
       if (window.innerWidth >= 1600) return 6; // ultra-wide - show all cards
-      if (window.innerWidth >= 1400) return 5; // large desktop
-      if (window.innerWidth >= 1024) return 4; // laptop - show 4 cards
+      if (window.innerWidth >= 1300) return 5; // large desktop
+      if (window.innerWidth >= 900) return 4;  // laptop - show 4 cards
       if (window.innerWidth >= 768) return 3;  // tablet
       if (window.innerWidth >= 640) return 2;  // small tablet
       return 1; // mobile
@@ -109,14 +109,26 @@ export function ModernProducts() {
     const newMaxIndex = Math.max(0, products.length - visibleCards);
     console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
-      setCurrentIndex(prev => prev + 1);
+      setCurrentIndex(prev => {
+        const newIndex = prev + 1;
+        console.log('Setting new index:', newIndex);
+        return newIndex;
+      });
+    } else {
+      console.log('Already at max index, cannot go further');
     }
   };
 
   const prevSlide = () => {
     console.log('Prev slide - Current:', currentIndex, 'Visible cards:', visibleCards);
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1);
+      setCurrentIndex(prev => {
+        const newIndex = prev - 1;
+        console.log('Setting new prev index:', newIndex);
+        return newIndex;
+      });
+    } else {
+      console.log('Already at start, cannot go back');
     }
   };
 
