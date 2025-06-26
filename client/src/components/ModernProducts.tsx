@@ -66,12 +66,13 @@ export function ModernProducts() {
     }
   ];
 
-  // Responsive card counts: 4 on desktop, 3 on large tablet, 2 on tablet, 1 on mobile
+  // Responsive card counts: 6 on ultra-wide, 4 on desktop, 3 on tablet, 2 on small tablet, 1 on mobile
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1280) return 4; // xl and up
-      if (window.innerWidth >= 1024) return 3; // lg and up
-      if (window.innerWidth >= 768) return 2;  // md and up
+      if (window.innerWidth >= 1536) return 6; // 2xl - show all cards
+      if (window.innerWidth >= 1280) return 4; // xl
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 640) return 2;  // sm
       return 1; // mobile
     }
     return 4; // default
@@ -83,7 +84,7 @@ export function ModernProducts() {
   useEffect(() => {
     const handleResize = () => {
       const newVisibleCards = getVisibleCards();
-      console.log('Resize detected, new visible cards:', newVisibleCards);
+      console.log('Resize detected, new visible cards:', newVisibleCards, 'Total products:', products.length);
       setVisibleCards(newVisibleCards);
       // Reset currentIndex if it's beyond the new max
       const newMaxIndex = Math.max(0, products.length - newVisibleCards);
@@ -105,7 +106,7 @@ export function ModernProducts() {
 
   const nextSlide = () => {
     const newMaxIndex = Math.max(0, products.length - visibleCards);
-    console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards);
+    console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
       setCurrentIndex(prev => prev + 1);
     }
@@ -210,26 +211,30 @@ export function ModernProducts() {
 
         {/* Horizontal Scrolling Products */}
         <div className="relative">
-          {/* Navigation Buttons */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
-            disabled={currentIndex === 0}
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-          </button>
-          
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
-            disabled={currentIndex >= maxIndex}
-          >
-            <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-          </button>
+          {/* Navigation Buttons - Only show if there are more cards than can fit */}
+          {maxIndex > 0 && (
+            <>
+              <button 
+                onClick={prevSlide}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
+                disabled={currentIndex === 0}
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+              </button>
+              
+              <button 
+                onClick={nextSlide}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
+                disabled={currentIndex >= maxIndex}
+              >
+                <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+              </button>
+            </>
+          )}
 
           {/* Scrolling Container */}
           <div 
-            className={`overflow-hidden mx-8 md:mx-12 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            className={`overflow-hidden ${maxIndex > 0 ? 'mx-8 md:mx-12' : 'mx-0'} ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
             ref={containerRef}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
@@ -240,10 +245,11 @@ export function ModernProducts() {
             onMouseLeave={onMouseLeave}
           >
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-4"
+              className="flex transition-transform duration-500 ease-in-out"
               style={{ 
                 transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
-                width: `${Math.max(100, (products.length / visibleCards) * 100)}%`
+                width: `${(products.length * 100) / visibleCards}%`,
+                gap: '1rem'
               }}
             >
               {products.map((product, index) => (
@@ -251,10 +257,7 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col mb-2.5"
                   style={{ 
-                    width: visibleCards === 1 ? '85%' : 
-                           visibleCards === 2 ? 'calc(45% - 8px)' : 
-                           visibleCards === 3 ? 'calc(30% - 10.67px)' :
-                           'calc(22% - 12px)',
+                    width: `calc(${100 / visibleCards}% - 1rem)`,
                     flexShrink: 0
                   }}
                 >
