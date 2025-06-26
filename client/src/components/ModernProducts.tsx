@@ -140,7 +140,7 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-full lg:w-1/4 md:w-1/2 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700"
+                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
                 >
                   {/* Product Image */}
                   <div className="p-3 pt-3">
