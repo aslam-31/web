@@ -140,34 +140,34 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
+                  className="flex-none w-full lg:w-1/4 md:w-1/2 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700"
                 >
                   {/* Product Image */}
-                  <div className="h-40 relative overflow-hidden rounded-t-2xl">
+                  <div className="h-48 relative overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-t-xl"
                     />
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-4 pb-6">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <div className="p-4">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs mb-4 leading-relaxed min-h-[2.5rem]">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
                       {product.description}
                     </p>
                     
                     {/* Category and Button */}
-                    <div className="flex justify-between items-center mt-auto">
-                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
                         {product.category}
                       </span>
                       <button 
                         onClick={() => setLocation('/products')}
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-xs transition-colors duration-200"
+                        className="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300 font-semibold text-sm transition-colors duration-200"
                       >
                         {product.buttonText}
                       </button>
