@@ -28,42 +28,42 @@ export function ModernProducts() {
       description: "High-performance manufacturing equipment and industrial machinery for global markets.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Manufacturing",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Consumer Electronics",
       description: "Latest technology products and consumer electronics for international distribution.",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Technology",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Agricultural Products",
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
-      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/agriculture-cattle.jpg",
       category: "Agriculture",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Textiles & Fashion",
       description: "Quality textiles and fashion products for international retail and wholesale markets.",
       image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Fashion",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Automotive Components",
       description: "Premium automotive parts and components for international automotive industry.",
       image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Automotive",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Medical Equipment",
       description: "Advanced medical devices and healthcare equipment for global healthcare providers.",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       category: "Healthcare",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     }
   ];
 
