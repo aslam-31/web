@@ -66,12 +66,13 @@ export function ModernProducts() {
     }
   ];
 
-  // Responsive card counts: 6 on ultra-wide, 4 on desktop, 3 on tablet, 2 on small tablet, 1 on mobile
+  // Responsive card counts: show more cards efficiently
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1536) return 6; // 2xl - show all cards
-      if (window.innerWidth >= 1280) return 4; // xl
-      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 1400) return 6; // 2xl - show all cards
+      if (window.innerWidth >= 1200) return 5; // xl
+      if (window.innerWidth >= 1000) return 4; // lg
+      if (window.innerWidth >= 768) return 3;  // md
       if (window.innerWidth >= 640) return 2;  // sm
       return 1; // mobile
     }
@@ -249,34 +250,35 @@ export function ModernProducts() {
               style={{ 
                 transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
                 width: `${(products.length * 100) / visibleCards}%`,
-                gap: '1rem'
+                gap: '0.75rem'
               }}
             >
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col mb-2.5"
+                  className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[350px] flex flex-col mb-2.5"
                   style={{ 
-                    width: `calc(${100 / visibleCards}% - 1rem)`,
-                    flexShrink: 0
+                    width: `calc(${100 / visibleCards}% - 0.75rem)`,
+                    flexShrink: 0,
+                    maxWidth: '280px'
                   }}
                 >
                   {/* Product Image */}
-                  <div className="p-4 pt-4">
+                  <div className="p-3 pt-3">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-40 sm:h-48 object-cover rounded-xl"
+                      className="w-full h-32 sm:h-36 object-cover rounded-lg"
                     />
                   </div>
                   
                   {/* Product Content */}
-                  <div className="px-4 pb-6 flex flex-col justify-between flex-grow">
+                  <div className="px-3 pb-4 flex flex-col justify-between flex-grow">
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">
                         {product.name}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
+                      <p className="text-gray-600 dark:text-gray-400 text-xs mb-3 leading-relaxed line-clamp-2">
                         {product.description}
                       </p>
                     </div>
