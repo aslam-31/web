@@ -69,11 +69,11 @@ export function ModernProducts() {
   // Responsive card counts: show more cards efficiently
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1400) return 6; // 2xl - show all cards
-      if (window.innerWidth >= 1200) return 5; // xl
-      if (window.innerWidth >= 900) return 4;  // laptop - show 4 cards
-      if (window.innerWidth >= 768) return 3;  // md
-      if (window.innerWidth >= 640) return 2;  // sm
+      if (window.innerWidth >= 1600) return 6; // ultra-wide - show all cards
+      if (window.innerWidth >= 1400) return 5; // large desktop
+      if (window.innerWidth >= 1024) return 4; // laptop - show 4 cards
+      if (window.innerWidth >= 768) return 3;  // tablet
+      if (window.innerWidth >= 640) return 2;  // small tablet
       return 1; // mobile
     }
     return 4; // default
