@@ -22,7 +22,7 @@ export function Founders() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {[1, 2].map((i) => (
               <div key={i} className="text-center">
-                <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-pulse bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
+                <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-pulse bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm">
                   <div className="w-32 h-32 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-6"></div>
                   <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
                   <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded mb-4 w-1/2 mx-auto"></div>
@@ -53,7 +53,7 @@ export function Founders() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {founders?.map((founder) => (
             <div key={founder.id} className="text-center">
-              <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-transform duration-300 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
+              <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-transform duration-300 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm">
                 <div className="relative mb-6">
                   <img 
                     src={prof} 
