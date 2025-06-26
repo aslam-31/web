@@ -20,6 +20,7 @@ export function ModernProducts() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const products: ProductItem[] = [
     {
@@ -109,6 +110,9 @@ export function ModernProducts() {
   const maxIndex = Math.max(0, products.length - visibleCards);
 
   const nextSlide = () => {
+    if (isNavigating) return; // Prevent multiple rapid clicks
+    setIsNavigating(true);
+    
     const newMaxIndex = Math.max(0, products.length - visibleCards);
     console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
@@ -118,9 +122,15 @@ export function ModernProducts() {
     } else {
       console.log('Already at max index, cannot go further');
     }
+    
+    // Reset navigation lock after animation
+    setTimeout(() => setIsNavigating(false), 300);
   };
 
   const prevSlide = () => {
+    if (isNavigating) return; // Prevent multiple rapid clicks
+    setIsNavigating(true);
+    
     console.log('Prev slide - Current:', currentIndex, 'Visible cards:', visibleCards);
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
@@ -129,6 +139,9 @@ export function ModernProducts() {
     } else {
       console.log('Already at start, cannot go back');
     }
+    
+    // Reset navigation lock after animation
+    setTimeout(() => setIsNavigating(false), 300);
   };
 
   // Touch handlers for mobile swiping
@@ -142,7 +155,7 @@ export function ModernProducts() {
   };
 
   const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd || isNavigating) return;
     
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
@@ -176,7 +189,7 @@ export function ModernProducts() {
   };
 
   const onMouseUp = (e: React.MouseEvent) => {
-    if (!isDragging || dragStart === null) return;
+    if (!isDragging || dragStart === null || isNavigating) return;
     
     const distance = dragStart - e.clientX;
     const isLeftDrag = distance > 50;
