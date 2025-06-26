@@ -142,6 +142,7 @@ Changelog:
 - January 24, 2025. Added trade volumes information and contact CTA section
 - January 24, 2025. Enhanced products page hero section with sliding background images, fade in/out effects, and left/right movement animations
 - January 24, 2025. Updated home page product cards eye icon to navigate to products page instead of individual product pages
+- January 24, 2025. Enhanced About Us section background to be more white with stronger white overlay and reduced image opacity
 ```
 
 ## User Preferences

@@ -4,8 +4,8 @@ export function VisionMission() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="vision-mission-section py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
+    <section id="about" className="vision-mission-section py-20 bg-gradient-to-b from-white to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
+      <div className="absolute inset-0 opacity-15">
         <img 
           src="images/3.jpg" 
           alt="Import Export background" 
@@ -13,7 +13,9 @@ export function VisionMission() {
           style={{ filter: 'grayscale(100%)' }}
         />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Strong white overlay for better readability */}
+      <div className="absolute inset-0 bg-white/80 dark:bg-black/80"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{t("vision.title")}</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
