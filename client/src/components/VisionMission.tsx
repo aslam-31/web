@@ -5,7 +5,7 @@ export function VisionMission() {
 
   return (
     <section id="about" className="vision-mission-section py-20 bg-gradient-to-b from-white to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
-      <div className="absolute inset-0 opacity-15">
+      <div className="absolute inset-0" style={{ opacity: 0.1 }}>
         <img 
           src="images/3.jpg" 
           alt="Import Export background" 

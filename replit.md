@@ -144,6 +144,7 @@ Changelog:
 - January 24, 2025. Updated home page product cards eye icon to navigate to products page instead of individual product pages
 - January 24, 2025. Enhanced About Us section background to be more white with reduced image opacity
 - January 24, 2025. Removed dual background overlays in About Us section for cleaner appearance
+- January 24, 2025. Fixed background image opacity to use custom 0.1 value instead of Tailwind's opacity-15 class
 ```
 
 ## User Preferences
