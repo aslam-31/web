@@ -152,6 +152,7 @@ Changelog:
 - January 24, 2025. Added comprehensive 3D effects to founder cards including hover transforms, shadows, profile image scaling, and interactive social media icons
 - January 24, 2025. Replaced products section with horizontal scrolling carousel featuring Consumer Electronics, Agricultural Products, Textiles & Fashion, and Automotive Components with navigation arrows and "Saiba Mais" buttons
 - January 24, 2025. Fixed carousel navigation buttons functionality and added glass card styling with noise-grid, gradient-border, and backdrop-blur effects to match founders section
+- January 24, 2025. Made products carousel fully responsive: 4 cards on desktop, 2 on tablets, 1 on mobile with proper navigation and improved card content spacing
 ```
 
 ## User Preferences

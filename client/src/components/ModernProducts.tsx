@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useLanguage } from "./LanguageProvider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -47,15 +47,36 @@ export function ModernProducts() {
     }
   ];
 
+  // Responsive card counts: 4 on desktop, 2 on tablet, 1 on mobile
+  const getVisibleCards = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 4; // lg and up
+      if (window.innerWidth >= 768) return 2;  // md and up
+      return 1; // mobile
+    }
+    return 4; // default
+  };
+
+  const [visibleCards, setVisibleCards] = useState(getVisibleCards());
+
+  // Update visible cards on resize
+  useEffect(() => {
+    const handleResize = () => setVisibleCards(getVisibleCards());
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  const maxIndex = Math.max(0, products.length - visibleCards);
+
   const nextSlide = () => {
-    console.log('Next clicked, current index:', currentIndex, 'max:', 1);
-    if (currentIndex < 1) {
+    if (currentIndex < maxIndex) {
       setCurrentIndex(prev => prev + 1);
     }
   };
 
   const prevSlide = () => {
-    console.log('Prev clicked, current index:', currentIndex);
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
     }
@@ -105,21 +126,21 @@ export function ModernProducts() {
           <button 
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
-            disabled={currentIndex >= 1}
+            disabled={currentIndex >= maxIndex}
           >
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
           </button>
 
           {/* Scrolling Container */}
-          <div className="overflow-hidden mx-12">
+          <div className="overflow-hidden mx-8 md:mx-12">
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-4"
-              style={{ transform: `translateX(-${currentIndex * (100/4)}%)` }}
+              style={{ transform: `translateX(-${currentIndex * (100/visibleCards)}%)` }}
             >
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-1/4 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
+                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
                 >
                   {/* Product Image */}
                   <div className="h-40 relative overflow-hidden rounded-t-2xl">
@@ -131,16 +152,16 @@ export function ModernProducts() {
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                  <div className="p-4 pb-6">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs mb-3 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 text-xs mb-4 leading-relaxed min-h-[2.5rem]">
                       {product.description}
                     </p>
                     
                     {/* Category and Button */}
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center mt-auto">
                       <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
                         {product.category}
                       </span>
