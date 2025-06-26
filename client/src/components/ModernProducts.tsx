@@ -48,11 +48,15 @@ export function ModernProducts() {
   ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.max(1, products.length - 3));
+    if (currentIndex < products.length - 4) {
+      setCurrentIndex(prev => prev + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.max(1, products.length - 3)) % Math.max(1, products.length - 3));
+    if (currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
+    }
   };
 
   return (
@@ -90,7 +94,7 @@ export function ModernProducts() {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50"
             disabled={currentIndex === 0}
           >
             <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
@@ -98,7 +102,7 @@ export function ModernProducts() {
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50"
             disabled={currentIndex >= products.length - 4}
           >
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
@@ -108,12 +112,12 @@ export function ModernProducts() {
           <div className="overflow-hidden mx-12">
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-4"
-              style={{ transform: `translateX(-${currentIndex * 25}%)` }}
+              style={{ transform: `translateX(-${currentIndex * (100/4)}%)` }}
             >
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-1/4 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="flex-none w-1/4 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm hover:-translate-y-2"
                 >
                   {/* Product Image */}
                   <div className="h-40 relative overflow-hidden rounded-t-2xl">
