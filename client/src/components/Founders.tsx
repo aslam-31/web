@@ -22,7 +22,7 @@ export function Founders() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {[1, 2].map((i) => (
               <div key={i} className="text-center">
-                <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-pulse bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm">
+                <div className="noise-grid gradient-border glass rounded-2xl p-8 animate-pulse bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm transform-gpu shadow-lg">
                   <div className="w-32 h-32 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-6"></div>
                   <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
                   <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded mb-4 w-1/2 mx-auto"></div>
@@ -53,26 +53,31 @@ export function Founders() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {founders?.map((founder) => (
             <div key={founder.id} className="text-center">
-              <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-transform duration-300 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm">
-                <div className="relative mb-6">
-                  <img 
-                    src={prof} 
-                    alt={founder.name} 
-                    className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg"
-                  />
+              <div className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm transform-gpu hover:rotate-y-3 hover:shadow-2xl hover:shadow-black/20 dark:hover:shadow-white/10 perspective-1000 hover:-translate-y-2">
+                <div className="relative mb-6 transform-gpu transition-transform duration-300 hover:scale-110">
+                  <div className="w-32 h-32 rounded-full mx-auto relative overflow-hidden shadow-2xl ring-4 ring-white/20 dark:ring-gray-700/50">
+                    <img 
+                      src={prof} 
+                      alt={founder.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">{founder.position}</p>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                  {founder.bio}
-                </p>
+                <div className="transform-gpu transition-all duration-300 hover:translate-z-4">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{founder.name}</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 font-medium">{founder.position}</p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                    {founder.bio}
+                  </p>
+                </div>
                 
                 {/* Social Media Icons */}
-                <div className="flex justify-center space-x-4">
+                <div className="flex justify-center space-x-4 transform-gpu transition-all duration-300 hover:scale-105">
                   {founder.email && (
                     <a 
                       href={`mailto:${founder.email}`}
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors duration-200 group"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-all duration-300 group transform hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                       title="Send Email"
                     >
                       <Mail className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
@@ -83,7 +88,7 @@ export function Founders() {
                       href={founder.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors duration-200 group"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-all duration-300 group transform hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                       title="LinkedIn Profile"
                     >
                       <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
@@ -94,7 +99,7 @@ export function Founders() {
                       href={founder.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-sky-100 dark:hover:bg-sky-900 transition-colors duration-200 group"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-sky-100 dark:hover:bg-sky-900 transition-all duration-300 group transform hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                       title="Twitter Profile"
                     >
                       <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-sky-600 dark:group-hover:text-sky-400" />
@@ -105,7 +110,7 @@ export function Founders() {
                       href={founder.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-pink-100 dark:hover:bg-pink-900 transition-colors duration-200 group"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-pink-100 dark:hover:bg-pink-900 transition-all duration-300 group transform hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                       title="Instagram Profile"
                     >
                       <Instagram className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-pink-600 dark:group-hover:text-pink-400" />
@@ -116,7 +121,7 @@ export function Founders() {
                       href={founder.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors duration-200 group"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-all duration-300 group transform hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                       title="Facebook Profile"
                     >
                       <Facebook className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
