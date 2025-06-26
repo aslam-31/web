@@ -258,11 +258,10 @@ export function ModernProducts() {
             onMouseLeave={onMouseLeave}
           >
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 ease-in-out gap-4"
               style={{ 
                 transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
-                width: `${(products.length * 100) / visibleCards}%`,
-                gap: '0.75rem'
+                width: `${(products.length * 100) / visibleCards}%`
               }}
             >
               {products.map((product, index) => (
@@ -270,7 +269,7 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[350px] flex flex-col mb-2.5"
                   style={{ 
-                    width: `calc(${100 / visibleCards}% - 0.75rem)`,
+                    width: `calc(${100 / visibleCards}% - 1rem)`,
                     flexShrink: 0,
                     maxWidth: '280px'
                   }}
