@@ -251,10 +251,10 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[400px] flex flex-col mb-2.5"
                   style={{ 
-                    width: visibleCards === 1 ? 'calc(100% - 16px)' : 
-                           visibleCards === 2 ? 'calc(50% - 8px)' : 
-                           visibleCards === 3 ? 'calc(33.333% - 10.67px)' :
-                           'calc(25% - 12px)',
+                    width: visibleCards === 1 ? '85%' : 
+                           visibleCards === 2 ? 'calc(45% - 8px)' : 
+                           visibleCards === 3 ? 'calc(30% - 10.67px)' :
+                           'calc(22% - 12px)',
                     flexShrink: 0
                   }}
                 >
