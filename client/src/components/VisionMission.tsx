@@ -24,10 +24,10 @@ export function VisionMission() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
-            <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
-              <svg viewBox="0 0 32 32" className="w-full h-full text-current">
-                <path d="M4,16 L28,16 M24,12 L28,16 L24,20" stroke="currentColor" strokeWidth="1" fill="none">
-                  <animateTransform attributeName="transform" type="translate" values="0,0; 10,0; 0,0" dur="3s" repeatCount="indefinite"/>
+            <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
+              <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                <path d="M4,12 L20,12 M17,9 L20,12 L17,15" stroke="currentColor" strokeWidth="1" fill="none">
+                  <animateTransform attributeName="transform" type="translate" values="0,0; 3,0; 0,0" dur="3s" repeatCount="indefinite"/>
                 </path>
               </svg>
             </div>
@@ -42,13 +42,13 @@ export function VisionMission() {
 
           <div className="noise-grid gradient-border glass rounded-2xl p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
-            <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
-              <svg viewBox="0 0 32 32" className="w-full h-full text-current">
-                <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="1" fill="none">
-                  <animateTransform attributeName="transform" type="rotate" values="0 16 16; 360 16 16" dur="8s" repeatCount="indefinite"/>
+            <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
+              <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1" fill="none">
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="8s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="16" cy="8" r="2" fill="currentColor">
-                  <animateTransform attributeName="transform" type="rotate" values="0 16 16; 360 16 16" dur="8s" repeatCount="indefinite"/>
+                <circle cx="12" cy="6" r="1.5" fill="currentColor">
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="8s" repeatCount="indefinite"/>
                 </circle>
               </svg>
             </div>
