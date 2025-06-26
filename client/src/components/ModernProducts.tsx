@@ -26,7 +26,7 @@ export function ModernProducts() {
     {
       name: "Industrial Machinery",
       description: "High-performance manufacturing equipment and industrial machinery for global markets.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/industrial-machinery.jpg",
       category: "Manufacturing",
       buttonText: "Learn More"
     },
