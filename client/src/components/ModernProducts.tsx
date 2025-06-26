@@ -48,12 +48,14 @@ export function ModernProducts() {
   ];
 
   const nextSlide = () => {
-    if (currentIndex < products.length - 4) {
+    console.log('Next clicked, current index:', currentIndex, 'max:', 1);
+    if (currentIndex < 1) {
       setCurrentIndex(prev => prev + 1);
     }
   };
 
   const prevSlide = () => {
+    console.log('Prev clicked, current index:', currentIndex);
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
     }
@@ -94,7 +96,7 @@ export function ModernProducts() {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
             disabled={currentIndex === 0}
           >
             <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
@@ -102,8 +104,8 @@ export function ModernProducts() {
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50"
-            disabled={currentIndex >= products.length - 4}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
+            disabled={currentIndex >= 1}
           >
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
           </button>
@@ -117,7 +119,7 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-1/4 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-gray-100/90 dark:bg-gray-800/90 backdrop-blur-sm hover:-translate-y-2"
+                  className="flex-none w-1/4 noise-grid gradient-border glass rounded-2xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
                 >
                   {/* Product Image */}
                   <div className="h-40 relative overflow-hidden rounded-t-2xl">
