@@ -33,7 +33,7 @@ export function ModernProducts() {
     {
       name: "Consumer Electronics",
       description: "Latest technology products and consumer electronics for international distribution.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/consumer-electronics.jpg",
       category: "Technology",
       buttonText: "Learn More"
     },
