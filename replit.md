@@ -145,7 +145,7 @@ Changelog:
 - January 24, 2025. Enhanced About Us section background to be more white with reduced image opacity
 - January 24, 2025. Removed dual background overlays in About Us section for cleaner appearance
 - January 24, 2025. Fixed background image opacity to use custom 0.1 value instead of Tailwind's opacity-15 class
-- January 24, 2025. Updated About Us background image opacity to 0.25 for better visibility
+- January 24, 2025. Updated About Us background image opacity to 0.2 for optimal visibility
 ```
 
 ## User Preferences
