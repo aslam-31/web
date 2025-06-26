@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { useLanguage } from "./LanguageProvider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -15,6 +15,9 @@ export function ModernProducts() {
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const products: ProductItem[] = [
     {
@@ -59,10 +62,11 @@ export function ModernProducts() {
 
   const [visibleCards, setVisibleCards] = useState(getVisibleCards());
 
-  // Update visible cards on resize
+  // Update visible cards on resize and initial load
   useEffect(() => {
     const handleResize = () => {
       const newVisibleCards = getVisibleCards();
+      console.log('Resize detected, new visible cards:', newVisibleCards);
       setVisibleCards(newVisibleCards);
       // Reset currentIndex if it's beyond the new max
       const newMaxIndex = Math.max(0, products.length - newVisibleCards);
@@ -70,6 +74,9 @@ export function ModernProducts() {
         setCurrentIndex(0);
       }
     };
+    
+    // Set initial value
+    handleResize();
     
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
@@ -80,14 +87,41 @@ export function ModernProducts() {
   const maxIndex = Math.max(0, products.length - visibleCards);
 
   const nextSlide = () => {
+    console.log('Next slide - Current:', currentIndex, 'Max:', maxIndex, 'Visible cards:', visibleCards);
     if (currentIndex < maxIndex) {
       setCurrentIndex(prev => prev + 1);
     }
   };
 
   const prevSlide = () => {
+    console.log('Prev slide - Current:', currentIndex, 'Visible cards:', visibleCards);
     if (currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
+    }
+  };
+
+  // Touch handlers for mobile swiping
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentIndex < maxIndex) {
+      nextSlide();
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      prevSlide();
     }
   };
 
@@ -141,15 +175,33 @@ export function ModernProducts() {
           </button>
 
           {/* Scrolling Container */}
-          <div className="overflow-hidden mx-8 md:mx-12">
+          <div 
+            className="overflow-hidden mx-8 md:mx-12"
+            ref={containerRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-4"
-              style={{ transform: `translateX(-${currentIndex * (100/visibleCards)}%)` }}
+              style={{ 
+                transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
+                width: `${(products.length / visibleCards) * 100}%`
+              }}
             >
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
+                  className={`flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm ${
+                    visibleCards === 1 ? 'w-full' : 
+                    visibleCards === 2 ? 'w-1/2' : 
+                    'w-1/4'
+                  }`}
+                  style={{ 
+                    minWidth: visibleCards === 1 ? '100%' : 
+                             visibleCards === 2 ? 'calc(50% - 8px)' : 
+                             'calc(25% - 12px)'
+                  }}
                 >
                   {/* Product Image */}
                   <div className="p-3 pt-3">
