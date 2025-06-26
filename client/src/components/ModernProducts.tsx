@@ -61,12 +61,21 @@ export function ModernProducts() {
 
   // Update visible cards on resize
   useEffect(() => {
-    const handleResize = () => setVisibleCards(getVisibleCards());
+    const handleResize = () => {
+      const newVisibleCards = getVisibleCards();
+      setVisibleCards(newVisibleCards);
+      // Reset currentIndex if it's beyond the new max
+      const newMaxIndex = Math.max(0, products.length - newVisibleCards);
+      if (currentIndex > newMaxIndex) {
+        setCurrentIndex(0);
+      }
+    };
+    
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }
-  }, []);
+  }, [currentIndex, products.length]);
 
   const maxIndex = Math.max(0, products.length - visibleCards);
 
@@ -140,7 +149,7 @@ export function ModernProducts() {
               {products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-xl overflow-hidden shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
+                  className="flex-none w-full lg:w-1/4 md:w-1/2 noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm"
                 >
                   {/* Product Image */}
                   <div className="p-3 pt-3">
@@ -152,7 +161,7 @@ export function ModernProducts() {
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-4">
+                  <div className="px-4 pb-4">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       {product.name}
                     </h3>
