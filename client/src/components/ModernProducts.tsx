@@ -64,10 +64,10 @@ export function ModernProducts() {
             display: none;
           }
           
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 769px) {
             .swiper-button-prev-custom,
             .swiper-button-next-custom {
-              display: none;
+              display: flex;
             }
           }
         `}
@@ -102,7 +102,7 @@ export function ModernProducts() {
               0: {
                 slidesPerView: 1,
               },
-              640: {
+              770: {
                 slidesPerView: 2,
               },
               1024: {
