@@ -59,7 +59,6 @@ export function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen hero-bg relative overflow-hidden">
-      <div className="absolute inset-0 noise-grid opacity-100"></div>
       {/* Auto-sliding Background Images with Smooth Transitions */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
