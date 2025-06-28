@@ -26,42 +26,42 @@ export function ModernProducts() {
     {
       name: "Industrial Machinery",
       description: "High-performance manufacturing equipment and industrial machinery for global markets.",
-      image: "/images/industrial-machinery.jpg",
+      image: "/images/products/industrial-machinery.jpg",
       category: "Manufacturing",
       buttonText: "Learn More"
     },
     {
       name: "Consumer Electronics",
       description: "Latest technology products and consumer electronics for international distribution.",
-      image: "/images/consumer-electronics.jpg",
+      image: "/images/products/consumer-electronics.jpg",
       category: "Technology",
       buttonText: "Learn More"
     },
     {
       name: "Agricultural Products",
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
-      image: "/images/agriculture-cattle.jpg",
+      image: "/images/products/agriculture-cattle.jpg",
       category: "Agriculture",
       buttonText: "Learn More"
     },
     {
       name: "Textiles & Fashion",
       description: "Quality textiles and fashion products for international retail and wholesale markets.",
-      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/products/textiles_and_fashion.jpg",
       category: "Fashion",
       buttonText: "Learn More"
     },
     {
       name: "Automotive Components",
       description: "Premium automotive parts and components for international automotive industry.",
-      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/products/automotive.jpg",
       category: "Automotive",
       buttonText: "Learn More"
     },
     {
       name: "Medical Equipment",
       description: "Advanced medical devices and healthcare equipment for global healthcare providers.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "/images/products/medical.jpg",
       category: "Healthcare",
       buttonText: "Learn More"
     }
@@ -70,14 +70,14 @@ export function ModernProducts() {
   // Responsive card counts: show more cards efficiently
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1600) return 6; // ultra-wide - show all cards
-      if (window.innerWidth >= 1300) return 5; // large desktop
-      if (window.innerWidth >= 900) return 4;  // laptop - show 4 cards
-      if (window.innerWidth >= 768) return 3;  // tablet
+      if (window.innerWidth >= 1400) return 5; // large desktop
+      if (window.innerWidth >= 1100) return 4; // desktop 
+      if (window.innerWidth >= 900) return 3;  // laptop
+      if (window.innerWidth >= 768) return 2;  // tablet
       if (window.innerWidth >= 640) return 2;  // small tablet
       return 1; // mobile
     }
-    return 4; // default
+    return 3; // default
   };
 
   const [visibleCards, setVisibleCards] = useState(getVisibleCards());
@@ -116,7 +116,7 @@ export function ModernProducts() {
     const newMaxIndex = Math.max(0, products.length - visibleCards);
     console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
-      const newIndex = currentIndex + 1;
+      const newIndex = Math.min(currentIndex + 1, newMaxIndex);
       console.log('Setting new index:', newIndex);
       setCurrentIndex(newIndex);
     } else {
@@ -269,18 +269,18 @@ export function ModernProducts() {
 
           {/* Scrolling Container */}
           <div 
-            className={`overflow-hidden ${maxIndex > 0 ? 'mx-8 md:mx-12' : 'mx-0'} ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            className={`overflow-hidden ${maxIndex > 0 ? 'mx-8 md:mx-12' : 'mx-0'} ${isDragging ? 'cursor-grabbing' : maxIndex > 0 ? 'cursor-grab' : 'cursor-default'}`}
             ref={containerRef}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseLeave}
+            onTouchStart={maxIndex > 0 ? onTouchStart : undefined}
+            onTouchMove={maxIndex > 0 ? onTouchMove : undefined}
+            onTouchEnd={maxIndex > 0 ? onTouchEnd : undefined}
+            onMouseDown={maxIndex > 0 ? onMouseDown : undefined}
+            onMouseMove={maxIndex > 0 ? onMouseMove : undefined}
+            onMouseUp={maxIndex > 0 ? onMouseUp : undefined}
+            onMouseLeave={maxIndex > 0 ? onMouseLeave : undefined}
           >
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-4"
+              className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{ 
                 transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
                 width: `${(products.length * 100) / visibleCards}%`
@@ -291,9 +291,9 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[350px] flex flex-col mb-2.5"
                   style={{ 
-                    width: `calc(${100 / visibleCards}% - 1rem)`,
+                    width: `calc(${100 / visibleCards}% - 1.5rem)`,
                     flexShrink: 0,
-                    maxWidth: '280px'
+                    maxWidth: '320px'
                   }}
                 >
                   {/* Product Image */}
