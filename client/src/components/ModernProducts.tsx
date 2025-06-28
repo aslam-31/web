@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "wouter";
 import { useLanguage } from "./LanguageProvider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -16,11 +16,11 @@ export function ModernProducts() {
   const [, setLocation] = useLocation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Touch/drag state
   const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState<number | null>(null);
-  const [isNavigating, setIsNavigating] = useState(false);
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
 
   const products: ProductItem[] = [
     {
@@ -67,148 +67,109 @@ export function ModernProducts() {
     }
   ];
 
-  // Responsive card counts: show more cards efficiently
-  const getVisibleCards = () => {
-    if (typeof window !== 'undefined') {
-      const width = window.innerWidth;
-      if (width >= 1600) return 6; // ultra-wide - show all cards
-      if (width >= 1400) return 5; // large desktop
-      if (width >= 1200) return 4; // desktop 
-      if (width >= 900) return 3;  // laptop
-      if (width >= 768) return 2;  // tablet
-      return 1; // mobile
-    }
-    return 4; // default
-  };
+  // Simple responsive breakpoints
+  const getVisibleCards = useCallback(() => {
+    if (typeof window === 'undefined') return 4;
+    const width = window.innerWidth;
+    if (width >= 1600) return 6; // Show all cards on ultra-wide
+    if (width >= 1400) return 5; // Large desktop
+    if (width >= 1200) return 4; // Desktop
+    if (width >= 900) return 3;  // Laptop
+    if (width >= 768) return 2;  // Tablet
+    return 1; // Mobile
+  }, []);
 
-  const [visibleCards, setVisibleCards] = useState(getVisibleCards());
+  const [visibleCards, setVisibleCards] = useState(() => getVisibleCards());
 
-  // Update visible cards on resize and initial load
+  // Handle window resize
   useEffect(() => {
-    let resizeTimeout: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout;
     
     const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
         const newVisibleCards = getVisibleCards();
-        if (newVisibleCards !== visibleCards) {
-          setVisibleCards(newVisibleCards);
-          // Reset currentIndex if it's beyond the new max
+        setVisibleCards(newVisibleCards);
+        // Reset to first position if current position is invalid
+        setCurrentIndex(prev => {
           const newMaxIndex = Math.max(0, products.length - newVisibleCards);
-          if (currentIndex > newMaxIndex) {
-            setCurrentIndex(0);
-          }
-        }
-      }, 100); // Debounce resize events
+          return prev > newMaxIndex ? 0 : prev;
+        });
+      }, 150);
     };
-    
-    // Set initial value on mount
-    const initialCards = getVisibleCards();
-    setVisibleCards(initialCards);
-    
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-        clearTimeout(resizeTimeout);
-      };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, [getVisibleCards, products.length]);
+
+  // Calculate navigation limits
+  const totalSlides = Math.max(0, products.length - visibleCards);
+  const canGoNext = currentIndex < totalSlides;
+  const canGoPrev = currentIndex > 0;
+
+  // Navigation functions
+  const nextSlide = useCallback(() => {
+    if (canGoNext) {
+      setCurrentIndex(prev => prev + 1);
     }
-  }, []); // Remove dependencies to prevent constant re-renders
+  }, [canGoNext]);
 
-  const maxIndex = Math.max(0, products.length - visibleCards);
-
-  const nextSlide = () => {
-    if (isNavigating) return; // Prevent multiple rapid clicks
-    setIsNavigating(true);
-    
-    const newMaxIndex = Math.max(0, products.length - visibleCards);
-    if (currentIndex < newMaxIndex) {
-      const newIndex = Math.min(currentIndex + 1, newMaxIndex);
-      setCurrentIndex(newIndex);
+  const prevSlide = useCallback(() => {
+    if (canGoPrev) {
+      setCurrentIndex(prev => prev - 1);
     }
-    
-    // Reset navigation lock after animation
-    setTimeout(() => setIsNavigating(false), 300);
-  };
+  }, [canGoPrev]);
 
-  const prevSlide = () => {
-    if (isNavigating) return; // Prevent multiple rapid clicks
-    setIsNavigating(true);
-    
-    if (currentIndex > 0) {
-      const newIndex = currentIndex - 1;
-      setCurrentIndex(newIndex);
-    }
-    
-    // Reset navigation lock after animation
-    setTimeout(() => setIsNavigating(false), 300);
-  };
+  // Touch and drag handlers
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  }, []);
 
-  // Touch handlers for mobile swiping
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd || isNavigating) return;
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (touchStart === null) return;
     
+    const touchEnd = e.changedTouches[0].clientX;
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    const currentMaxIndex = Math.max(0, products.length - visibleCards);
-
-    if (isLeftSwipe && currentIndex < currentMaxIndex) {
-      nextSlide();
-    }
-    if (isRightSwipe && currentIndex > 0) {
-      prevSlide();
-    }
-
-    // Reset touch states
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
-
-  // Mouse drag handlers
-  const onMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setDragStart(e.clientX);
-    e.preventDefault();
-  };
-
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || dragStart === null) return;
-    e.preventDefault();
-  };
-
-  const onMouseUp = (e: React.MouseEvent) => {
-    if (!isDragging || dragStart === null || isNavigating) return;
+    const minSwipeDistance = 50;
     
-    const distance = dragStart - e.clientX;
-    const isLeftDrag = distance > 50;
-    const isRightDrag = distance < -50;
-    const currentMaxIndex = Math.max(0, products.length - visibleCards);
-
-    if (isLeftDrag && currentIndex < currentMaxIndex) {
+    if (distance > minSwipeDistance && canGoNext) {
       nextSlide();
-    }
-    if (isRightDrag && currentIndex > 0) {
+    } else if (distance < -minSwipeDistance && canGoPrev) {
       prevSlide();
     }
+    
+    setTouchStart(null);
+  }, [touchStart, canGoNext, canGoPrev, nextSlide, prevSlide]);
 
-    setIsDragging(false);
-    setDragStart(null);
-  };
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStartX(e.clientX);
+    e.preventDefault();
+  }, []);
 
-  const onMouseLeave = () => {
+  const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || dragStartX === null) return;
+    
+    const distance = dragStartX - e.clientX;
+    const minDragDistance = 50;
+    
+    if (distance > minDragDistance && canGoNext) {
+      nextSlide();
+    } else if (distance < -minDragDistance && canGoPrev) {
+      prevSlide();
+    }
+    
     setIsDragging(false);
-    setDragStart(null);
-  };
+    setDragStartX(null);
+  }, [isDragging, dragStartX, canGoNext, canGoPrev, nextSlide, prevSlide]);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsDragging(false);
+    setDragStartX(null);
+  }, []);
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 min-h-[700px] bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-black dark:via-gray-950 dark:to-blue-950 relative overflow-hidden">
@@ -242,13 +203,13 @@ export function ModernProducts() {
 
         {/* Horizontal Scrolling Products */}
         <div className="relative">
-          {/* Navigation Buttons - Only show if there are more cards than can fit */}
-          {maxIndex > 0 && (
+          {/* Navigation Buttons - Only show if navigation is needed */}
+          {totalSlides > 0 && (
             <>
               <button 
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
-                disabled={currentIndex === 0}
+                disabled={!canGoPrev}
               >
                 <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </button>
@@ -256,7 +217,7 @@ export function ModernProducts() {
               <button 
                 onClick={nextSlide}
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-20 noise-grid gradient-border glass bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors duration-200 disabled:opacity-30"
-                disabled={currentIndex >= maxIndex}
+                disabled={!canGoNext}
               >
                 <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </button>
@@ -265,15 +226,13 @@ export function ModernProducts() {
 
           {/* Scrolling Container */}
           <div 
-            className={`overflow-hidden ${maxIndex > 0 ? 'mx-8 md:mx-12' : 'mx-0'} ${isDragging ? 'cursor-grabbing' : maxIndex > 0 ? 'cursor-grab' : 'cursor-default'}`}
+            className={`overflow-hidden ${totalSlides > 0 ? 'mx-8 md:mx-12' : 'mx-0'} ${isDragging ? 'cursor-grabbing' : totalSlides > 0 ? 'cursor-grab' : 'cursor-default'}`}
             ref={containerRef}
-            onTouchStart={maxIndex > 0 ? onTouchStart : undefined}
-            onTouchMove={maxIndex > 0 ? onTouchMove : undefined}
-            onTouchEnd={maxIndex > 0 ? onTouchEnd : undefined}
-            onMouseDown={maxIndex > 0 ? onMouseDown : undefined}
-            onMouseMove={maxIndex > 0 ? onMouseMove : undefined}
-            onMouseUp={maxIndex > 0 ? onMouseUp : undefined}
-            onMouseLeave={maxIndex > 0 ? onMouseLeave : undefined}
+            onTouchStart={totalSlides > 0 ? handleTouchStart : undefined}
+            onTouchEnd={totalSlides > 0 ? handleTouchEnd : undefined}
+            onMouseDown={totalSlides > 0 ? handleMouseDown : undefined}
+            onMouseUp={totalSlides > 0 ? handleMouseUp : undefined}
+            onMouseLeave={totalSlides > 0 ? handleMouseLeave : undefined}
           >
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-6"
