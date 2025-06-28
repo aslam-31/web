@@ -152,11 +152,22 @@ export function ModernProducts() {
                     </p>
                     
                     {/* Bottom Section */}
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-between">
                       {/* Category Badge */}
                       <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100/70 dark:bg-gray-700/70 px-2 sm:px-3 py-1 rounded-full backdrop-blur-sm">
                         {product.category}
                       </span>
+                      
+                      {/* Action Button */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleProductClick(product.slug);
+                        }}
+                        className="bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      >
+                        {product.buttonText}
+                      </button>
                     </div>
                   </div>
                 </div>
