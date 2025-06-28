@@ -192,7 +192,14 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
   const currentCategory = categoryConfig[category as keyof typeof categoryConfig];
   
   // Show "Will be updated soon" for all categories except agriculture_product
-  if (!currentCategory || category !== 'agriculture_product') {
+  if (category !== 'agriculture_product') {
+    const categoryTitles = {
+      consumer_electronics: 'Consumer Electronics',
+      textiles_fashion: 'Textiles & Fashion', 
+      automotive_components: 'Automotive Components'
+    };
+    
+    const pageTitle = categoryTitles[category as keyof typeof categoryTitles] || 'Product Category';
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
         <ThreeBackground />
@@ -202,7 +209,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
         <section className="relative pt-32 pb-20 px-5 sm:px-8 lg:px-10 min-h-[60vh] flex items-center">
           <div className="max-w-7xl mx-auto text-center w-full">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
-              Product Category
+              {pageTitle}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Coming Soon
@@ -242,6 +249,22 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
           </div>
         </section>
 
+        <Footer />
+      </div>
+    );
+  }
+
+  // Only agriculture_product will reach this point and show full content
+  if (!currentCategory) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
+        <ThreeBackground />
+        <Navigation />
+        <div className="pt-32 text-center">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Product category not found
+          </h1>
+        </div>
         <Footer />
       </div>
     );
