@@ -191,19 +191,57 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
 
   const currentCategory = categoryConfig[category as keyof typeof categoryConfig];
   
-  if (!currentCategory) {
+  // Show "Will be updated soon" for all categories except agriculture_product
+  if (!currentCategory || category !== 'agriculture_product') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
         <ThreeBackground />
         <Navigation />
-        <div className="pt-32 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Product category will be updated soon
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400">
-            We're working on bringing you detailed information about this product category.
-          </p>
-        </div>
+        
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 px-5 sm:px-8 lg:px-10 min-h-[60vh] flex items-center">
+          <div className="max-w-7xl mx-auto text-center w-full">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
+              Product Category
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Coming Soon
+            </p>
+          </div>
+        </section>
+
+        {/* Update Soon Message Box */}
+        <section className="relative py-20 px-5 sm:px-8 lg:px-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="noise-grid gradient-border glass rounded-3xl p-12 text-center bg-white/10 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20">
+              <div className="mb-8">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                  Will Be Updated Soon
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                  We're working hard to bring you detailed information about this product category. 
+                  Our team is preparing comprehensive content including product specifications, 
+                  pricing information, and trade volumes.
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105">
+                  Notify Me When Available
+                </button>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Get notified when this product category becomes available
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </div>
     );
