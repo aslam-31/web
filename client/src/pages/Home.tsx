@@ -14,71 +14,42 @@ import { OurClients } from "@/components/OurClients";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
-import { useLoading } from "@/components/LoadingProvider";
 
 export default function Home() {
-  const { isLoading, startLoading, stopLoading } = useLoading();
-  const [showContent, setShowContent] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Start loading when component mounts
-    startLoading();
-    
-    // Check if all images are loaded
-    const checkImagesLoaded = () => {
-      const images = document.querySelectorAll('img');
-      let loadedCount = 0;
+    // Wait for all images to load
+    const loadImages = async () => {
+      // Wait a bit for images to start loading
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      if (images.length === 0) {
-        setTimeout(() => {
-          stopLoading();
-          setShowContent(true);
-        }, 1000);
-        return;
-      }
-
-      const handleImageLoad = () => {
-        loadedCount++;
-        if (loadedCount >= images.length) {
-          setTimeout(() => {
-            stopLoading();
-            setShowContent(true);
-          }, 1000);
-        }
-      };
-
-      images.forEach((img) => {
-        if (img.complete && img.naturalHeight !== 0) {
-          loadedCount++;
-        } else {
-          img.onload = handleImageLoad;
-          img.onerror = handleImageLoad;
-        }
+      const images = document.querySelectorAll('img');
+      const imagePromises = Array.from(images).map(img => {
+        return new Promise((resolve) => {
+          if (img.complete) {
+            resolve(img);
+          } else {
+            img.addEventListener('load', () => resolve(img));
+            img.addEventListener('error', () => resolve(img));
+          }
+        });
       });
 
-      if (loadedCount >= images.length) {
-        setTimeout(() => {
-          stopLoading();
-          setShowContent(true);
-        }, 1000);
-      }
+      // Wait for all images to load (or error)
+      await Promise.all(imagePromises);
+      
+      // Keep loading screen for minimum time
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setIsLoading(false);
     };
 
-    // Check images after a short delay to let them start loading
-    const timer = setTimeout(checkImagesLoaded, 1500);
-
-    return () => clearTimeout(timer);
-  }, [startLoading, stopLoading]);
+    loadImages();
+  }, []);
 
   if (isLoading) {
-    return (
-      <LoadingScreen 
-        onComplete={() => {
-          stopLoading();
-          setShowContent(true);
-        }} 
-      />
-    );
+    return <LoadingScreen onComplete={() => setIsLoading(false)} />;
   }
 
   return (
