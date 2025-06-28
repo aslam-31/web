@@ -137,11 +137,11 @@ export function Products() {
         </div>
 
         {/* Desktop and Tablet Grid Layout */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
           {products?.slice(0, 3).map((product, index) => (
             <div
               key={product.id}
-              className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
+              className="noise-grid gradient-border glass rounded-2xl p-4 sm:p-6 lg:p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Moving Vector Elements */}
@@ -172,11 +172,11 @@ export function Products() {
 
         {/* Additional Services for Larger Screens */}
         {products && products.length > 3 && (
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
             {products.slice(3).map((product, index) => (
               <div
                 key={product.id}
-                className="noise-grid gradient-border glass rounded-2xl p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
+                className="noise-grid gradient-border glass rounded-2xl p-4 sm:p-6 lg:p-8 hover-scale transition-all duration-500 group relative overflow-hidden"
                 style={{ animationDelay: `${(index + 3) * 0.1}s` }}
               >
                 {/* Moving Vector Elements */}

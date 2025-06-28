@@ -170,7 +170,7 @@ const Products = () => {
       {/* Products Grid */}
       <section className="relative py-20 px-5 sm:px-8 lg:px-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {products.map((product, index) => (
               <div
                 key={product.name}
@@ -241,11 +241,11 @@ const Products = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="group noise-grid gradient-border glass rounded-2xl p-8 hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                className="group noise-grid gradient-border glass rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="text-center">

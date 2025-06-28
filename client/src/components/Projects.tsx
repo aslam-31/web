@@ -88,7 +88,7 @@ export function Projects() {
         </div>
 
         {/* Benefits Grid - Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.key}
@@ -96,7 +96,7 @@ export function Projects() {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Card Container */}
-              <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-2 overflow-hidden">
+              <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-2 overflow-hidden">
                 
                 {/* Side Edge Glows */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-center rounded-l-3xl"></div>

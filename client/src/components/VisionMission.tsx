@@ -21,8 +21,8 @@ export function VisionMission() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-12">
+          <div className="noise-grid gradient-border glass rounded-2xl p-4 sm:p-6 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
             <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
               <svg viewBox="0 0 24 24" className="w-full h-full text-current">
@@ -40,7 +40,7 @@ export function VisionMission() {
             </p>
           </div>
 
-          <div className="noise-grid gradient-border glass rounded-2xl p-6 sm:p-8 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
+          <div className="noise-grid gradient-border glass rounded-2xl p-4 sm:p-6 lg:p-12 hover-scale transition-transform duration-300 relative overflow-hidden">
             {/* Moving Vector Elements */}
             <div className="absolute top-6 right-6 w-6 h-6 opacity-20">
               <svg viewBox="0 0 24 24" className="w-full h-full text-current">
