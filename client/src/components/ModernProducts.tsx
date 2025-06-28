@@ -110,7 +110,7 @@ export function ModernProducts() {
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>
-                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-300/40 dark:border-gray-600/40 hover:shadow-xl transition-all duration-300 hover:bg-white/95 dark:hover:bg-gray-800/95">
+                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20 dark:border-gray-600/20 hover:shadow-xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-gray-800/40">
                   {/* Product Image */}
                   <div className="relative h-48 overflow-hidden rounded-lg m-3 mb-0">
                     <img
@@ -139,7 +139,7 @@ export function ModernProducts() {
                       {/* Action Button */}
                       <button
                         onClick={handleProductClick}
-                        className="bg-white/20 hover:bg-white/30 dark:bg-gray-700/30 dark:hover:bg-gray-600/40 backdrop-blur-md border border-white/30 dark:border-gray-600/30 text-gray-900 dark:text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        className="bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       >
                         {product.buttonText}
                       </button>
@@ -151,10 +151,10 @@ export function ModernProducts() {
           </Swiper>
           
           {/* Custom Navigation Buttons */}
-          <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-600/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/40 dark:hover:bg-gray-700/40 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
+          <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 dark:bg-gray-800/10 backdrop-blur-md border border-white/20 dark:border-gray-600/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/30 dark:hover:bg-gray-700/30 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
             <ChevronLeft className="w-6 h-6 text-gray-800 dark:text-gray-200" />
           </div>
-          <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-600/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/40 dark:hover:bg-gray-700/40 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
+          <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 dark:bg-gray-800/10 backdrop-blur-md border border-white/20 dark:border-gray-600/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/30 dark:hover:bg-gray-700/30 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
             <ChevronRight className="w-6 h-6 text-gray-800 dark:text-gray-200" />
           </div>
         </div>
