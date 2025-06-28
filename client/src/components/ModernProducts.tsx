@@ -109,13 +109,24 @@ export function ModernProducts() {
   const totalSlides = Math.max(0, products.length - visibleCards);
   const canGoNext = currentIndex < totalSlides;
   const canGoPrev = currentIndex > 0;
+  
+  // Calculate the exact translation percentage
+  const getTranslateX = () => {
+    // Standard calculation that works for all screen sizes
+    return currentIndex * (100 / visibleCards);
+  };
 
   // Navigation functions
   const nextSlide = useCallback(() => {
     if (canGoNext) {
-      setCurrentIndex(prev => prev + 1);
+      console.log('Navigation - Current:', currentIndex, 'Visible:', visibleCards, 'Total slides:', totalSlides, 'Moving to:', currentIndex + 1);
+      setCurrentIndex(prev => {
+        const newIndex = prev + 1;
+        console.log('Transform will be:', -(newIndex * (100/visibleCards)) + '%');
+        return newIndex;
+      });
     }
-  }, [canGoNext]);
+  }, [canGoNext, currentIndex, visibleCards, totalSlides]);
 
   const prevSlide = useCallback(() => {
     if (canGoPrev) {
@@ -237,7 +248,7 @@ export function ModernProducts() {
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{ 
-                transform: `translateX(-${currentIndex * (100/visibleCards)}%)`,
+                transform: `translateX(-${getTranslateX()}%)`,
                 width: `${(products.length * 100) / visibleCards}%`
               }}
             >
