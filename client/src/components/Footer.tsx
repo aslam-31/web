@@ -18,7 +18,7 @@ export function Footer() {
             <div className="flex items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src="/images/CLIFTON-BLACK.png" 
+                  src="/images/logo/CLIFTON-BLACK.png" 
                   alt="CLIFTON Logo" 
                   className="w-full h-full object-contain filter invert dark:invert-0"
                 />

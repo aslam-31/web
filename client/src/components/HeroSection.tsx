@@ -2,11 +2,21 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Cargo ship at port
-  "images/1.webp", // Airplane in flight
-  "https://images.unsplash.com/photo-1617952739760-1dcae19a1d93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Container port aerial view
-  "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Cargo plane loading
+  "images/hero_bg/2.jpg", // Cargo ship at port
+
+  
+  "images/hero_bg/4.jpg",// Airplane in flight
+
+  
+  "images/hero_bg/5.jpg", // Container port aerial view
+
+  
+  "", // Cargo plane loading
+
+  
   "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Large cargo ship
+
+  
   "images/2.png"  // Airport cargo terminal
 ];
 
@@ -49,7 +59,7 @@ export function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen hero-bg relative overflow-hidden">
-      <div className="absolute inset-0 noise-grid opacity-20"></div>
+      <div className="absolute inset-0 noise-grid opacity-100"></div>
       {/* Auto-sliding Background Images with Smooth Transitions */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
@@ -72,8 +82,8 @@ export function HeroSection() {
       </div>
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        {/* White background overlay with 0.3 opacity */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}></div>
+        {/* White background overlay with 0.5 opacity */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/20 to-white/50 dark:from-black/50 dark:via-black/20 dark:to-black/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
@@ -166,13 +176,13 @@ export function HeroSection() {
               <div className="flex justify-center items-center mb-4">
                 {/* Logo for light mode */}
                 <img 
-                  src="/images/CLIFTON-CUT-BLACK.png" 
+                  src="/images/logo/CLIFTON-CUT-BLACK.png" 
                   alt="CLIFTON Logo" 
                   className="h-16 sm:h-24 md:h-28 lg:h-32 xl:h-36 2xl:h-40 w-auto animate-slide-right dark:hidden"
                 />
                 {/* Logo for dark mode */}
                 <img 
-                  src="/images/CLIFTON-CUT-WHITE.png" 
+                  src="/images/logo/CLIFTON-CUT-WHITE.png" 
                   alt="CLIFTON Logo" 
                   className="h-16 sm:h-24 md:h-28 lg:h-32 xl:h-36 2xl:h-40 w-auto animate-slide-right hidden dark:block"
                 />

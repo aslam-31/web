@@ -47,7 +47,7 @@ export function Navigation() {
             <div className="flex items-center">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src={theme === 'light' ? "/images/CLIFTON-BLACK.png" : "/images/CLIFTON-WHITE.png"}
+                  src={theme === 'light' ? "/images/logo/CLIFTON-BLACK.png" : "/images/logo/CLIFTON-WHITE.png"}
                   alt="CLIFTON Logo" 
                   className="w-full h-full object-contain"
                 />
