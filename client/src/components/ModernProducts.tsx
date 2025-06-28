@@ -21,6 +21,7 @@ export function ModernProducts() {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState<number | null>(null);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const products: ProductItem[] = [
     {
@@ -110,29 +111,43 @@ export function ModernProducts() {
   const canGoNext = currentIndex < totalSlides;
   const canGoPrev = currentIndex > 0;
   
-  // Calculate the exact translation percentage
+  // Calculate precise translation for each device type
   const getTranslateX = () => {
-    // Standard calculation that works for all screen sizes
-    return currentIndex * (100 / visibleCards);
+    // Each slide moves by exactly one card width percentage
+    const slidePercentage = 100 / visibleCards;
+    return currentIndex * slidePercentage;
   };
 
-  // Navigation functions
+  // Navigation functions - rebuilt for all devices with throttling
   const nextSlide = useCallback(() => {
-    if (canGoNext) {
-      console.log('Navigation - Current:', currentIndex, 'Visible:', visibleCards, 'Total slides:', totalSlides, 'Moving to:', currentIndex + 1);
-      setCurrentIndex(prev => {
-        const newIndex = prev + 1;
-        console.log('Transform will be:', -(newIndex * (100/visibleCards)) + '%');
-        return newIndex;
-      });
+    if (!canGoNext || isNavigating) return;
+    
+    setIsNavigating(true);
+    const newIndex = currentIndex + 1;
+    
+    if (newIndex <= totalSlides) {
+      setCurrentIndex(newIndex);
+
     }
-  }, [canGoNext, currentIndex, visibleCards, totalSlides]);
+    
+    // Release navigation lock after animation
+    setTimeout(() => setIsNavigating(false), 300);
+  }, [canGoNext, isNavigating, currentIndex, totalSlides, visibleCards]);
 
   const prevSlide = useCallback(() => {
-    if (canGoPrev) {
-      setCurrentIndex(prev => prev - 1);
+    if (!canGoPrev || isNavigating) return;
+    
+    setIsNavigating(true);
+    const newIndex = currentIndex - 1;
+    
+    if (newIndex >= 0) {
+      setCurrentIndex(newIndex);
+
     }
-  }, [canGoPrev]);
+    
+    // Release navigation lock after animation
+    setTimeout(() => setIsNavigating(false), 300);
+  }, [canGoPrev, isNavigating, currentIndex, visibleCards]);
 
   // Touch and drag handlers
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
@@ -259,7 +274,8 @@ export function ModernProducts() {
                   style={{ 
                     width: `calc(${100 / visibleCards}% - 1.5rem)`,
                     flexShrink: 0,
-                    maxWidth: '320px'
+                    minWidth: visibleCards === 1 ? '280px' : 'auto',
+                    maxWidth: visibleCards === 1 ? 'none' : '320px'
                   }}
                 >
                   {/* Product Image */}
