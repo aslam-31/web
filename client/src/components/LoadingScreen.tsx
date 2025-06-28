@@ -9,23 +9,67 @@ interface LoadingScreenProps {
 export function LoadingScreen({ onComplete, duration = 2000 }: LoadingScreenProps) {
   const { theme } = useTheme();
   const [isZooming, setIsZooming] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    // Start zoom animation before completing
-    const zoomTimer = setTimeout(() => {
-      setIsZooming(true);
-    }, duration - 500);
+    // Function to check if all images are loaded
+    const checkImagesLoaded = () => {
+      const images = document.querySelectorAll('img');
+      let loadedCount = 0;
+      
+      if (images.length === 0) {
+        setImagesLoaded(true);
+        return;
+      }
 
-    // Complete loading
-    const completeTimer = setTimeout(() => {
-      onComplete();
-    }, duration);
+      images.forEach((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          loadedCount++;
+        } else {
+          img.onload = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              setImagesLoaded(true);
+            }
+          };
+          img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              setImagesLoaded(true);
+            }
+          };
+        }
+      });
 
-    return () => {
-      clearTimeout(zoomTimer);
-      clearTimeout(completeTimer);
+      if (loadedCount === images.length) {
+        setImagesLoaded(true);
+      }
     };
-  }, [onComplete, duration]);
+
+    // Check images initially
+    const initialTimer = setTimeout(checkImagesLoaded, 100);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
+
+  useEffect(() => {
+    if (imagesLoaded) {
+      // Start zoom animation before completing
+      const zoomTimer = setTimeout(() => {
+        setIsZooming(true);
+      }, 500);
+
+      // Complete loading
+      const completeTimer = setTimeout(() => {
+        onComplete();
+      }, 1000);
+
+      return () => {
+        clearTimeout(zoomTimer);
+        clearTimeout(completeTimer);
+      };
+    }
+  }, [imagesLoaded, onComplete]);
 
   const logoSrc = theme === 'dark' 
     ? '/images/logo/CLIFTON-CUT-WHITE.png'

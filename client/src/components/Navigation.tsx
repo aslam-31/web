@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { useTheme } from "./ThemeProvider";
 import { useLanguage } from "./LanguageProvider";
+import { useLoading } from "./LoadingProvider";
 
 import WhatsApp_Image_2025_06_23_at_15_47_14_b699984d_removebg_preview from "@assets/WhatsApp_Image_2025-06-23_at_15.47.14_b699984d-removebg-preview.png";
 
@@ -10,6 +11,12 @@ export function Navigation() {
   const [location, setLocation] = useLocation();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const { isLoading } = useLoading();
+
+  // Hide navigation during loading
+  if (isLoading) {
+    return null;
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

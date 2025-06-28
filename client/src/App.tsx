@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { LoadingProvider } from "@/components/LoadingProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
@@ -32,10 +33,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
+          <LoadingProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+            </TooltipProvider>
+          </LoadingProvider>
         </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>

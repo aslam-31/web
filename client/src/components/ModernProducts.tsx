@@ -23,14 +23,6 @@ export function ModernProducts() {
 
   const products: ProductItem[] = [
     {
-      name: "Consumer Electronics",
-      description: "Latest technology products and consumer electronics for international distribution.",
-      image: "/images/products/consumer-electronics.jpg",
-      category: "Technology",
-      buttonText: "Learn More",
-      slug: "consumer_electronics"
-    },
-    {
       name: "Agricultural Products", 
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
       image: "/images/products/agriculture-cattle.jpg", 
@@ -38,6 +30,15 @@ export function ModernProducts() {
       buttonText: "Learn More",
       slug: "agriculture_product"
     },
+    {
+      name: "Consumer Electronics",
+      description: "Latest technology products and consumer electronics for international distribution.",
+      image: "/images/products/consumer-electronics.jpg",
+      category: "Technology",
+      buttonText: "Learn More",
+      slug: "consumer_electronics"
+    },
+   
     {
       name: "Textiles & Fashion",
       description: "Quality textiles and fashion products for international retail and wholesale markets.",
