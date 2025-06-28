@@ -155,14 +155,14 @@ export function Products() {
               
               {getServiceIcon(product.name)}
               
-              <div className="space-y-6">
-                <span className="inline-block px-4 py-2 text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
                   {product.category}
                 </span>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                   {product.description}
                 </p>
               </div>
@@ -193,14 +193,14 @@ export function Products() {
                 
                 {getServiceIcon(product.name)}
                 
-                <div className="space-y-6">
-                  <span className="inline-block px-4 py-2 text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
+                <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+                  <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
                     {product.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                     {product.description}
                   </p>
                 </div>
