@@ -44,8 +44,8 @@ export function Founders() {
     <section className="py-20 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">{t("founders.title")}</h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
+          <h2 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-6 px-4">{t("founders.title")}</h2>
+          <p className="text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
             {t("founders.subtitle")}
           </p>
         </div>
@@ -65,9 +65,9 @@ export function Founders() {
                   </div>
                 </div>
                 <div className="transform-gpu transition-all duration-300 hover:translate-z-4">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{founder.name}</h3>
-                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 font-medium">{founder.position}</p>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6">
+                  <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{founder.name}</h3>
+                  <p className="text-xs sm:text-base text-gray-700 dark:text-gray-300 mb-2 sm:mb-4 font-medium">{founder.position}</p>
+                  <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-3 sm:mb-6">
                     {founder.bio}
                   </p>
                 </div>

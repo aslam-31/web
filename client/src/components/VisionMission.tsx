@@ -15,8 +15,8 @@ export function VisionMission() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">{t("vision.title")}</h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
+          <h2 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-6 px-4">{t("vision.title")}</h2>
+          <p className="text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
             {t("vision.subtitle")}
           </p>
         </div>
@@ -34,8 +34,8 @@ export function VisionMission() {
             <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-300 rounded-xl flex items-center justify-center mb-6">
               <i className="fas fa-eye text-2xl text-white dark:text-black"></i>
             </div>
-            <h3 className="text-2xl font-bold mb-4">{t("vision.vision.title")}</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4">{t("vision.vision.title")}</h3>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t("vision.vision.description")}
             </p>
           </div>
@@ -55,8 +55,8 @@ export function VisionMission() {
             <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-300 rounded-xl flex items-center justify-center mb-6">
               <i className="fas fa-bullseye text-2xl text-white dark:text-black"></i>
             </div>
-            <h3 className="text-2xl font-bold mb-4">{t("vision.mission.title")}</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4">{t("vision.mission.title")}</h3>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t("vision.mission.description")}
             </p>
           </div>

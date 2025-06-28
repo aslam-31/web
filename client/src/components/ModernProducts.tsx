@@ -83,11 +83,11 @@ export function ModernProducts() {
           <div className="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-6 py-2 rounded-full font-medium mb-6 backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 text-[18px]">
             Our Products
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-lg sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-gray-900 dark:text-white">Premium </span>
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Commodities</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Sourcing and delivering the finest agricultural products to markets worldwide with uncompromising quality standards
           </p>
         </div>
