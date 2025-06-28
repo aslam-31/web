@@ -154,6 +154,7 @@ Changelog:
 - January 24, 2025. Fixed carousel navigation buttons functionality and added glass card styling with noise-grid, gradient-border, and backdrop-blur effects to match founders section
 - January 24, 2025. Made products carousel fully responsive: 4 cards on desktop, 2 on tablets, 1 on mobile with proper navigation and improved card content spacing
 - January 24, 2025. Applied glass effect styling to product cards with noise-grid, gradient-border, and backdrop-blur while maintaining padded rounded images
+- June 28, 2025. Updated product cards to match glassmorphism design with clean layout, category badges, and "Saiba Mais" buttons positioned at bottom
 ```
 
 ## User Preferences
