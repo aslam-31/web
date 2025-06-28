@@ -11,10 +11,10 @@ const Products = () => {
   
   // Background images for sliding effect
   const backgroundImages = [
-    '/images/products/coffee.jpg',
-    '/images/products/salt.jpeg',
-    '/images/products/sugar.jpg',
-    '/images/products/soye.jpg'
+    '/images/products/agriculture-cattle.jpg',
+    '/images/products/consumer-electronics.jpg',
+    '/images/products/textiles_and_fashion.jpg',
+    '/images/products/automotive.jpg'
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -47,30 +47,31 @@ const Products = () => {
 
   const products = [
     {
-      name: 'Consumer Electronics',
-      slug: 'consumer_electronics',
-      image: '/images/products/coffee.jpg',
-      gradient: 'from-blue-600 to-blue-800',
-      description: 'High-quality electronic devices and components for global markets'
-    },
-    {
       name: 'Agricultural Products',
       slug: 'agriculture_product',
-      image: '/images/products/salt.jpeg',
+      image: '/images/products/agriculture-cattle.jpg',
       gradient: 'from-green-600 to-green-800',
       description: 'Premium agricultural commodities including coffee, salt, sugar, and soybeans'
     },
     {
+      name: 'Consumer Electronics',
+      slug: 'consumer_electronics',
+      image: '/images/products/consumer-electronics.jpg',
+      gradient: 'from-blue-600 to-blue-800',
+      description: 'High-quality electronic devices and components for global markets'
+    },
+    
+    {
       name: 'Textiles & Fashion',
       slug: 'textiles_fashion',
-      image: '/images/products/sugar.jpg',
+      image: '/images/products/textiles_and_fashion.jpg',
       gradient: 'from-purple-600 to-purple-800',
       description: 'Quality fabrics, garments, and fashion accessories for international trade'
     },
     {
       name: 'Automotive Components',
       slug: 'automotive_components',
-      image: '/images/products/soye.jpg',
+      image: '/images/products/automotive.jpg',
       gradient: 'from-red-600 to-red-800',
       description: 'Reliable automotive parts and components for the global automotive industry'
     }
@@ -173,24 +174,31 @@ const Products = () => {
             {products.map((product, index) => (
               <div
                 key={product.name}
-                className="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-700 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-4 hover:scale-105"
+                className="group relative noise-grid gradient-border glass rounded-3xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-4 hover:scale-105 bg-white/10 dark:bg-gray-900/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700 rounded-3xl`}></div>
                 
-                {/* Product Image */}
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                {/* Product Image with rounded corners */}
+                <div className="p-6 pb-0">
+                  <div className="aspect-square overflow-hidden rounded-2xl">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
                 </div>
                 
                 {/* Product Info */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
+                <div className="p-6 pt-4">
+                  {/* Category Badge */}
+                  <span className="inline-block text-xs text-gray-500 dark:text-gray-400 bg-gray-100/70 dark:bg-gray-700/70 px-3 py-1 rounded-full backdrop-blur-sm mb-3">
+                    {product.name.split(' ')[0]}
+                  </span>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
                     {product.name}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
@@ -198,7 +206,7 @@ const Products = () => {
                   </p>
                   <button 
                     onClick={() => window.location.href = `/products/${product.slug}`}
-                    className="noise-grid gradient-border glass px-4 py-2 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:scale-105 transition-all duration-300 bg-white/10 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20"
+                    className="w-full bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-3 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     Learn More
                   </button>
