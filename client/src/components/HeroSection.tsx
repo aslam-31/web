@@ -82,8 +82,8 @@ export function HeroSection() {
       </div>
       {/* Enhanced Background Overlay */}
       <div className="absolute inset-0 z-1">
-        {/* White background overlay with 0.5 opacity */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}></div>
+        {/* White background overlay with 0.3 opacity */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/20 to-white/50 dark:from-black/50 dark:via-black/20 dark:to-black/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent dark:from-black/40 dark:via-transparent dark:to-black/40"></div>
         
