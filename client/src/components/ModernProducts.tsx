@@ -139,7 +139,7 @@ export function ModernProducts() {
                       {/* Action Button */}
                       <button
                         onClick={handleProductClick}
-                        className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
+                        className="bg-white/20 hover:bg-white/30 dark:bg-gray-700/30 dark:hover:bg-gray-600/40 backdrop-blur-md border border-white/30 dark:border-gray-600/30 text-gray-900 dark:text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       >
                         {product.buttonText}
                       </button>
