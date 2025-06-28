@@ -3,7 +3,7 @@ import { useLanguage } from '../components/LanguageProvider';
 import { useTheme } from '../components/ThemeProvider';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { ThreeBackground } from '../components/ThreeBackground';
+import { ProductsThreeBackground } from '../components/ProductsThreeBackground';
 
 const Products = () => {
   const { t } = useLanguage();
@@ -109,7 +109,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
-      <ThreeBackground />
+      <ProductsThreeBackground />
       <Navigation />
       
       {/* Hero Section with Sliding Background */}
