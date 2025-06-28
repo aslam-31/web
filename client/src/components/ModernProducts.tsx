@@ -70,31 +70,36 @@ export function ModernProducts() {
   // Responsive card counts: show more cards efficiently
   const getVisibleCards = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1400) return 5; // large desktop
-      if (window.innerWidth >= 1100) return 4; // desktop 
-      if (window.innerWidth >= 900) return 3;  // laptop
-      if (window.innerWidth >= 768) return 2;  // tablet
-      if (window.innerWidth >= 640) return 2;  // small tablet
+      const width = window.innerWidth;
+      if (width >= 1600) return 6; // ultra-wide - show all cards
+      if (width >= 1400) return 5; // large desktop
+      if (width >= 1200) return 4; // desktop 
+      if (width >= 900) return 3;  // laptop
+      if (width >= 768) return 2;  // tablet
       return 1; // mobile
     }
-    return 3; // default
+    return 4; // default
   };
 
   const [visibleCards, setVisibleCards] = useState(getVisibleCards());
 
   // Update visible cards on resize and initial load
   useEffect(() => {
+    let resizeTimeout: NodeJS.Timeout;
+    
     const handleResize = () => {
-      const newVisibleCards = getVisibleCards();
-      if (newVisibleCards !== visibleCards) {
-        console.log('Resize detected, new visible cards:', newVisibleCards, 'Total products:', products.length);
-        setVisibleCards(newVisibleCards);
-        // Reset currentIndex if it's beyond the new max
-        const newMaxIndex = Math.max(0, products.length - newVisibleCards);
-        if (currentIndex > newMaxIndex) {
-          setCurrentIndex(0);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const newVisibleCards = getVisibleCards();
+        if (newVisibleCards !== visibleCards) {
+          setVisibleCards(newVisibleCards);
+          // Reset currentIndex if it's beyond the new max
+          const newMaxIndex = Math.max(0, products.length - newVisibleCards);
+          if (currentIndex > newMaxIndex) {
+            setCurrentIndex(0);
+          }
         }
-      }
+      }, 100); // Debounce resize events
     };
     
     // Set initial value on mount
@@ -103,7 +108,10 @@ export function ModernProducts() {
     
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+        clearTimeout(resizeTimeout);
+      };
     }
   }, []); // Remove dependencies to prevent constant re-renders
 
@@ -114,13 +122,9 @@ export function ModernProducts() {
     setIsNavigating(true);
     
     const newMaxIndex = Math.max(0, products.length - visibleCards);
-    console.log('Next slide - Current:', currentIndex, 'Max:', newMaxIndex, 'Visible cards:', visibleCards, 'Total products:', products.length);
     if (currentIndex < newMaxIndex) {
       const newIndex = Math.min(currentIndex + 1, newMaxIndex);
-      console.log('Setting new index:', newIndex);
       setCurrentIndex(newIndex);
-    } else {
-      console.log('Already at max index, cannot go further');
     }
     
     // Reset navigation lock after animation
@@ -131,13 +135,9 @@ export function ModernProducts() {
     if (isNavigating) return; // Prevent multiple rapid clicks
     setIsNavigating(true);
     
-    console.log('Prev slide - Current:', currentIndex, 'Visible cards:', visibleCards);
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
-      console.log('Setting new prev index:', newIndex);
       setCurrentIndex(newIndex);
-    } else {
-      console.log('Already at start, cannot go back');
     }
     
     // Reset navigation lock after animation
@@ -161,8 +161,6 @@ export function ModernProducts() {
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
     const currentMaxIndex = Math.max(0, products.length - visibleCards);
-
-    console.log('Touch end - Distance:', distance, 'Current:', currentIndex, 'Max:', currentMaxIndex);
 
     if (isLeftSwipe && currentIndex < currentMaxIndex) {
       nextSlide();
@@ -195,8 +193,6 @@ export function ModernProducts() {
     const isLeftDrag = distance > 50;
     const isRightDrag = distance < -50;
     const currentMaxIndex = Math.max(0, products.length - visibleCards);
-
-    console.log('Mouse up - Distance:', distance, 'Current:', currentIndex, 'Max:', currentMaxIndex);
 
     if (isLeftDrag && currentIndex < currentMaxIndex) {
       nextSlide();
