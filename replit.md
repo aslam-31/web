@@ -165,6 +165,7 @@ Changelog:
 - June 28, 2025. Updated section header to "Premium Commodities" with gradient text, blue pill badge, and agricultural products description
 - June 28, 2025. Changed button text from "Saiba Mais" to "Learn More" in English across all product cards
 - June 28, 2025. Updated Client Testimonials for mobile devices below 800px: previous/next testimonials at 50% opacity, main testimonial at 100% opacity with horizontal layout
+- June 28, 2025. Fixed desktop testimonials centering with improved flex container, increased height to 500px, and larger circle radius for proper circular layout
 ```
 
 ## User Preferences

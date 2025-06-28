@@ -71,12 +71,12 @@ export function Testimonials() {
         {/* Testimonials Container */}
         <div className="relative">
           {/* Desktop: Circular Animation Container */}
-          <div className="relative w-full max-w-4xl mx-auto h-72 sm:h-80 md:h-96 flex items-center justify-center hidden min-[800px]:block">
+          <div className="relative w-full max-w-6xl mx-auto h-[500px] hidden min-[800px]:flex min-[800px]:items-center min-[800px]:justify-center">
             {testimonials.map((testimonial, index) => {
               // Calculate position on circle
               const angle = (index * 360) / testimonials.length - (currentIndex * 360) / testimonials.length;
               const radian = (angle * Math.PI) / 180;
-              const radius = 180; // Distance from center
+              const radius = 200; // Distance from center
               const x = Math.cos(radian) * radius;
               const y = Math.sin(radian) * radius;
               
