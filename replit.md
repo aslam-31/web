@@ -168,6 +168,7 @@ Changelog:
 - June 28, 2025. Fixed desktop testimonials centering with improved flex container, increased height to 500px, and larger circle radius for proper circular layout
 - June 28, 2025. Reduced inner padding for client logos from p-8/p-10/p-12 to p-4/p-5/p-6 for better logo visibility and reduced white space
 - June 28, 2025. Updated products carousel responsive design: 1 card visible below 770px with navigation buttons, 2 cards from 770px+
+- June 28, 2025. Inverted footer colors: black background in light mode, white background in dark mode
 ```
 
 ## User Preferences
