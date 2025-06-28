@@ -131,18 +131,18 @@ export function ModernProducts() {
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>
-                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200/30 dark:border-gray-700/30 overflow-hidden hover:shadow-xl transition-all duration-300 hover:bg-white/90 dark:hover:bg-gray-800/90">
+                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200/30 dark:border-gray-700/30 hover:shadow-xl transition-all duration-300 hover:bg-white/90 dark:hover:bg-gray-800/90">
                   {/* Product Image */}
-                  <div className="relative h-48 overflow-hidden rounded-t-xl">
+                  <div className="relative h-48 overflow-hidden rounded-lg m-3 mb-0">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-6">
+                  <div className="p-4 pt-3">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                       {product.name}
                     </h3>
