@@ -47,28 +47,32 @@ const Products = () => {
 
   const products = [
     {
-      name: 'Coffee',
+      name: 'Consumer Electronics',
+      slug: 'consumer_electronics',
       image: '/images/products/coffee.jpg',
-      gradient: 'from-amber-600 to-amber-800',
-      description: 'Premium quality coffee beans sourced from the finest farms worldwide'
-    },
-    {
-      name: 'Salt',
-      image: '/images/products/salt.jpeg',
       gradient: 'from-blue-600 to-blue-800',
-      description: 'High-grade industrial and food-grade salt for various applications'
+      description: 'High-quality electronic devices and components for global markets'
     },
     {
-      name: 'Sugar',
-      image: '/images/products/sugar.jpg',
-      gradient: 'from-pink-600 to-pink-800',
-      description: 'Refined and raw sugar varieties meeting international quality standards'
-    },
-    {
-      name: 'Soye',
-      image: '/images/products/soye.jpg',
+      name: 'Agricultural Products',
+      slug: 'agriculture_product',
+      image: '/images/products/salt.jpeg',
       gradient: 'from-green-600 to-green-800',
-      description: 'Sustainable soybean products for food and industrial applications'
+      description: 'Premium agricultural commodities including coffee, salt, sugar, and soybeans'
+    },
+    {
+      name: 'Textiles & Fashion',
+      slug: 'textiles_fashion',
+      image: '/images/products/sugar.jpg',
+      gradient: 'from-purple-600 to-purple-800',
+      description: 'Quality fabrics, garments, and fashion accessories for international trade'
+    },
+    {
+      name: 'Automotive Components',
+      slug: 'automotive_components',
+      image: '/images/products/soye.jpg',
+      gradient: 'from-red-600 to-red-800',
+      description: 'Reliable automotive parts and components for the global automotive industry'
     }
   ];
 
@@ -189,9 +193,15 @@ const Products = () => {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
                     {product.description}
                   </p>
+                  <button 
+                    onClick={() => window.location.href = `/products/${product.slug}`}
+                    className="noise-grid gradient-border glass px-4 py-2 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:scale-105 transition-all duration-300 bg-white/10 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20"
+                  >
+                    Learn More
+                  </button>
                 </div>
 
                 {/* Floating Elements */}

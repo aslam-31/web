@@ -14,6 +14,7 @@ interface ProductItem {
   image: string;
   category: string;
   buttonText: string;
+  slug: string;
 }
 
 export function ModernProducts() {
@@ -26,33 +27,37 @@ export function ModernProducts() {
       description: "Latest technology products and consumer electronics for international distribution.",
       image: "/images/products/consumer-electronics.jpg",
       category: "Technology",
-      buttonText: "Learn More"
+      buttonText: "Learn More",
+      slug: "consumer_electronics"
     },
     {
-      name: "Agricultural Products",
+      name: "Agricultural Products", 
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
       image: "/images/products/agriculture-cattle.jpg", 
       category: "Agriculture",
-      buttonText: "Learn More"
+      buttonText: "Learn More",
+      slug: "agriculture_product"
     },
     {
       name: "Textiles & Fashion",
       description: "Quality textiles and fashion products for international retail and wholesale markets.",
       image: "/images/products/textiles_and_fashion.jpg",
       category: "Fashion",
-      buttonText: "Learn More"
+      buttonText: "Learn More",
+      slug: "textiles_fashion"
     },
     {
       name: "Automotive Components",
       description: "Precision automotive components for global manufacturers.",
       image: "/images/products/automotive.jpg",
       category: "Automotive", 
-      buttonText: "Learn More"
+      buttonText: "Learn More",
+      slug: "automotive_components"
     }
   ];
 
-  const handleProductClick = () => {
-    setLocation('/products');
+  const handleProductClick = (productSlug: string) => {
+    setLocation(`/products/${productSlug}`);
   };
 
   return (
@@ -144,7 +149,10 @@ export function ModernProducts() {
                       
                       {/* Action Button */}
                       <button
-                        onClick={handleProductClick}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleProductClick(product.slug);
+                        }}
                         className="bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       >
                         {product.buttonText}

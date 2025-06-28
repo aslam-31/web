@@ -1,0 +1,366 @@
+import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
+import { useTheme } from '../components/ThemeProvider';
+import { Navigation } from '../components/Navigation';
+import { Footer } from '../components/Footer';
+import { ThreeBackground } from '../components/ThreeBackground';
+
+interface ProductCategoryProps {
+  category: string;
+}
+
+const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
+  const { t } = useLanguage();
+  const { theme } = useTheme();
+
+  // Product category configurations
+  const categoryConfig = {
+    agriculture_product: {
+      title: 'Agricultural Products',
+      subtitle: 'Premium quality agricultural commodities sourced from trusted global suppliers',
+      backgroundImages: [
+        '/images/products/coffee.jpg',
+        '/images/products/salt.jpeg',
+        '/images/products/sugar.jpg'
+      ],
+      products: [
+        {
+          name: 'Coffee',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-amber-600 to-amber-800',
+          description: 'Premium quality coffee beans sourced from the finest farms worldwide',
+          tradeVolume: '500-5,000 MT',
+          minOrder: '25 MT'
+        },
+        {
+          name: 'Salt',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'High-grade industrial and food-grade salt for various applications',
+          tradeVolume: '1,000-10,000 MT',
+          minOrder: '50 MT'
+        },
+        {
+          name: 'Sugar',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-pink-600 to-pink-800',
+          description: 'Refined and raw sugar varieties meeting international quality standards',
+          tradeVolume: '2,000-25,000 MT',
+          minOrder: '100 MT'
+        },
+        {
+          name: 'Soybeans',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-green-600 to-green-800',
+          description: 'Sustainable soybean products for food and industrial applications',
+          tradeVolume: '1,500-15,000 MT',
+          minOrder: '75 MT'
+        }
+      ]
+    },
+    consumer_electronics: {
+      title: 'Consumer Electronics',
+      subtitle: 'High-quality electronic devices and components for global markets',
+      backgroundImages: [
+        '/images/products/coffee.jpg',
+        '/images/products/salt.jpeg',
+        '/images/products/sugar.jpg'
+      ],
+      products: [
+        {
+          name: 'Smartphones',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Latest smartphones and mobile devices from leading manufacturers',
+          tradeVolume: '1,000-50,000 units',
+          minOrder: '100 units'
+        },
+        {
+          name: 'Laptops & Computers',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Professional and consumer laptops, desktops, and accessories',
+          tradeVolume: '500-25,000 units',
+          minOrder: '50 units'
+        },
+        {
+          name: 'Audio Equipment',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-purple-600 to-purple-800',
+          description: 'High-quality headphones, speakers, and audio accessories',
+          tradeVolume: '1,000-100,000 units',
+          minOrder: '200 units'
+        },
+        {
+          name: 'Smart Home Devices',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-green-600 to-green-800',
+          description: 'IoT devices, smart speakers, and home automation products',
+          tradeVolume: '500-75,000 units',
+          minOrder: '100 units'
+        }
+      ]
+    },
+    textiles_fashion: {
+      title: 'Textiles & Fashion',
+      subtitle: 'Quality fabrics, garments, and fashion accessories for international trade',
+      backgroundImages: [
+        '/images/products/coffee.jpg',
+        '/images/products/salt.jpeg',
+        '/images/products/sugar.jpg'
+      ],
+      products: [
+        {
+          name: 'Cotton Fabrics',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Premium cotton fabrics for garment manufacturing and textile production',
+          tradeVolume: '10,000-500,000 yards',
+          minOrder: '1,000 yards'
+        },
+        {
+          name: 'Ready-to-Wear Garments',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-purple-600 to-purple-800',
+          description: 'High-quality ready-made garments for men, women, and children',
+          tradeVolume: '1,000-100,000 pieces',
+          minOrder: '500 pieces'
+        },
+        {
+          name: 'Fashion Accessories',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-pink-600 to-pink-800',
+          description: 'Trendy accessories including bags, belts, jewelry, and footwear',
+          tradeVolume: '2,000-200,000 pieces',
+          minOrder: '1,000 pieces'
+        },
+        {
+          name: 'Technical Textiles',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Specialized textiles for industrial and technical applications',
+          tradeVolume: '5,000-250,000 meters',
+          minOrder: '2,500 meters'
+        }
+      ]
+    },
+    automotive_components: {
+      title: 'Automotive Components',
+      subtitle: 'Reliable automotive parts and components for the global automotive industry',
+      backgroundImages: [
+        '/images/products/coffee.jpg',
+        '/images/products/salt.jpeg',
+        '/images/products/sugar.jpg'
+      ],
+      products: [
+        {
+          name: 'Engine Parts',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-red-600 to-red-800',
+          description: 'High-performance engine components and replacement parts',
+          tradeVolume: '1,000-50,000 units',
+          minOrder: '100 units'
+        },
+        {
+          name: 'Brake Systems',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-orange-600 to-orange-800',
+          description: 'Advanced brake pads, discs, and complete braking systems',
+          tradeVolume: '2,000-100,000 units',
+          minOrder: '500 units'
+        },
+        {
+          name: 'Electronic Components',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Automotive electronics, sensors, and control modules',
+          tradeVolume: '5,000-250,000 units',
+          minOrder: '1,000 units'
+        },
+        {
+          name: 'Body & Exterior',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Body panels, lights, mirrors, and exterior automotive components',
+          tradeVolume: '1,000-75,000 units',
+          minOrder: '200 units'
+        }
+      ]
+    }
+  };
+
+  const currentCategory = categoryConfig[category as keyof typeof categoryConfig];
+  
+  if (!currentCategory) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
+        <ThreeBackground />
+        <Navigation />
+        <div className="pt-32 text-center">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Product category will be updated soon
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">
+            We're working on bringing you detailed information about this product category.
+          </p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fadeClass, setFadeClass] = useState('opacity-100');
+  const [slideDirection, setSlideDirection] = useState('translate-x-0');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeClass('opacity-0');
+      setSlideDirection('translate-x-full');
+      
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === currentCategory.backgroundImages.length - 1 ? 0 : prevIndex + 1
+        );
+        
+        setSlideDirection('-translate-x-full');
+        setTimeout(() => {
+          setFadeClass('opacity-100');
+          setSlideDirection('translate-x-0');
+        }, 100);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentCategory.backgroundImages.length]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
+      <ThreeBackground />
+      <Navigation />
+      
+      {/* Hero Section with Sliding Background */}
+      <section className="relative pt-32 pb-20 px-5 sm:px-8 lg:px-10 min-h-screen flex items-center overflow-hidden">
+        {/* Animated Background Images */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${fadeClass} ${slideDirection}`}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${currentCategory.backgroundImages[currentImageIndex]})`
+            }}
+          />
+          
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 z-10"></div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto text-center relative z-20 w-full">
+          <div className="animate-slide-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+              {currentCategory.title}
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed drop-shadow-lg">
+              {currentCategory.subtitle}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="group noise-grid gradient-border glass px-8 py-4 rounded-xl text-white hover-scale transition-all duration-500 font-semibold text-lg relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+                <span className="relative z-10">Request Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+              </button>
+              <button className="group bg-white text-black px-8 py-4 rounded-xl hover-scale transition-all duration-500 font-semibold text-lg border-2 border-transparent hover:border-white/20 relative overflow-hidden">
+                <span className="relative z-10">View Catalog</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 transform skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+          {currentCategory.backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="relative py-20 px-5 sm:px-8 lg:px-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              Our {currentCategory.title}
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+              Discover our comprehensive range of high-quality products with competitive pricing and reliable supply chains.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {currentCategory.products.map((product, index) => (
+              <div
+                key={product.name}
+                className="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-700 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-4 hover:scale-105"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                    {product.description}
+                  </p>
+                  
+                  <div className="space-y-2 mb-4">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500 dark:text-gray-400">Trade Volume:</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.tradeVolume}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500 dark:text-gray-400">Min Order:</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.minOrder}</span>
+                    </div>
+                  </div>
+                  
+                  <button className="w-full noise-grid gradient-border glass px-4 py-3 rounded-lg text-sm font-medium text-gray-900 dark:text-white hover:scale-105 transition-all duration-300 bg-white/10 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20">
+                    Request Quote
+                  </button>
+                </div>
+
+                <div className="absolute top-4 right-4 w-8 h-8 opacity-10 group-hover:opacity-20 transition-all duration-500">
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-current">
+                    <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="currentColor" strokeWidth="1" fill="none">
+                      <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="15s" repeatCount="indefinite"/>
+                    </polygon>
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default ProductCategory;
