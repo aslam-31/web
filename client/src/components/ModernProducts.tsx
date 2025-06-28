@@ -111,11 +111,13 @@ export function ModernProducts() {
   const canGoNext = currentIndex < totalSlides;
   const canGoPrev = currentIndex > 0;
   
-  // Calculate precise translation for each device type
+  // Calculate translation - always move by exactly one card width
   const getTranslateX = () => {
-    // Each slide moves by exactly one card width percentage
-    const slidePercentage = 100 / visibleCards;
-    return currentIndex * slidePercentage;
+    // Each card is (100/totalCards)% wide, move by one card width
+    const oneCardWidth = 100 / products.length;
+    const translation = currentIndex * oneCardWidth;
+    console.log(`Device: ${visibleCards} cards visible | Moving: ${currentIndex} cards | Translation: ${translation}%`);
+    return translation;
   };
 
   // Navigation functions - rebuilt for all devices with throttling
@@ -264,7 +266,7 @@ export function ModernProducts() {
               className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{ 
                 transform: `translateX(-${getTranslateX()}%)`,
-                width: `${(products.length * 100) / visibleCards}%`
+                width: `${products.length * 100}%`
               }}
             >
               {products.map((product, index) => (
@@ -272,10 +274,10 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[350px] flex flex-col mb-2.5"
                   style={{ 
-                    width: `calc(${100 / visibleCards}% - 1.5rem)`,
+                    width: `calc(${100 / products.length}% - 1.5rem)`,
                     flexShrink: 0,
-                    minWidth: visibleCards === 1 ? '280px' : 'auto',
-                    maxWidth: visibleCards === 1 ? 'none' : '320px'
+                    minWidth: '250px',
+                    maxWidth: '320px'
                   }}
                 >
                   {/* Product Image */}
