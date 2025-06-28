@@ -156,6 +156,7 @@ Changelog:
 - January 24, 2025. Applied glass effect styling to product cards with noise-grid, gradient-border, and backdrop-blur while maintaining padded rounded images
 - June 28, 2025. Updated product cards to match glassmorphism design with clean layout, category badges, and "Saiba Mais" buttons positioned at bottom
 - June 28, 2025. Positioned navigation buttons on sides of cards with glassmorphism styling, backdrop blur, and enhanced hover effects
+- June 28, 2025. Added gradient background and improved card contrast for better visibility with enhanced glassmorphism effect
 ```
 
 ## User Preferences

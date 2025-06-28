@@ -56,7 +56,7 @@ export function ModernProducts() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <style>
         {`
           .products-swiper .swiper-button-next,
@@ -157,7 +157,7 @@ export function ModernProducts() {
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>
-                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200/30 dark:border-gray-700/30 hover:shadow-xl transition-all duration-300 hover:bg-white/90 dark:hover:bg-gray-800/90">
+                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-300/40 dark:border-gray-600/40 hover:shadow-xl transition-all duration-300 hover:bg-white/95 dark:hover:bg-gray-800/95">
                   {/* Product Image */}
                   <div className="relative h-48 overflow-hidden rounded-lg m-3 mb-0">
                     <img
