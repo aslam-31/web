@@ -36,6 +36,10 @@ export function Navigation() {
   const navigateToProducts = () => {
     setLocation('/products');
     setIsMobileMenuOpen(false);
+    // Scroll to top when navigating to products page
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   return (

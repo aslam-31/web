@@ -170,6 +170,7 @@ Changelog:
 - June 28, 2025. Updated products carousel responsive design: 1 card visible below 770px with navigation buttons, 2 cards from 770px+
 - June 28, 2025. Inverted footer colors: black background in light mode, white background in dark mode
 - June 28, 2025. Made footer fully responsive with optimized layouts, typography scaling, and proper spacing for all device sizes
+- June 28, 2025. Updated Products navigation to go to dedicated products page and scroll to top header automatically
 ```
 
 ## User Preferences
