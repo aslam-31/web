@@ -157,6 +157,7 @@ Changelog:
 - June 28, 2025. Updated product cards to match glassmorphism design with clean layout, category badges, and "Saiba Mais" buttons positioned at bottom
 - June 28, 2025. Positioned navigation buttons on sides of cards with glassmorphism styling, backdrop blur, and enhanced hover effects
 - June 28, 2025. Added gradient background and improved card contrast for better visibility with enhanced glassmorphism effect
+- June 28, 2025. Enhanced navigation button visibility with higher opacity, stronger borders, custom arrow symbols, and improved positioning
 ```
 
 ## User Preferences

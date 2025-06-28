@@ -31,7 +31,7 @@ export function ModernProducts() {
     {
       name: "Agricultural Products",
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
-      image: "/images/products/agriculture.jpg", 
+      image: "/images/products/agriculture-cattle.jpg", 
       category: "Agriculture",
       buttonText: "Saiba Mais"
     },
@@ -64,36 +64,49 @@ export function ModernProducts() {
             width: 50px;
             height: 50px;
             margin-top: -25px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            color: #374151;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            color: #1f2937;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
-            z-index: 10;
+            z-index: 100;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
           }
           
           .products-swiper .swiper-button-next {
-            right: -25px;
+            right: -60px;
           }
           
           .products-swiper .swiper-button-prev {
-            left: -25px;
+            left: -60px;
           }
           
           .products-swiper .swiper-button-next:hover,
           .products-swiper .swiper-button-prev:hover {
-            background: rgba(255, 255, 255, 0.95);
-            color: #111827;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 1);
+            color: #000000;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            border-color: rgba(0, 0, 0, 0.2);
           }
           
           .products-swiper .swiper-button-next::after,
           .products-swiper .swiper-button-prev::after {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 900;
+            content: '';
+          }
+          
+          .products-swiper .swiper-button-next::after {
+            content: '›';
+          }
+          
+          .products-swiper .swiper-button-prev::after {
+            content: '‹';
           }
           
           .products-swiper .swiper-button-disabled {
