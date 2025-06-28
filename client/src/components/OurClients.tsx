@@ -43,7 +43,7 @@ export function OurClients() {
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Client Logo Container */}
-              <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-2 hover:scale-105 overflow-hidden">
+              <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-4 sm:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transform hover:-translate-y-2 hover:scale-105 overflow-hidden">
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900 opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-3xl"></div>
                 
