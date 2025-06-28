@@ -164,6 +164,7 @@ Changelog:
 - June 28, 2025. Enhanced transparency across all glass elements - reduced card opacity to 30%, buttons to 10% for cleaner, more transparent glass aesthetic
 - June 28, 2025. Updated section header to "Premium Commodities" with gradient text, blue pill badge, and agricultural products description
 - June 28, 2025. Changed button text from "Saiba Mais" to "Learn More" in English across all product cards
+- June 28, 2025. Updated Client Testimonials for mobile devices below 800px: previous/next testimonials at 50% opacity, main testimonial at 100% opacity with horizontal layout
 ```
 
 ## User Preferences

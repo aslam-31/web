@@ -70,8 +70,8 @@ export function Testimonials() {
 
         {/* Testimonials Container */}
         <div className="relative">
-          {/* Circular Animation Container */}
-          <div className="relative w-full max-w-4xl mx-auto h-72 sm:h-80 md:h-96 flex items-center justify-center">
+          {/* Desktop: Circular Animation Container */}
+          <div className="relative w-full max-w-4xl mx-auto h-72 sm:h-80 md:h-96 flex items-center justify-center hidden min-[800px]:block">
             {testimonials.map((testimonial, index) => {
               // Calculate position on circle
               const angle = (index * 360) / testimonials.length - (currentIndex * 360) / testimonials.length;
@@ -122,6 +122,73 @@ export function Testimonials() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Mobile: Linear Layout for devices below 800px */}
+          <div className="block min-[800px]:hidden">
+            <div className="relative w-full h-80 flex items-center justify-center overflow-hidden">
+              {testimonials.map((testimonial, index) => {
+                const getPrevIndex = (current: number) => current === 0 ? testimonials.length - 1 : current - 1;
+                const getNextIndex = (current: number) => current === testimonials.length - 1 ? 0 : current + 1;
+                
+                const isMain = index === currentIndex;
+                const isPrev = index === getPrevIndex(currentIndex);
+                const isNext = index === getNextIndex(currentIndex);
+                
+                if (!isMain && !isPrev && !isNext) return null;
+                
+                let translateX = 0;
+                let opacity = 0.5;
+                let zIndex = 1;
+                
+                if (isMain) {
+                  translateX = 0;
+                  opacity = 1;
+                  zIndex = 10;
+                } else if (isPrev) {
+                  translateX = -200;
+                  opacity = 0.5;
+                  zIndex = 5;
+                } else if (isNext) {
+                  translateX = 200;
+                  opacity = 0.5;
+                  zIndex = 5;
+                }
+                
+                return (
+                  <div
+                    key={index}
+                    className="absolute transition-all duration-500 ease-in-out"
+                    style={{
+                      transform: `translateX(${translateX}px)`,
+                      opacity: opacity,
+                      zIndex: zIndex,
+                    }}
+                  >
+                    <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-100 dark:border-gray-800 w-80">
+                      {/* Quote Marks */}
+                      <div className="flex justify-center mb-4">
+                        <svg className="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                      </div>
+                      
+                      {/* Testimonial Text */}
+                      <p className="text-gray-700 dark:text-gray-300 text-center leading-relaxed mb-6 min-h-[4rem]">
+                        "{testimonial.testimonial}"
+                      </p>
+                      
+                      {/* Name */}
+                      <div className="text-center">
+                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">
+                          {testimonial.name}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Progress Indicators */}
