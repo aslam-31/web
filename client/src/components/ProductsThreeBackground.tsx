@@ -53,39 +53,39 @@ export function ProductsThreeBackground() {
 
     const materials = [
       new THREE.MeshPhongMaterial({ 
-        color: 0x3b82f6, 
+        color: 0x000000, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.3,
         shininess: 100
       }),
       new THREE.MeshPhongMaterial({ 
-        color: 0x10b981, 
+        color: 0x333333, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.4,
         shininess: 100
       }),
       new THREE.MeshPhongMaterial({ 
-        color: 0x8b5cf6, 
+        color: 0x666666, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.3,
         shininess: 100
       }),
       new THREE.MeshPhongMaterial({ 
-        color: 0xf59e0b, 
+        color: 0x999999, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.4,
         shininess: 100
       }),
       new THREE.MeshPhongMaterial({ 
-        color: 0xef4444, 
+        color: 0xcccccc, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.3,
         shininess: 100
       }),
       new THREE.MeshPhongMaterial({ 
-        color: 0x06b6d4, 
+        color: 0xffffff, 
         transparent: true, 
-        opacity: 0.6,
+        opacity: 0.4,
         shininess: 100
       })
     ];
@@ -119,15 +119,15 @@ export function ProductsThreeBackground() {
       iconObjects.push(mesh);
     }
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    // Lighting - Black and white theme
+    const ambientLight = new THREE.AmbientLight(0x808080, 0.4);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    const pointLight = new THREE.PointLight(0x3b82f6, 0.5, 10);
+    const pointLight = new THREE.PointLight(0xffffff, 0.3, 10);
     pointLight.position.set(-5, 5, 5);
     scene.add(pointLight);
 
