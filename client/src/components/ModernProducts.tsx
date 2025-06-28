@@ -93,12 +93,12 @@ export function ModernProducts() {
         </div>
 
         {/* Products Grid with Navigation */}
-        <div className="relative max-w-7xl mx-auto px-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           <Swiper
             modules={[Navigation]}
-            spaceBetween={24}
+            spaceBetween={16}
             loop={false}
-            grabCursor={true}
+            grabCursor={false}
             navigation={{
               prevEl: '.swiper-button-prev-custom',
               nextEl: '.swiper-button-next-custom',
@@ -106,24 +106,35 @@ export function ModernProducts() {
             breakpoints={{
               0: {
                 slidesPerView: 1,
+                spaceBetween: 12,
+              },
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 16,
               },
               770: {
                 slidesPerView: 2,
+                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 3,
+                spaceBetween: 24,
               },
               1280: {
                 slidesPerView: 4,
+                spaceBetween: 24,
               },
             }}
             className="products-swiper"
           >
             {products.map((product, index) => (
               <SwiperSlide key={index}>
-                <div className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20 dark:border-gray-600/20 hover:shadow-xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-gray-800/40">
+                <div 
+                  onClick={() => handleProductClick(product.slug)}
+                  className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20 dark:border-gray-600/20 hover:shadow-xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-gray-800/40 cursor-pointer hover:scale-105"
+                >
                   {/* Product Image */}
-                  <div className="relative h-48 overflow-hidden rounded-lg m-3 mb-0">
+                  <div className="relative h-40 sm:h-48 overflow-hidden rounded-lg m-2 sm:m-3 mb-0">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -132,31 +143,20 @@ export function ModernProducts() {
                   </div>
                   
                   {/* Product Content */}
-                  <div className="p-4 pt-3">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <div className="p-3 sm:p-4 pt-2 sm:pt-3">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
                       {product.description}
                     </p>
                     
                     {/* Bottom Section */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-center">
                       {/* Category Badge */}
-                      <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100/70 dark:bg-gray-700/70 px-3 py-1 rounded-full backdrop-blur-sm">
+                      <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100/70 dark:bg-gray-700/70 px-2 sm:px-3 py-1 rounded-full backdrop-blur-sm">
                         {product.category}
                       </span>
-                      
-                      {/* Action Button */}
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleProductClick(product.slug);
-                        }}
-                        className="bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                      >
-                        {product.buttonText}
-                      </button>
                     </div>
                   </div>
                 </div>
