@@ -111,13 +111,12 @@ export function ModernProducts() {
   const canGoNext = currentIndex < totalSlides;
   const canGoPrev = currentIndex > 0;
   
-  // Calculate translation - always move by exactly one card width
+  // Calculate translation - move by one card width relative to visible area
   const getTranslateX = () => {
-    // Each card is (100/totalCards)% wide, move by one card width
-    const oneCardWidth = 100 / products.length;
-    const translation = currentIndex * oneCardWidth;
-    console.log(`Device: ${visibleCards} cards visible | Moving: ${currentIndex} cards | Translation: ${translation}%`);
-    return translation;
+    // Each card takes up (100/visibleCards)% of the visible area
+    // Move by one card width at a time
+    const oneCardMovement = 100 / visibleCards;
+    return currentIndex * oneCardMovement;
   };
 
   // Navigation functions - rebuilt for all devices with throttling
@@ -266,7 +265,7 @@ export function ModernProducts() {
               className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{ 
                 transform: `translateX(-${getTranslateX()}%)`,
-                width: `${products.length * 100}%`
+                width: `${(products.length * 100) / visibleCards}%`
               }}
             >
               {products.map((product, index) => (
@@ -274,10 +273,10 @@ export function ModernProducts() {
                   key={product.name}
                   className="flex-none noise-grid gradient-border glass rounded-xl shadow-md bg-gray-200/95 dark:bg-gray-700/95 backdrop-blur-sm min-h-[350px] flex flex-col mb-2.5"
                   style={{ 
-                    width: `calc(${100 / products.length}% - 1.5rem)`,
+                    width: `calc(${100 / visibleCards}% - 1.5rem)`,
                     flexShrink: 0,
-                    minWidth: '250px',
-                    maxWidth: '320px'
+                    minWidth: visibleCards === 1 ? '280px' : '250px',
+                    maxWidth: visibleCards === 1 ? 'none' : '320px'
                   }}
                 >
                   {/* Product Image */}
