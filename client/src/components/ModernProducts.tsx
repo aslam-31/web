@@ -61,31 +61,57 @@ export function ModernProducts() {
         {`
           .products-swiper .swiper-button-next,
           .products-swiper .swiper-button-prev {
-            width: 44px;
-            height: 44px;
-            margin-top: -22px;
-            background: white;
-            border: 1px solid #e5e5e5;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            color: #666;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            color: #374151;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            z-index: 10;
+          }
+          
+          .products-swiper .swiper-button-next {
+            right: -25px;
+          }
+          
+          .products-swiper .swiper-button-prev {
+            left: -25px;
           }
           
           .products-swiper .swiper-button-next:hover,
           .products-swiper .swiper-button-prev:hover {
-            color: #333;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95);
+            color: #111827;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
           }
           
           .products-swiper .swiper-button-next::after,
           .products-swiper .swiper-button-prev::after {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
           }
           
           .products-swiper .swiper-button-disabled {
-            opacity: 0.3;
+            opacity: 0.4;
+            pointer-events: none;
+          }
+          
+          .dark .products-swiper .swiper-button-next,
+          .dark .products-swiper .swiper-button-prev {
+            background: rgba(31, 41, 55, 0.8);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            color: #d1d5db;
+          }
+          
+          .dark .products-swiper .swiper-button-next:hover,
+          .dark .products-swiper .swiper-button-prev:hover {
+            background: rgba(31, 41, 55, 0.95);
+            color: #f9fafb;
           }
           
           @media screen and (max-width: 768px) {
