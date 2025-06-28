@@ -160,6 +160,7 @@ Changelog:
 - June 28, 2025. Enhanced navigation button visibility with higher opacity, stronger borders, custom arrow symbols, and improved positioning
 - June 28, 2025. Added custom glassmorphism navigation buttons with Lucide icons for products slider with proper positioning and hover effects
 - June 28, 2025. Updated "Saiba Mais" buttons to glass design with backdrop blur, semi-transparent backgrounds, and consistent glassmorphism styling
+- June 28, 2025. Applied complete glassmorphism design to navigation buttons with semi-transparent backgrounds, glass borders, and backdrop blur effects
 ```
 
 ## User Preferences

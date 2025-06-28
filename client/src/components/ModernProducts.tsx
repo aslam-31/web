@@ -151,11 +151,11 @@ export function ModernProducts() {
           </Swiper>
           
           {/* Custom Navigation Buttons */}
-          <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-300/40 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg z-10">
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-600/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/40 dark:hover:bg-gray-700/40 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
+            <ChevronLeft className="w-6 h-6 text-gray-800 dark:text-gray-200" />
           </div>
-          <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-300/40 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg z-10">
-            <ChevronRight className="w-6 h-6 text-gray-700" />
+          <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-600/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/40 dark:hover:bg-gray-700/40 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl z-10">
+            <ChevronRight className="w-6 h-6 text-gray-800 dark:text-gray-200" />
           </div>
         </div>
       </div>
