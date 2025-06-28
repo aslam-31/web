@@ -61,75 +61,12 @@ export function ModernProducts() {
         {`
           .products-swiper .swiper-button-next,
           .products-swiper .swiper-button-prev {
-            width: 50px;
-            height: 50px;
-            margin-top: -25px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border: 2px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            color: #1f2937;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            z-index: 100;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-          }
-          
-          .products-swiper .swiper-button-next {
-            right: -60px;
-          }
-          
-          .products-swiper .swiper-button-prev {
-            left: -60px;
-          }
-          
-          .products-swiper .swiper-button-next:hover,
-          .products-swiper .swiper-button-prev:hover {
-            background: rgba(255, 255, 255, 1);
-            color: #000000;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            transform: scale(1.1);
-            border-color: rgba(0, 0, 0, 0.2);
-          }
-          
-          .products-swiper .swiper-button-next::after,
-          .products-swiper .swiper-button-prev::after {
-            font-size: 20px;
-            font-weight: 900;
-            content: '';
-          }
-          
-          .products-swiper .swiper-button-next::after {
-            content: '›';
-          }
-          
-          .products-swiper .swiper-button-prev::after {
-            content: '‹';
-          }
-          
-          .products-swiper .swiper-button-disabled {
-            opacity: 0.4;
-            pointer-events: none;
-          }
-          
-          .dark .products-swiper .swiper-button-next,
-          .dark .products-swiper .swiper-button-prev {
-            background: rgba(31, 41, 55, 0.8);
-            border: 1px solid rgba(75, 85, 99, 0.3);
-            color: #d1d5db;
-          }
-          
-          .dark .products-swiper .swiper-button-next:hover,
-          .dark .products-swiper .swiper-button-prev:hover {
-            background: rgba(31, 41, 55, 0.95);
-            color: #f9fafb;
+            display: none;
           }
           
           @media screen and (max-width: 768px) {
-            .products-swiper .swiper-button-next,
-            .products-swiper .swiper-button-prev {
+            .swiper-button-prev-custom,
+            .swiper-button-next-custom {
               display: none;
             }
           }
@@ -145,13 +82,16 @@ export function ModernProducts() {
         </div>
 
         {/* Products Grid with Navigation */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto px-16">
           <Swiper
             modules={[Navigation]}
             spaceBetween={24}
             loop={false}
             grabCursor={true}
-            navigation={true}
+            navigation={{
+              prevEl: '.swiper-button-prev-custom',
+              nextEl: '.swiper-button-next-custom',
+            }}
             breakpoints={{
               0: {
                 slidesPerView: 1,
@@ -209,6 +149,14 @@ export function ModernProducts() {
               </SwiperSlide>
             ))}
           </Swiper>
+          
+          {/* Custom Navigation Buttons */}
+          <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-300/40 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg z-10">
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </div>
+          <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-md border border-gray-300/40 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg z-10">
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </div>
         </div>
       </div>
     </section>
