@@ -163,6 +163,7 @@ Changelog:
 - June 28, 2025. Applied complete glassmorphism design to navigation buttons with semi-transparent backgrounds, glass borders, and backdrop blur effects
 - June 28, 2025. Enhanced transparency across all glass elements - reduced card opacity to 30%, buttons to 10% for cleaner, more transparent glass aesthetic
 - June 28, 2025. Updated section header to "Premium Commodities" with gradient text, blue pill badge, and agricultural products description
+- June 28, 2025. Changed button text from "Saiba Mais" to "Learn More" in English across all product cards
 ```
 
 ## User Preferences

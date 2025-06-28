@@ -26,28 +26,28 @@ export function ModernProducts() {
       description: "Latest technology products and consumer electronics for international distribution.",
       image: "/images/products/consumer-electronics.jpg",
       category: "Technology",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Agricultural Products",
       description: "Premium agricultural products and specialty foods from Spain to global markets.",
       image: "/images/products/agriculture-cattle.jpg", 
       category: "Agriculture",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Textiles & Fashion",
       description: "Quality textiles and fashion products for international retail and wholesale markets.",
       image: "/images/products/textiles_and_fashion.jpg",
       category: "Fashion",
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     },
     {
       name: "Automotive Components",
       description: "Precision automotive components for global manufacturers.",
       image: "/images/products/automotive.jpg",
       category: "Automotive", 
-      buttonText: "Saiba Mais"
+      buttonText: "Learn More"
     }
   ];
 
