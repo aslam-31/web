@@ -2,22 +2,22 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 const heroImages = [
-  "images/hero_bg/2.jpg", // Cargo ship at port
+  "images/hero_bg/1.png", // Cargo ship at port
 
   
-  "images/hero_bg/4.jpg",// Airplane in flight
+  "images/hero_bg/2.jpg",// Airplane in flight
 
   
-  "images/hero_bg/5.jpg", // Container port aerial view
+  "images/hero_bg/3.jpg", // Container port aerial view
 
   
-  "", // Cargo plane loading
+  "images/hero_bg/4.jpg", // Cargo plane loading
 
   
-  "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // Large cargo ship
+  "images/hero_bg/5.jpg", // Large cargo ship
 
   
-  "images/2.png"  // Airport cargo terminal
+  "images/hero_bg/6.png"  // Airport cargo terminal
 ];
 
 const animations = [
