@@ -10,6 +10,7 @@ const Products = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
   const [, setLocation] = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
   
   // Background images for sliding effect
   const backgroundImages = [
@@ -24,6 +25,11 @@ const Products = () => {
   const [slideDirection, setSlideDirection] = useState('translate-x-0');
 
   useEffect(() => {
+    // Simulate loading time and hide navigation until loaded
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
     const interval = setInterval(() => {
       // Start fade out and slide effect
       setFadeClass('opacity-0');
@@ -44,7 +50,10 @@ const Products = () => {
       }, 500);
     }, 4000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(loadingTimer);
+      clearInterval(interval);
+    };
   }, [backgroundImages.length]);
 
   const products = [
@@ -116,6 +125,19 @@ const Products = () => {
     'Transparent pricing with no hidden costs',
     '24/7 customer support and order tracking'
   ];
+
+  // Show loading screen
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Loading Products</h2>
+          <p className="text-gray-600 dark:text-gray-400">Please wait while we prepare your content...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
