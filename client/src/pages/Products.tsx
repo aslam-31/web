@@ -5,6 +5,7 @@ import { useTheme } from '../components/ThemeProvider';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ProductsThreeBackground } from '../components/ProductsThreeBackground';
+import { LoadingScreen } from '../components/LoadingScreen';
 
 const Products = () => {
   const { t } = useLanguage();
@@ -128,15 +129,7 @@ const Products = () => {
 
   // Show loading screen
   if (isLoading) {
-    return (
-      <div className="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Loading Products</h2>
-          <p className="text-gray-600 dark:text-gray-400">Please wait while we prepare your content...</p>
-        </div>
-      </div>
-    );
+    return <LoadingScreen onComplete={() => setIsLoading(false)} duration={1000} />;
   }
 
   return (
