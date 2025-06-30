@@ -71,7 +71,40 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
         '/images/products/salt.jpeg',
         '/images/products/sugar.jpg'
       ],
-      products: []
+      products: [
+        {
+          name: 'Smartphones',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Latest smartphones and mobile devices from leading manufacturers',
+          tradeVolume: '1,000-50,000 units',
+          minOrder: '100 units'
+        },
+        {
+          name: 'Laptops & Computers',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Professional and consumer laptops, desktops, and accessories',
+          tradeVolume: '500-25,000 units',
+          minOrder: '50 units'
+        },
+        {
+          name: 'Audio Equipment',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-purple-600 to-purple-800',
+          description: 'High-quality headphones, speakers, and audio accessories',
+          tradeVolume: '1,000-100,000 units',
+          minOrder: '200 units'
+        },
+        {
+          name: 'Smart Home Devices',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-green-600 to-green-800',
+          description: 'IoT devices, smart speakers, and home automation products',
+          tradeVolume: '500-75,000 units',
+          minOrder: '100 units'
+        }
+      ]
     },
     textiles_fashion: {
       title: 'Textiles & Fashion',
@@ -81,7 +114,40 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
         '/images/products/salt.jpeg',
         '/images/products/sugar.jpg'
       ],
-      products: []
+      products: [
+        {
+          name: 'Cotton Fabrics',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Premium cotton fabrics for garment manufacturing and textile production',
+          tradeVolume: '10,000-500,000 yards',
+          minOrder: '1,000 yards'
+        },
+        {
+          name: 'Ready-to-Wear Garments',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-purple-600 to-purple-800',
+          description: 'High-quality ready-made garments for men, women, and children',
+          tradeVolume: '1,000-100,000 pieces',
+          minOrder: '500 pieces'
+        },
+        {
+          name: 'Fashion Accessories',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-pink-600 to-pink-800',
+          description: 'Trendy accessories including bags, belts, jewelry, and footwear',
+          tradeVolume: '2,000-200,000 pieces',
+          minOrder: '1,000 pieces'
+        },
+        {
+          name: 'Technical Textiles',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Specialized textiles for industrial and technical applications',
+          tradeVolume: '5,000-250,000 meters',
+          minOrder: '2,500 meters'
+        }
+      ]
     },
     automotive_components: {
       title: 'Automotive Components',
@@ -91,7 +157,40 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
         '/images/products/salt.jpeg',
         '/images/products/sugar.jpg'
       ],
-      products: []
+      products: [
+        {
+          name: 'Engine Parts',
+          image: '/images/products/coffee.jpg',
+          gradient: 'from-red-600 to-red-800',
+          description: 'High-performance engine components and replacement parts',
+          tradeVolume: '1,000-50,000 units',
+          minOrder: '100 units'
+        },
+        {
+          name: 'Brake Systems',
+          image: '/images/products/salt.jpeg',
+          gradient: 'from-orange-600 to-orange-800',
+          description: 'Advanced brake pads, discs, and complete braking systems',
+          tradeVolume: '2,000-100,000 units',
+          minOrder: '500 units'
+        },
+        {
+          name: 'Electronic Components',
+          image: '/images/products/sugar.jpg',
+          gradient: 'from-blue-600 to-blue-800',
+          description: 'Automotive electronics, sensors, and control modules',
+          tradeVolume: '5,000-250,000 units',
+          minOrder: '1,000 units'
+        },
+        {
+          name: 'Body & Exterior',
+          image: '/images/products/soye.jpg',
+          gradient: 'from-gray-600 to-gray-800',
+          description: 'Body panels, lights, mirrors, and exterior automotive components',
+          tradeVolume: '1,000-75,000 units',
+          minOrder: '200 units'
+        }
+      ]
     }
   };
 
@@ -105,30 +204,6 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
 
     return () => clearTimeout(loadingTimer);
   }, []);
-
-  // Background image animation for agriculture_product
-  useEffect(() => {
-    if (category === 'agriculture_product' && currentCategory) {
-      const interval = setInterval(() => {
-        setFadeClass('opacity-0');
-        setSlideDirection('translate-x-full');
-        
-        setTimeout(() => {
-          setCurrentImageIndex((prevIndex) => 
-            prevIndex === currentCategory.backgroundImages.length - 1 ? 0 : prevIndex + 1
-          );
-          
-          setSlideDirection('-translate-x-full');
-          setTimeout(() => {
-            setFadeClass('opacity-100');
-            setSlideDirection('translate-x-0');
-          }, 100);
-        }, 500);
-      }, 4000);
-
-      return () => clearInterval(interval);
-    }
-  }, [category, currentCategory?.backgroundImages.length]);
 
   // Show loading screen first
   if (isLoading) {
@@ -214,6 +289,27 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
     );
   }
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeClass('opacity-0');
+      setSlideDirection('translate-x-full');
+      
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === currentCategory.backgroundImages.length - 1 ? 0 : prevIndex + 1
+        );
+        
+        setSlideDirection('-translate-x-full');
+        setTimeout(() => {
+          setFadeClass('opacity-100');
+          setSlideDirection('translate-x-0');
+        }, 100);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentCategory.backgroundImages.length]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden">
       <ProductsThreeBackground />
@@ -294,7 +390,6 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
                   boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05)'
                 }}
               >
-                {/* Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700 rounded-3xl`}></div>
                 
                 {/* Product Image with rounded corners */}
@@ -308,7 +403,6 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
                   </div>
                 </div>
                 
-                {/* Product Info */}
                 <div className="p-6 pt-4">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-gray-600 dark:group-hover:from-white dark:group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
                     {product.name}
@@ -317,23 +411,22 @@ const ProductCategory: React.FC<ProductCategoryProps> = ({ category }) => {
                     {product.description}
                   </p>
                   
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between items-center py-2 border-b border-gray-200/30 dark:border-gray-700/30">
-                      <span className="text-xs text-gray-500 dark:text-gray-400">Trade Volume</span>
-                      <span className="font-semibold text-gray-900 dark:text-white text-sm">{product.tradeVolume}</span>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500 dark:text-gray-400">Trade Volume:</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.tradeVolume}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs text-gray-500 dark:text-gray-400">Min Order</span>
-                      <span className="font-semibold text-gray-900 dark:text-white text-sm">{product.minOrder}</span>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500 dark:text-gray-400">Min Order:</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.minOrder}</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <button className="w-full bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-3 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     Request Quote
                   </button>
                 </div>
 
-                {/* Floating Elements */}
                 <div className="absolute top-4 right-4 w-8 h-8 opacity-10 group-hover:opacity-20 transition-all duration-500">
                   <svg viewBox="0 0 24 24" className="w-full h-full text-current">
                     <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="currentColor" strokeWidth="1" fill="none">
