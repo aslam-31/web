@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from "wouter";
 import { useLanguage } from '../components/LanguageProvider';
 import { useTheme } from '../components/ThemeProvider';
 import { Navigation } from '../components/Navigation';
@@ -8,6 +9,7 @@ import { ProductsThreeBackground } from '../components/ProductsThreeBackground';
 const Products = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const [, setLocation] = useLocation();
   
   // Background images for sliding effect
   const backgroundImages = [
@@ -76,6 +78,14 @@ const Products = () => {
       description: 'Reliable automotive parts and components for the global automotive industry'
     }
   ];
+
+  const handleProductClick = (productSlug: string) => {
+    console.log('Products page - Product card clicked:', productSlug);
+    console.log('Products page - Navigating to:', `/products/${productSlug}`);
+    setLocation(`/products/${productSlug}`);
+    // Scroll to top after navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const benefits = [
     {
@@ -174,10 +184,15 @@ const Products = () => {
             {products.map((product, index) => (
               <div
                 key={product.name}
-                className="group relative noise-grid gradient-border glass rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-4 hover:scale-105 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-gray-200/30 dark:border-gray-600/30"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleProductClick(product.slug);
+                }}
+                className="group relative noise-grid gradient-border glass rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-4 hover:scale-105 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-gray-200/30 dark:border-gray-600/30 cursor-pointer"
                 style={{ 
                   animationDelay: `${index * 150}ms`,
-                  boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05)'
+                  boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05)',
+                  pointerEvents: 'auto'
                 }}
               >
                 {/* Gradient Overlay */}
@@ -208,7 +223,10 @@ const Products = () => {
                     {product.description}
                   </p>
                   <button 
-                    onClick={() => window.location.href = `/products/${product.slug}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleProductClick(product.slug);
+                    }}
                     className="w-full bg-white/10 hover:bg-white/20 dark:bg-gray-700/10 dark:hover:bg-gray-600/20 backdrop-blur-md border border-white/20 dark:border-gray-600/20 text-gray-900 dark:text-white py-3 px-4 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     Learn More
