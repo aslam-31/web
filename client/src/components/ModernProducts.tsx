@@ -103,7 +103,8 @@ export function ModernProducts() {
             modules={[Navigation]}
             spaceBetween={16}
             loop={false}
-            grabCursor={false}
+            grabCursor={true}
+            allowTouchMove={true}
             navigation={{
               prevEl: '.swiper-button-prev-custom',
               nextEl: '.swiper-button-next-custom',
@@ -135,8 +136,12 @@ export function ModernProducts() {
             {products.map((product, index) => (
               <SwiperSlide key={index}>
                 <div 
-                  onClick={() => handleProductClick(product.slug)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleProductClick(product.slug);
+                  }}
                   className="noise-grid gradient-border glass rounded-xl shadow-lg bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20 dark:border-gray-600/20 hover:shadow-xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-gray-800/40 cursor-pointer hover:scale-105"
+                  style={{ pointerEvents: 'auto' }}
                 >
                   {/* Product Image */}
                   <div className="relative h-40 sm:h-48 overflow-hidden rounded-lg m-2 sm:m-3 mb-0">
