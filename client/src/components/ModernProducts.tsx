@@ -58,7 +58,11 @@ export function ModernProducts() {
   ];
 
   const handleProductClick = (productSlug: string) => {
+    console.log('Product card clicked:', productSlug);
+    console.log('Navigating to:', `/products/${productSlug}`);
     setLocation(`/products/${productSlug}`);
+    // Scroll to top after navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
